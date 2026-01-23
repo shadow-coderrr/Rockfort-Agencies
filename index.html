@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rockfort Agencies | Premium Construction Chemicals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <style>
+        :root {
+            --google-blue: #1a73e8;
+            --google-dark-blue: #174ea6;
+            --google-grey: #5f6368;
+            --text-dark: #202124;
+            --border-color: #dadce0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+        body { background-color: #ffffff; color: var(--text-dark); scroll-behavior: smooth; }
+
+        /* --- Navbar --- */
+        nav {
+            padding: 15px 20px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center;
+            position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); z-index: 1000; gap: 20px;
+        }
+        .menu-btn { background: none; border: none; cursor: pointer; color: var(--google-grey); padding: 8px; border-radius: 50%; transition: 0.3s; display: flex; }
+        .menu-btn:hover { background-color: #f1f3f4; }
+        .logo { font-size: 22px; font-weight: 500; color: var(--google-grey); flex-grow: 1; }
+        .logo b { color: var(--google-blue); font-weight: 700; }
+
+        /* --- Sidebar --- */
+        .sidebar { height: 100%; width: 280px; position: fixed; z-index: 2000; top: 0; left: -300px; background: white; transition: 0.3s ease; box-shadow: 2px 0 12px rgba(0,0,0,0.15); padding-top: 20px; }
+        .sidebar.open { left: 0; }
+        .overlay { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.5); z-index: 1500; }
+        .overlay.show { display: block; }
+        
+        .sidebar-header { padding: 0 24px 20px; font-size: 20px; font-weight: 500; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; }
+        .sidebar a { padding: 16px 24px; text-decoration: none; color: var(--text-dark); display: flex; gap: 15px; font-weight: 500; transition: 0.2s; }
+        .sidebar a:hover { background-color: #e8f0fe; color: var(--google-blue); }
+
+        /* --- Hero --- */
+        .hero { background: linear-gradient(135deg, #e8f0fe 0%, #ffffff 100%); padding: 60px 20px 80px; display: flex; flex-direction: column; align-items: center; }
+        .hero-card { background: white; max-width: 900px; width: 100%; padding: 50px 40px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid var(--google-blue); }
+        .hero-badge { display: inline-block; background: #e6f4ea; color: #137333; padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; }
+        .hero-title { font-size: 38px; font-weight: 700; color: #202124; margin-bottom: 15px; line-height: 1.2; }
+        .hero-subtitle { font-size: 18px; color: var(--google-grey); margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .cta-button { display: inline-flex; align-items: center; gap: 8px; background: var(--google-blue); color: white; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: 500; transition: 0.3s; box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3); }
+        .cta-button:hover { background: var(--google-dark-blue); transform: translateY(-2px); }
+        .partners-row { margin-top: 40px; padding-top: 30px; border-top: 1px solid #f1f3f4; }
+        .brand-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .brand-tag { background: #f8f9fa; border: 1px solid #dadce0; color: var(--google-grey); padding: 6px 14px; border-radius: 6px; font-size: 14px; font-weight: 500; }
+
+        /* --- Product Grid --- */
+        .container { max-width: 1200px; margin: -40px auto 80px; padding: 0 20px; position: relative; z-index: 10; }
+        .section-title { font-size: 22px; font-weight: 500; margin-bottom: 25px; color: var(--text-dark); border-left: 5px solid var(--google-blue); padding-left: 15px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+
+        /* --- Card Design --- */
+        .card { background: white; border: 1px solid var(--border-color); border-radius: 12px; transition: 0.3s; overflow: hidden; display: flex; flex-direction: column; }
+        .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateY(-5px); border-color: transparent; }
+        .card-img { height: 200px; background: white; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f1f3f4; padding: 10px; }
+        .card-content { padding: 20px; flex-grow: 1; }
+        
+        .category { font-size: 11px; font-weight: 700; color: var(--google-blue); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .material-name { font-size: 18px; font-weight: 500; margin-bottom: 8px; color: #3c4043; line-height: 1.4; }
+        .product-desc { font-size: 13px; color: #5f6368; margin-bottom: 15px; font-weight: 400; line-height: 1.5; min-height: 20px; }
+
+        .price-box { margin-bottom: 15px; }
+        .price-label { font-size: 12px; color: var(--google-grey); }
+        .price { font-size: 24px; font-weight: 700; color: #202124; }
+        .no-price { font-size: 18px; color: var(--google-blue); font-weight: 500; }
+
+        /* Buttons */
+        .buy-now-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: white; color: var(--google-blue); border: 1px solid var(--border-color); text-decoration: none; padding: 10px; border-radius: 6px; font-weight: 500; transition: 0.2s; margin-top: 10px; }
+        .buy-now-btn:hover { background: #e8f0fe; border-color: var(--google-blue); }
+
+        .view-options-btn { width: 100%; padding: 8px; background-color: #f1f3f4; border: none; border-radius: 4px; color: #202124; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 10px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; }
+        .view-options-btn:hover { background-color: #e8eaed; color: var(--google-blue); }
+
+        /* --- POPUP MODAL --- */
+        .modal-window { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
+        .modal-content { background-color: white; margin: 10% auto; padding: 0; border-radius: 12px; width: 90%; max-width: 500px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); animation: slideIn 0.3s; }
+        @keyframes slideIn { from {transform: translateY(20px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
+        
+        .modal-header { padding: 20px; border-bottom: 1px solid #f1f3f4; display: flex; justify-content: space-between; align-items: center; }
+        .modal-header h3 { font-size: 18px; font-weight: 500; }
+        .close-modal { font-size: 24px; cursor: pointer; color: #5f6368; }
+        
+        .modal-body { padding: 20px; max-height: 400px; overflow-y: auto; }
+        .modal-list-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f1f3f4; }
+        .modal-list-item:last-child { border-bottom: none; }
+        .item-name { font-weight: 500; color: #3c4043; }
+        .item-price { font-weight: 700; color: var(--google-blue); }
+        .contact-price { font-size: 13px; color: var(--google-grey); font-weight: 500; }
+
+        footer { background: #f8f9fa; padding: 50px 20px; text-align: center; border-top: 1px solid var(--border-color); }
+    </style>
+</head>
+<body>
+
+    <div id="mySidebar" class="sidebar">
+        <div class="sidebar-header">
+            <span>Our Brands</span>
+            <span class="material-icons" onclick="closeMenu()" style="cursor:pointer;">close</span>
+        </div>
+        <a href="#products" onclick="loadBrand('All Products')"><span class="material-icons">grid_view</span> All Products</a>
+        <a href="#products" onclick="loadBrand('Abro')"><span class="material-icons">label</span> Abro</a>
+        <a href="#products" onclick="loadBrand('Jubilant')"><span class="material-icons">label</span> Jubilant</a>
+        <a href="#products" onclick="loadBrand('Atul')"><span class="material-icons">label</span> Atul</a>
+        <a href="#products" onclick="loadBrand('Nerofix')"><span class="material-icons">label</span> Nerofix</a>
+        <a href="#products" onclick="loadBrand('Bostik')"><span class="material-icons">label</span> Bostik</a>
+        <a href="#products" onclick="loadBrand('Itzu')"><span class="material-icons">label</span> Itzu</a>
+        <a href="#products" onclick="loadBrand('A1')"><span class="material-icons">label</span> A1</a>
+        <a href="#products" onclick="loadBrand('Astral')"><span class="material-icons">label</span> Astral</a>
+    </div>
+    <div id="myOverlay" class="overlay" onclick="closeMenu()"></div>
+
+    <div id="optionsModal" class="modal-window">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Available Options</h3>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="modalList">
+                </div>
+        </div>
+    </div>
+
+    <nav>
+        <button class="menu-btn" onclick="openMenu()">
+            <span class="material-icons" style="font-size: 28px;">menu</span>
+        </button>
+        <div class="logo">Rockfort <b>Agencies</b></div>
+        <div style="font-size: 14px; color: var(--google-grey); font-weight: 500;">
+            <i class="material-icons" style="font-size: 18px; vertical-align: middle;">location_on</i> Trichy
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-card">
+            <span class="hero-badge"><span class="material-icons" style="font-size:14px; vertical-align:middle;">verified</span> Leading Supplier in Trichy</span>
+            <h1 class="hero-title">Construction Chemicals, Adhesives & Sealants</h1>
+            <p class="hero-subtitle">We are the leading suppliers of Tile Adhesives, Epoxy Grouts, Silicon Sealants, Waterproofing Solutions, and Industrial Tapes in Trichy.</p>
+            <a href="tel:+919489330306" class="cta-button"><span class="material-icons">call</span> Get a Quote</a>
+            <div class="partners-row">
+                <div class="brand-tags">
+                    <span class="brand-tag">Saint-Gobain</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span>
+                    <span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Esdee</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="products">
+        <h2 class="section-title" id="gridTitle">Product Catalog</h2>
+        <div class="product-grid" id="productGrid"></div>
+    </div>
+
+    <footer>
+        <p style="font-size: 18px; font-weight: 500; color: #202124; margin-bottom: 10px;">Rockfort Agencies</p>
+        <p style="color: var(--google-grey); margin-bottom: 20px;">Wholesale & Retail Suppliers | Trichy</p>
+        <p style="color: var(--google-blue);">+91 94893 30306</p>
+        <div style="margin-top: 30px; font-size: 12px; color: #bdc1c6;">&copy; Copyright 2026 Naveennivas Sivakumar. All rights reserved.</div>
+    </footer>
+
+    <script>
+        // --- 1. Menu Functions ---
+        function openMenu() { document.getElementById("mySidebar").classList.add("open"); document.getElementById("myOverlay").classList.add("show"); }
+        function closeMenu() { document.getElementById("mySidebar").classList.remove("open"); document.getElementById("myOverlay").classList.remove("show"); }
+
+        // --- 2. Modal Functions (Popup) ---
+        function openOptionsModal(productIndex) {
+            const product = currentItemsToRender[productIndex]; // Use globally stored filtered items
+            const modalList = document.getElementById("modalList");
+            const modalTitle = document.getElementById("modalTitle");
+            
+            modalTitle.innerText = product.name + " - Options";
+            modalList.innerHTML = ""; 
+
+            product.options.forEach(item => {
+                let priceHtml = item.price ? `<span class="item-price">₹ ${item.price}</span>` : `<span class="contact-price">Contact for Rate</span>`;
+                let row = `
+                    <div class="modal-list-item">
+                        <span class="item-name">${item.variant}</span>
+                        ${priceHtml}
+                    </div>
+                `;
+                modalList.innerHTML += row;
+            });
+
+            document.getElementById("optionsModal").style.display = "block";
+        }
+
+        function closeModal() { document.getElementById("optionsModal").style.display = "none"; }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("optionsModal")) { closeModal(); }
+        }
+
+        // --- 3. Data & Render Logic ---
+        
+        // This will hold the items currently displayed on screen (so Modal knows which one to open)
+        let currentItemsToRender = []; 
+
+        function loadBrand(brandName) {
+            closeMenu();
+            const titleElement = document.getElementById("gridTitle");
+            const gridElement = document.getElementById("productGrid");
+            
+            titleElement.innerText = (brandName === 'All Products') ? "All Products Catalog" : brandName + " Materials";
+            gridElement.innerHTML = "";
+
+            // --- ABRO DATA (All .jpeg) ---
+            const abroProducts = [
+                { 
+                    name: "Abro Spray Paints (400ml)", 
+                    price: "115 - 150", 
+                    desc: "Quick drying high quality spray paint. Click below to see colours.", 
+                    img: "abro_spray_group.jpeg",
+                    hasOptions: true,
+                    btnText: "View Available Colours",
+                    brand: "ABRO",
+                    options: [
+                        { variant: "Gloss White", price: "115" },
+                        { variant: "Gloss Black", price: "115" },
+                        { variant: "Matt Black", price: "115" },
+                        { variant: "Silver", price: "115" },
+                        { variant: "Gold (Premium)", price: "150" }
+                    ]
+                },
+                {
+                    name: "Abro Packing Tapes (BOPP)",
+                    price: "", 
+                    desc: "High adhesion BOPP Tapes. Available in Clear & Brown.",
+                    img: "abro_pack_group.jpeg",
+                    hasOptions: true,
+                    btnText: "View Sizes & Types",
+                    brand: "ABRO",
+                    options: [
+                        { variant: "2 Inch Clear", price: "" },
+                        { variant: "2 Inch Brown", price: "" },
+                        { variant: "3 Inch Clear", price: "" },
+                        { variant: "3 Inch Brown", price: "" }
+                    ]
+                },
+                {
+                    name: "Abro Telescopic Runners",
+                    price: "", 
+                    desc: "Heavy duty drawer slides. Smooth operation.",
+                    img: "abro_runner_group.jpeg",
+                    hasOptions: true,
+                    btnText: "View Weight Capacity",
+                    brand: "ABRO",
+                    options: [
+                        { variant: "35 Kg Capacity", price: "" },
+                        { variant: "45 Kg Capacity", price: "" }
+                    ]
+                },
+                { name: "Abro 3123 Masking Tape", price: "115", desc: "Available sizes: 1\", 2\", 1/2\", 3/4\", 1.5\"", img: "abro_3123.jpeg", brand: "ABRO" },
+                { name: "Abro Ezpro Masking Tape", price: "100", desc: "Available sizes: 1\", 2\", 1/2\", 3/4\", 1.5\"", img: "abro_ezpro.jpeg", brand: "ABRO" },
+                { name: "Abro GHB Tape", price: "55", desc: "Thickness: 2mm, 1.2mm", img: "abro_ghb.jpeg", brand: "ABRO" },
+                { name: "Abro Lub. AB-80 (50ml)", price: "", desc: "Multi-purpose Lubricant Spray", img: "abro_ab80_50.jpeg", brand: "ABRO" },
+                { name: "Abro Lub. AB-80 (100ml)", price: "", desc: "Multi-purpose Lubricant Spray", img: "abro_ab80_100.jpeg", brand: "ABRO" },
+                { name: "Abro Cloth Roll (All Grit)", price: "1400", desc: "Available Grits: 60, 80, 100, 120", img: "abro_cloth_roll.jpeg", brand: "ABRO" },
+                { name: "Abro Cut-off Wheel Green (14\")", price: "110", desc: "Heavy duty cutting wheel", img: "abro_wheel_green_14.jpeg", brand: "ABRO" },
+                { name: "Abro Cut-off Wheel Black (14\")", price: "110", desc: "Heavy duty cutting wheel", img: "abro_wheel_black_14.jpeg", brand: "ABRO" },
+                { name: "Abro Cut-off Wheel Green (4\")", price: "11", desc: "Standard 4 inch wheel", img: "abro_wheel_green_4.jpeg", brand: "ABRO" },
+                { name: "Abro Cut-off Wheel Green (5\")", price: "13", desc: "Standard 5 inch wheel", img: "abro_wheel_green_5.jpeg", brand: "ABRO" },
+                { name: "Abro Cut-off Wheel Black (4\")", price: "11", desc: "Standard 4 inch wheel", img: "abro_wheel_black_4.jpeg", brand: "ABRO" },
+                { name: "Abro Drywall Tape (2 Inch)", price: "", desc: "Joint Tape for Drywall", img: "abro_drywall_2.jpeg", brand: "ABRO" },
+                { name: "Abro Drywall Tape (4 Inch)", price: "", desc: "Joint Tape for Drywall", img: "abro_drywall_4.jpeg", brand: "ABRO" },
+                { name: "Abro Drywall Tape (6 Inch)", price: "", desc: "Joint Tape for Drywall", img: "abro_drywall_6.jpeg", brand: "ABRO" },
+                { name: "Abro Fiber Disc (All Grit)", price: "13", desc: "Grits: 60, 80, 100, 120", img: "abro_fiber_disc.jpeg", brand: "ABRO" },
+                { name: "Abro Flap Disc (All Grit)", price: "", desc: "Grits: 60, 80 available", img: "abro_flap_disc.jpeg", brand: "ABRO" },
+                { name: "Abro GP 260ml", price: "100", desc: "Available Colors: Clear, White, Black", img: "abro_gp_260.jpeg", brand: "ABRO" },
+                { name: "Abro Latex Paper (All Grit)", price: "10", desc: "Grits: 100, 150, 160, 180, 220", img: "abro_latex.jpeg", brand: "ABRO" },
+                { name: "Abro Leakage Repair Tape (2\")", price: "120", desc: "Instant waterproof sealing", img: "abro_leakage_2.jpeg", brand: "ABRO" },
+                { name: "Abro Leakage Repair Tape (4\")", price: "280", desc: "Instant waterproof sealing", img: "abro_leakage_4.jpeg", brand: "ABRO" },
+                { name: "Abro Leakage Repair Tape (6\")", price: "250", desc: "Instant waterproof sealing", img: "abro_leakage_6.jpeg", brand: "ABRO" },
+                { name: "Abro Mirror Mounting Tape (1\")", price: "", desc: "Double sided high strength", img: "abro_mounting_1.jpeg", brand: "ABRO" },
+                { name: "Abro Mirror Mounting Tape (1/2\")", price: "", desc: "Double sided high strength", img: "abro_mounting_half.jpeg", brand: "ABRO" },
+                { name: "Abro PTFE Tape (5m)", price: "", desc: "Thread sealing tape", img: "abro_ptfe_5m.jpeg", brand: "ABRO" },
+                { name: "Abro PTFE Tape (10m)", price: "", desc: "Thread sealing tape", img: "abro_ptfe_10m.jpeg", brand: "ABRO" },
+                { name: "Abro PU Foam (750ml)", price: "300", desc: "Expanding polyurethane foam", img: "abro_pu_750.jpeg", brand: "ABRO" },
+                { name: "Abro PU Foam (450ml)", price: "175", desc: "Expanding polyurethane foam", img: "abro_pu_450.jpeg", brand: "ABRO" },
+                { name: "Abro Insulation Tape", price: "8.50", desc: "Colors: Red, Blue, Green, Yellow, White, Black", img: "abro_insulation.jpeg", brand: "ABRO" },
+                { name: "Abro Acrybond Sealant (280ml)", price: "80", desc: "Paintable acrylic sealant", img: "abro_acrybond.jpeg", brand: "ABRO" },
+                { name: "Abro Grinding Wheel", price: "26", desc: "Metal grinding disc", img: "abro_grinding.jpeg", brand: "ABRO" },
+                { name: "Abro Shuttering Tape", price: "75", desc: "PVC Shuttering tape", img: "abro_shuttering.jpeg", brand: "ABRO" },
+                { name: "Abro Weather 9895 Sealant", price: "", desc: "Weatherproof silicone sealant", img: "abro_weather_9895.jpeg", brand: "ABRO" }
+            ];
+
+            // --- FILTER LOGIC ---
+            // Reset the render list
+            currentItemsToRender = [];
+
+            if (brandName === 'Abro') {
+                // Show only Abro
+                currentItemsToRender = abroProducts;
+            } 
+            else if (brandName === 'All Products') {
+                // Show ABRO + (In future) Bostik + Jubilant + etc.
+                // Currently we only have Abro, so we add Abro to the list.
+                currentItemsToRender = currentItemsToRender.concat(abroProducts);
+            } 
+            else {
+                // For brands that have NO data yet (like Jubilant, Bostik), we show dummy data
+                // so the page isn't empty.
+                currentItemsToRender = []; // Keep empty or generate dummies below
+            }
+
+            // --- RENDER LOGIC ---
+            if (currentItemsToRender.length > 0) {
+                currentItemsToRender.forEach((product, index) => {
+                    let priceDisplay = product.price ? `₹ ${product.price}` : `<span class='no-price'>Contact for Rate</span>`;
+                    
+                    let optionsButton = '';
+                    if (product.hasOptions) {
+                        optionsButton = `<button class="view-options-btn" onclick="openOptionsModal(${index})">
+                                            <span class="material-icons" style="font-size:16px;">list</span> ${product.btnText}
+                                        </button>`;
+                    }
+
+                    let cardHTML = `
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="images/${product.img}" 
+                                     alt="${product.name}" 
+                                     style="width:100%; height:100%; object-fit:contain;"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/400x300?text=${product.brand}';">
+                            </div>
+                            <div class="card-content">
+                                <p class="category">${product.brand}</p>
+                                <h3 class="material-name">${product.name}</h3>
+                                <p class="product-desc">${product.desc}</p>
+                                ${optionsButton}
+                                <div class="price-box">
+                                    <p class="price-label">Price</p>
+                                    <div class="price">${priceDisplay}</div>
+                                </div>
+                                <a href="tel:+919489330306" class="buy-now-btn">
+                                    <span class="material-icons">call</span> CALL TO BUY
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    gridElement.innerHTML += cardHTML;
+                });
+            } else {
+                // If "currentItemsToRender" is empty (meaning it's a brand like Jubilant with no data yet),
+                // Show Dummy Placeholders so page doesn't look broken.
+                for (let i = 1; i <= 6; i++) {
+                    let displayName = brandName + " Product " + i;
+                    let cardHTML = `
+                        <div class="card">
+                            <div class="card-img">
+                                <span class="material-icons" style="font-size: 50px;">inventory_2</span>
+                            </div>
+                            <div class="card-content">
+                                <p class="category">${brandName}</p>
+                                <h3 class="material-name">${displayName}</h3>
+                                <p class="product-desc">Coming soon to our catalogue.</p>
+                                <div class="price-box">
+                                    <p class="price-label">Price</p>
+                                    <div class="price">₹ --</div>
+                                </div>
+                                <a href="tel:+919489330306" class="buy-now-btn">
+                                    <span class="material-icons">call</span> CALL TO BUY
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    gridElement.innerHTML += cardHTML;
+                }
+            }
+        }
+
+        // Load Default Content
+        window.onload = function() { loadBrand('All Products'); };
+    </script>
+
+</body>
+</html>
