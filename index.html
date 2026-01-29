@@ -46,7 +46,7 @@
             background: rgba(255, 255, 255, 0.95); 
             backdrop-filter: blur(10px); 
             z-index: 1000; 
-            height: 65px; /* Slightly taller for bigger logo */
+            height: 65px; 
         }
         
         .nav-left { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
@@ -55,28 +55,27 @@
         .menu-btn { background: none; border: none; cursor: pointer; color: var(--google-grey); padding: 5px; border-radius: 50%; transition: 0.3s; display: flex; }
         .menu-btn:hover { background-color: #f1f3f4; }
         
-        /* LOGO STYLING - RESTORED TO BIGGER SIZE */
+        /* LOGO STYLING */
         .logo { font-size: 22px; font-weight: 500; color: var(--google-grey); white-space: nowrap; }
         .logo b { color: var(--google-blue); font-weight: 700; }
 
-        /* --- MAGIC SEARCH ICON (Expands on Hover/Focus) --- */
+        /* --- MAGIC SEARCH ICON --- */
         .nav-search-container {
             position: relative;
-            width: 40px; /* Initially just a circle size */
+            width: 40px; 
             height: 40px;
             background: #f1f3f4;
             border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth Animation */
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
             overflow: hidden;
             display: flex;
             align-items: center;
             border: 1px solid transparent;
         }
         
-        /* Expansion Logic */
         .nav-search-container:hover, 
         .nav-search-container:focus-within {
-            width: 220px; /* Expand to this width */
+            width: 220px; 
             background: #ffffff;
             border-color: #dadce0;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -85,7 +84,7 @@
         .nav-search-input {
             width: 100%;
             height: 100%;
-            padding: 0 15px 0 45px; /* Leave space for icon on left */
+            padding: 0 15px 0 45px; 
             background: transparent;
             border: none;
             font-size: 14px;
@@ -93,13 +92,11 @@
             outline: none;
             cursor: pointer;
         }
-        .nav-search-input:focus {
-            cursor: text;
-        }
+        .nav-search-input:focus { cursor: text; }
 
         .nav-search-icon {
             position: absolute;
-            left: 10px; /* Centered in the circle */
+            left: 10px; 
             top: 50%;
             transform: translateY(-50%);
             color: var(--google-grey);
@@ -112,9 +109,23 @@
         .sidebar.open { left: 0; }
         .overlay { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.5); z-index: 1500; }
         .overlay.show { display: block; }
+        
         .sidebar-header { padding: 0 24px 20px; font-size: 20px; font-weight: 500; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; }
-        .sidebar a { padding: 16px 24px; text-decoration: none; color: var(--text-dark); display: flex; gap: 15px; font-weight: 500; transition: 0.2s; }
+        .sidebar a { padding: 16px 24px; text-decoration: none; color: var(--text-dark); display: flex; align-items: center; gap: 15px; font-weight: 500; transition: 0.2s; }
         .sidebar a:hover { background-color: #e8f0fe; color: var(--google-blue); }
+
+        /* LIMITED STOCK BADGE */
+        .sidebar-badge {
+            font-size: 10px;
+            background-color: #d93025; /* Red color */
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: auto; /* Pushes to right */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
         /* --- Hero Section --- */
         .hero { background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.0) 100%); padding: 40px 20px 60px; display: flex; flex-direction: column; align-items: center; }
@@ -179,9 +190,7 @@
         
         /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 600px) {
-            .logo { font-size: 20px; } /* Keep Text Readable but fit */
-            
-            /* Search on mobile: expands slightly less to fit screen */
+            .logo { font-size: 20px; } 
             .nav-search-container:hover, 
             .nav-search-container:focus-within {
                 width: 140px; 
@@ -202,11 +211,11 @@
         <a href="#products" onclick="loadBrand('Abro')"><span class="material-icons">label</span> Abro</a>
         <a href="#products" onclick="loadBrand('Bostik')"><span class="material-icons">label</span> Bostik</a>
         <a href="#products" onclick="loadBrand('Jubilant')"><span class="material-icons">label</span> Jubilant</a>
+        <a href="#products" onclick="loadBrand('Weber')"><span class="material-icons">label</span> Weber</a>
         <a href="#products" onclick="loadBrand('Atul')"><span class="material-icons">label</span> Atul</a>
         <a href="#products" onclick="loadBrand('Nerofix')"><span class="material-icons">label</span> Nerofix</a>
-        <a href="#products" onclick="loadBrand('Itzu')"><span class="material-icons">label</span> Itzu</a>
-        <a href="#products" onclick="loadBrand('A1')"><span class="material-icons">label</span> A1</a>
-        <a href="#products" onclick="loadBrand('Astral')"><span class="material-icons">label</span> Astral</a>
+        <a href="#products" onclick="loadBrand('Itzu')"><span class="material-icons">label</span> Itzu <span class="sidebar-badge">Limited Stock</span></a>
+        <a href="#products" onclick="loadBrand('A1')"><span class="material-icons">label</span> A1 <span class="sidebar-badge">Limited Stock</span></a>
     </div>
     <div id="myOverlay" class="overlay" onclick="closeMenu()"></div>
 
@@ -262,14 +271,12 @@
                 <span class="partners-label">Our Authorized Partners</span>
                 <div class="marquee-container">
                     <div class="marquee-track">
-                        <span class="brand-tag">Saint-Gobain</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span>
+                        <span class="brand-tag">Saint-Gobain (Weber)</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span>
                         <span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Nerofix</span>
-                        <span class="brand-tag">Astral</span><span class="brand-tag">Esdee</span><span class="brand-tag">Itzu</span>
-                        <span class="brand-tag">A1</span>
-                        <span class="brand-tag">Saint-Gobain</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span>
+                        <span class="brand-tag">Esdee</span>
+                        <span class="brand-tag">Saint-Gobain (Weber)</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span>
                         <span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Nerofix</span>
-                        <span class="brand-tag">Astral</span><span class="brand-tag">Esdee</span><span class="brand-tag">Itzu</span>
-                        <span class="brand-tag">A1</span>
+                        <span class="brand-tag">Esdee</span>
                     </div>
                 </div>
             </div>
@@ -394,7 +401,7 @@
             { name: "Bostik Fixall Grey (10 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_10kg.jpeg", brand: "BOSTIK" },
             { name: "Bostik Fixall Grey (20 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_20kg.jpeg", brand: "BOSTIK" },
             { name: "Bostik Fixall Grey (30 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_30kg.jpeg", brand: "BOSTIK" },
-            { name: "Fixall White (30kg)", price: "", desc: "White tile adhesive for marble/glass blocks.", img: "bostik_fixall_white.jpeg", brand: "BOSTIK" },
+            { name: "Super Fixall White (30kg)", price: "", desc: "White tile adhesive for marble/glass blocks.", img: "bostik_fixall_white.jpeg", brand: "BOSTIK" },
             { name: "Super Fixall Grey (30kg)", price: "", desc: "High strength premium tile adhesive.", img: "bostik_super_fixall.jpeg", brand: "BOSTIK" },
             { name: "Bostik Tile Grout (1kg)", price: "", desc: "Cementitious tile joint filler.", img: "bostik_normal_grout.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Colours", options: [{ variant: "Ivory", price: "" }, { variant: "White", price: "" }] },
             { name: "Bostik LW (1 Litre)", price: "", desc: "Integral waterproofing compound for concrete.", img: "bostik_lw.jpeg", brand: "BOSTIK" },
@@ -404,7 +411,8 @@
             { name: "Bostik Plugleak (5kg)", price: "", desc: "Instant leak plugging compound.", img: "bostik_plugleak_5kg.jpeg", brand: "BOSTIK" },
             { name: "PUD Mix (20 Litre)", price: "", desc: "Waterproofing admixture.", img: "bostik_pud_mix.jpeg", brand: "BOSTIK" },
             { name: "Bostik UW Blue (5kg)", price: "", desc: "Underwater bonding agent/grout.", img: "bostik_uw_blue.jpeg", brand: "BOSTIK" },
-            { name: "Bostik ZRP (1kg)", price: "", desc: "Zinc Rich Primer for corrosion protection.", img: "bostik_zrp.jpeg", brand: "BOSTIK" }
+            { name: "Bostik ZRP (1kg)", price: "", desc: "Zinc Rich Primer for corrosion protection.", img: "bostik_zrp.jpeg", brand: "BOSTIK" },
+            { name: "Block P530 Boscoseal PU-D (20kg)", price: "", desc: "Waterproofing membrane.", img: "bostik_block_p530_20kg.jpeg", brand: "BOSTIK" }
         ];
 
         function renderGrid(productsList) {
