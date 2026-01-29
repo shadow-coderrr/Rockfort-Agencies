@@ -46,7 +46,7 @@
             background: rgba(255, 255, 255, 0.95); 
             backdrop-filter: blur(10px); 
             z-index: 1000; 
-            height: 60px;
+            height: 65px; /* Slightly taller for bigger logo */
         }
         
         .nav-left { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
@@ -55,8 +55,8 @@
         .menu-btn { background: none; border: none; cursor: pointer; color: var(--google-grey); padding: 5px; border-radius: 50%; transition: 0.3s; display: flex; }
         .menu-btn:hover { background-color: #f1f3f4; }
         
-        /* LOGO STYLING */
-        .logo { font-size: 19px; font-weight: 500; color: var(--google-grey); white-space: nowrap; }
+        /* LOGO STYLING - RESTORED TO BIGGER SIZE */
+        .logo { font-size: 22px; font-weight: 500; color: var(--google-grey); white-space: nowrap; }
         .logo b { color: var(--google-blue); font-weight: 700; }
 
         /* --- MAGIC SEARCH ICON (Expands on Hover/Focus) --- */
@@ -177,9 +177,10 @@
 
         footer { background: #f8f9fa; padding: 50px 20px; text-align: center; border-top: 1px solid var(--border-color); }
         
-        /* Mobile adjustment */
+        /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 600px) {
-            .logo { font-size: 17px; } /* Keep full text visible */
+            .logo { font-size: 20px; } /* Keep Text Readable but fit */
+            
             /* Search on mobile: expands slightly less to fit screen */
             .nav-search-container:hover, 
             .nav-search-container:focus-within {
