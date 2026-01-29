@@ -50,59 +50,61 @@
         }
         
         .nav-left { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
-        .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 1; justify-content: flex-end; }
+        .nav-right { display: flex; align-items: center; justify-content: flex-end; flex-shrink: 0; }
 
         .menu-btn { background: none; border: none; cursor: pointer; color: var(--google-grey); padding: 5px; border-radius: 50%; transition: 0.3s; display: flex; }
         .menu-btn:hover { background-color: #f1f3f4; }
         
-        /* LOGO STYLING - Full visibility */
+        /* LOGO STYLING */
         .logo { font-size: 19px; font-weight: 500; color: var(--google-grey); white-space: nowrap; }
         .logo b { color: var(--google-blue); font-weight: 700; }
 
-        /* --- SEARCH BAR (Desktop) --- */
+        /* --- MAGIC SEARCH ICON (Expands on Hover/Focus) --- */
         .nav-search-container {
             position: relative;
-            width: 220px;
-            transition: all 0.3s ease;
+            width: 40px; /* Initially just a circle size */
+            height: 40px;
+            background: #f1f3f4;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth Animation */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            border: 1px solid transparent;
         }
+        
+        /* Expansion Logic */
+        .nav-search-container:hover, 
+        .nav-search-container:focus-within {
+            width: 220px; /* Expand to this width */
+            background: #ffffff;
+            border-color: #dadce0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
         .nav-search-input {
             width: 100%;
-            padding: 8px 10px 8px 35px; 
-            background: #f1f3f4;
-            border: 1px solid transparent;
-            border-radius: 50px; 
+            height: 100%;
+            padding: 0 15px 0 45px; /* Leave space for icon on left */
+            background: transparent;
+            border: none;
             font-size: 14px;
             color: var(--text-dark);
-            height: 36px;
+            outline: none;
+            cursor: pointer;
         }
         .nav-search-input:focus {
-            background: #ffffff;
-            border-color: var(--google-blue);
-            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-            outline: none;
+            cursor: text;
         }
+
         .nav-search-icon {
             position: absolute;
-            left: 10px; 
+            left: 10px; /* Centered in the circle */
             top: 50%;
             transform: translateY(-50%);
             color: var(--google-grey);
-            font-size: 18px;
+            font-size: 20px;
             pointer-events: none;
-        }
-
-        /* --- TRICHY LOCATION --- */
-        .nav-location {
-            font-size: 13px; 
-            color: var(--google-grey); 
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-            background: #f8f9fa;
-            padding: 6px 12px;
-            border-radius: 20px;
-            border: 1px solid #eee;
         }
 
         /* --- Sidebar --- */
@@ -175,48 +177,15 @@
 
         footer { background: #f8f9fa; padding: 50px 20px; text-align: center; border-top: 1px solid var(--border-color); }
         
-        /* --- MOBILE OPTIMIZATION --- */
+        /* Mobile adjustment */
         @media (max-width: 600px) {
-            .nav-location { display: none !important; } /* Hide 'Trichy' icon completely on mobile */
-            
-            /* Logo stays visible */
-            .logo { display: block; font-size: 17px; } 
-            
-            /* Search turns into an icon button that expands */
-            .nav-search-container {
-                width: 36px;
-                border-radius: 50%;
-                background: #f1f3f4;
-                overflow: hidden;
-            }
-            /* Expand when focused */
+            .logo { font-size: 17px; } /* Keep full text visible */
+            /* Search on mobile: expands slightly less to fit screen */
+            .nav-search-container:hover, 
             .nav-search-container:focus-within {
-                width: 140px; /* Expands to allow typing */
-            }
-            
-            .nav-search-input {
-                padding: 8px;
-                padding-left: 10px;
-                width: 100%;
-                background: transparent;
-                cursor: pointer;
-            }
-            .nav-search-input:focus {
-                background: white;
-                cursor: text;
-                padding-left: 10px;
-            }
-            
-            /* Center the icon initially */
-            .nav-search-icon {
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                color: #5f6368;
-            }
-            /* Move icon when expanded */
-            .nav-search-container:focus-within .nav-search-icon {
-                display: none; /* Hide icon when typing to save space */
+                width: 140px; 
+                position: absolute;
+                right: 0;
             }
         }
     </style>
@@ -276,10 +245,7 @@
         <div class="nav-right">
             <div class="nav-search-container">
                 <span class="material-icons nav-search-icon">search</span>
-                <input type="text" id="searchInput" class="nav-search-input" placeholder="" onkeyup="filterProducts()">
-            </div>
-            <div class="nav-location">
-                <i class="material-icons" style="font-size: 18px; vertical-align: middle; margin-right: 2px;">location_on</i> Trichy
+                <input type="text" id="searchInput" class="nav-search-input" placeholder="Search..." onkeyup="filterProducts()">
             </div>
         </div>
     </nav>
