@@ -15,12 +15,12 @@
             --text-dark: #202124;
             --border-color: #dadce0;
             --out-stock: #d93025;
-            --video-color: #c5221f; /* Youtube Red style for video button */
+            --video-color: #c5221f;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
 
-        /* --- ULTRA-PREMIUM WHITE WAVE BACKGROUND --- */
+        /* --- BACKGROUND --- */
         body { 
             background-color: #ffffff;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f1f3f4' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3Cpath fill='%23e8eaed' fill-opacity='0.5' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
@@ -36,7 +36,7 @@
 
         /* --- Navbar --- */
         nav {
-            padding: 10px 20px; 
+            padding: 8px 15px; 
             border-bottom: 1px solid rgba(218, 220, 224, 0.5); 
             display: flex; 
             align-items: center;
@@ -46,30 +46,70 @@
             background: rgba(255, 255, 255, 0.95); 
             backdrop-filter: blur(10px); 
             z-index: 1000; 
+            height: 60px;
         }
         
-        .nav-left { display: flex; align-items: center; gap: 10px; }
-        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .nav-left { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+        .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 1; justify-content: flex-end; }
 
-        .menu-btn { background: none; border: none; cursor: pointer; color: var(--google-grey); padding: 8px; border-radius: 50%; transition: 0.3s; display: flex; }
+        .menu-btn { background: none; border: none; cursor: pointer; color: var(--google-grey); padding: 5px; border-radius: 50%; transition: 0.3s; display: flex; }
         .menu-btn:hover { background-color: #f1f3f4; }
-        .logo { font-size: 20px; font-weight: 500; color: var(--google-grey); white-space: nowrap; }
+        
+        /* LOGO STYLING - Full visibility */
+        .logo { font-size: 19px; font-weight: 500; color: var(--google-grey); white-space: nowrap; }
         .logo b { color: var(--google-blue); font-weight: 700; }
 
-        /* --- COMPACT SEARCH BAR --- */
-        .nav-search-container { position: relative; width: 220px; }
-        .nav-search-input { width: 100%; padding: 8px 35px 8px 15px; background: #f1f3f4; border: 1px solid transparent; border-radius: 50px; font-size: 14px; color: var(--text-dark); transition: 0.3s; }
-        .nav-search-input:focus { background: #ffffff; border-color: var(--google-blue); box-shadow: 0 1px 4px rgba(0,0,0,0.1); outline: none; }
-        .nav-search-icon { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--google-grey); font-size: 18px; pointer-events: none; }
+        /* --- SEARCH BAR (Desktop) --- */
+        .nav-search-container {
+            position: relative;
+            width: 220px;
+            transition: all 0.3s ease;
+        }
+        .nav-search-input {
+            width: 100%;
+            padding: 8px 10px 8px 35px; 
+            background: #f1f3f4;
+            border: 1px solid transparent;
+            border-radius: 50px; 
+            font-size: 14px;
+            color: var(--text-dark);
+            height: 36px;
+        }
+        .nav-search-input:focus {
+            background: #ffffff;
+            border-color: var(--google-blue);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            outline: none;
+        }
+        .nav-search-icon {
+            position: absolute;
+            left: 10px; 
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--google-grey);
+            font-size: 18px;
+            pointer-events: none;
+        }
 
-        .nav-location { font-size: 14px; color: var(--google-grey); font-weight: 500; display: flex; align-items: center; white-space: nowrap; }
+        /* --- TRICHY LOCATION --- */
+        .nav-location {
+            font-size: 13px; 
+            color: var(--google-grey); 
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            background: #f8f9fa;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+        }
 
         /* --- Sidebar --- */
         .sidebar { height: 100%; width: 280px; position: fixed; z-index: 2000; top: 0; left: -300px; background: white; transition: 0.3s ease; box-shadow: 2px 0 12px rgba(0,0,0,0.15); padding-top: 20px; }
         .sidebar.open { left: 0; }
         .overlay { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.5); z-index: 1500; }
         .overlay.show { display: block; }
-        
         .sidebar-header { padding: 0 24px 20px; font-size: 20px; font-weight: 500; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; }
         .sidebar a { padding: 16px 24px; text-decoration: none; color: var(--text-dark); display: flex; gap: 15px; font-weight: 500; transition: 0.2s; }
         .sidebar a:hover { background-color: #e8f0fe; color: var(--google-blue); }
@@ -83,7 +123,7 @@
         .cta-button { display: inline-flex; align-items: center; gap: 8px; background: var(--google-blue); color: white; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: 500; transition: 0.3s; box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3); }
         .cta-button:hover { background: var(--google-dark-blue); transform: translateY(-2px); }
         
-        /* --- SLIDESHOW (Marquee) --- */
+        /* --- SLIDESHOW --- */
         .partners-row { margin-top: 40px; padding-top: 30px; border-top: 1px solid #f1f3f4; overflow: hidden; position: relative; }
         .partners-label { font-size: 12px; color: #9aa0a6; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: block; }
         .marquee-container { display: flex; width: 100%; overflow: hidden; white-space: nowrap; }
@@ -102,63 +142,82 @@
         .card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.1); transform: translateY(-5px); border-color: transparent; }
         .card-img { height: 200px; background: white; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f1f3f4; padding: 10px; position: relative; }
         .card-content { padding: 20px; flex-grow: 1; }
-        
         .category { font-size: 11px; font-weight: 700; color: var(--google-blue); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
         .material-name { font-size: 18px; font-weight: 500; margin-bottom: 8px; color: #3c4043; line-height: 1.4; }
         .product-desc { font-size: 13px; color: #5f6368; margin-bottom: 15px; font-weight: 400; line-height: 1.5; min-height: 20px; }
-
         .price-box { margin-bottom: 15px; }
         .price-label { font-size: 12px; color: var(--google-grey); }
         .price { font-size: 24px; font-weight: 700; color: #202124; }
         .no-price { font-size: 18px; color: var(--google-blue); font-weight: 500; }
         .out-of-stock { font-size: 18px; color: var(--out-stock); font-weight: 700; }
-
         .buy-now-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: white; color: var(--google-blue); border: 1px solid var(--google-blue); text-decoration: none; padding: 10px; border-radius: 6px; font-weight: 500; transition: 0.2s; margin-top: 10px; }
         .buy-now-btn:hover { background: #e8f0fe; }
-
         .view-options-btn { width: 100%; padding: 8px; background-color: #f1f3f4; border: none; border-radius: 4px; color: #202124; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 10px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; }
         .view-options-btn:hover { background-color: #e8eaed; color: var(--google-blue); }
-
-        /* --- VIDEO BUTTON STYLE --- */
-        .video-btn {
-            width: 100%; padding: 8px; 
-            background-color: white; 
-            border: 1px solid var(--video-color); 
-            border-radius: 4px; 
-            color: var(--video-color); 
-            font-size: 13px; font-weight: 500; 
-            cursor: pointer; margin-bottom: 10px; 
-            transition: 0.2s; 
-            display: flex; justify-content: center; align-items: center; gap: 5px;
-        }
+        .video-btn { width: 100%; padding: 8px; background-color: white; border: 1px solid var(--video-color); border-radius: 4px; color: var(--video-color); font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 10px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; }
         .video-btn:hover { background-color: #fce8e6; }
 
-        /* --- POPUP MODAL (General) --- */
+        /* --- POPUP MODAL --- */
         .modal-window { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
         .modal-content { background-color: white; margin: 10% auto; padding: 0; border-radius: 12px; width: 90%; max-width: 500px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); animation: slideIn 0.3s; position: relative; }
         @keyframes slideIn { from {transform: translateY(20px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
-        
         .modal-header { padding: 20px; border-bottom: 1px solid #f1f3f4; display: flex; justify-content: space-between; align-items: center; }
         .modal-header h3 { font-size: 18px; font-weight: 500; }
         .close-modal { font-size: 24px; cursor: pointer; color: #5f6368; }
-        
         .modal-body { padding: 20px; max-height: 400px; overflow-y: auto; }
         .modal-list-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f1f3f4; }
         .modal-list-item:last-child { border-bottom: none; }
         .item-name { font-weight: 500; color: #3c4043; }
         .item-price { font-weight: 700; color: var(--google-blue); }
         .contact-price { font-size: 13px; color: var(--google-grey); font-weight: 500; }
-
-        /* --- VIDEO MODAL CONTENT --- */
-        .video-container { position: relative; width: 100%; padding-top: 56.25%; /* 16:9 Aspect Ratio */ background: black; }
+        .video-container { position: relative; width: 100%; padding-top: 56.25%; background: black; }
         .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         footer { background: #f8f9fa; padding: 50px 20px; text-align: center; border-top: 1px solid var(--border-color); }
         
+        /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 600px) {
-            .logo { display: none; }
-            .nav-location { display: none; }
-            .nav-search-container { width: 100%; max-width: 100%; }
+            .nav-location { display: none !important; } /* Hide 'Trichy' icon completely on mobile */
+            
+            /* Logo stays visible */
+            .logo { display: block; font-size: 17px; } 
+            
+            /* Search turns into an icon button that expands */
+            .nav-search-container {
+                width: 36px;
+                border-radius: 50%;
+                background: #f1f3f4;
+                overflow: hidden;
+            }
+            /* Expand when focused */
+            .nav-search-container:focus-within {
+                width: 140px; /* Expands to allow typing */
+            }
+            
+            .nav-search-input {
+                padding: 8px;
+                padding-left: 10px;
+                width: 100%;
+                background: transparent;
+                cursor: pointer;
+            }
+            .nav-search-input:focus {
+                background: white;
+                cursor: text;
+                padding-left: 10px;
+            }
+            
+            /* Center the icon initially */
+            .nav-search-icon {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                color: #5f6368;
+            }
+            /* Move icon when expanded */
+            .nav-search-container:focus-within .nav-search-icon {
+                display: none; /* Hide icon when typing to save space */
+            }
         }
     </style>
 </head>
@@ -216,8 +275,8 @@
         
         <div class="nav-right">
             <div class="nav-search-container">
-                <input type="text" id="searchInput" class="nav-search-input" placeholder="Search..." onkeyup="filterProducts()">
                 <span class="material-icons nav-search-icon">search</span>
+                <input type="text" id="searchInput" class="nav-search-input" placeholder="" onkeyup="filterProducts()">
             </div>
             <div class="nav-location">
                 <i class="material-icons" style="font-size: 18px; vertical-align: middle; margin-right: 2px;">location_on</i> Trichy
@@ -257,17 +316,15 @@
 
     <footer>
         <p style="font-size: 18px; font-weight: 500; color: #202124; margin-bottom: 10px;">Rockfort Agencies</p>
-        <p style="color: var(--google-grey); margin-bottom: 20px;">Wholesale & Retail Suppliers | Trichy</p>
+        <p style="color: var(--google-grey); margin-bottom: 20px;">Wholesale & Retail Suppliers | Tiruchirappalli</p>
         <p style="color: var(--google-blue);">+91 97903 45300</p>
         <div style="margin-top: 30px; font-size: 12px; color: #bdc1c6;">&copy; Copyright 2026 Naveennivas Sivakumar. All rights reserved.</div>
     </footer>
 
     <script>
-        // --- Menu Functions ---
         function openMenu() { document.getElementById("mySidebar").classList.add("open"); document.getElementById("myOverlay").classList.add("show"); }
         function closeMenu() { document.getElementById("mySidebar").classList.remove("open"); document.getElementById("myOverlay").classList.remove("show"); }
 
-        // --- Modal Functions (Options) ---
         function openOptionsModal(productIndex) {
             const product = displayedProducts[productIndex];
             const modalList = document.getElementById("modalList");
@@ -282,7 +339,6 @@
         }
         function closeModal() { document.getElementById("optionsModal").style.display = "none"; }
 
-        // --- Video Modal Functions ---
         function openVideoModal(videoSrc) {
             const modal = document.getElementById("videoModal");
             const video = document.getElementById("productVideo");
@@ -302,11 +358,9 @@
             if (event.target == document.getElementById("videoModal")) closeVideoModal();
         }
 
-        // --- GLOBAL DATA ---
         let brandDataScope = []; 
         let displayedProducts = []; 
 
-        // 1. ABRO DATA
         const abroProducts = [
             { name: "Abro Spray Paints (400ml)", price: "115 - 150", desc: "Quick drying high quality spray paint.", img: "abro_spray_group.jpeg", hasOptions: true, btnText: "View Available Colours", brand: "ABRO", options: [{ variant: "Gloss White", price: "115" }, { variant: "Gloss Black", price: "115" }, { variant: "Matt Black", price: "115" }, { variant: "Silver", price: "115" }, { variant: "Gold (Premium)", price: "150" }] },
             { name: "Abro Packing Tapes (BOPP)", price: "", desc: "High adhesion BOPP Tapes.", img: "abro_pack_group.jpeg", hasOptions: true, btnText: "View Sizes & Types", brand: "ABRO", options: [{ variant: "2 Inch Clear", price: "" }, { variant: "2 Inch Brown", price: "" }, { variant: "3 Inch Clear", price: "" }, { variant: "3 Inch Brown", price: "" }] },
@@ -345,12 +399,11 @@
             { name: "Abro Weather 9895 Sealant", price: "", desc: "Weatherproof silicone sealant", img: "abro_weather_9895.jpeg", brand: "ABRO" }
         ];
 
-        // 2. BOSTIK DATA
         const bostikProducts = [
             { 
                 name: "Bostik Anchor Grout (1kg)", price: "Out of Stock", isOutOfStock: true,
                 desc: "High strength polyester anchoring grout.", img: "bostik_anchor_grout.jpeg", brand: "BOSTIK",
-                video: "videos/bostik_anchor_grout.mp4" // Video Link
+                video: "videos/bostik_anchor_grout.mp4" 
             },
             { name: "Bostik Base & Hardner (0.3 Kg)", price: "", desc: "Epoxy base and hardener for construction.", img: "bostik_base_hardner_0.3kg.jpeg", brand: "BOSTIK" },
             { name: "Bostik Base & Hardner (1.5 Kg)", price: "", desc: "Epoxy base and hardener for construction.", img: "bostik_base_hardner_1.5kg.jpeg", brand: "BOSTIK" },
@@ -387,7 +440,6 @@
             { name: "Bostik ZRP (1kg)", price: "", desc: "Zinc Rich Primer for corrosion protection.", img: "bostik_zrp.jpeg", brand: "BOSTIK" }
         ];
 
-        // --- Core Rendering Function ---
         function renderGrid(productsList) {
             const gridElement = document.getElementById("productGrid");
             gridElement.innerHTML = "";
@@ -404,26 +456,18 @@
                     
                     let optionsButton = '';
                     if (product.hasOptions) {
-                        optionsButton = `<button class="view-options-btn" onclick="openOptionsModal(${index})">
-                                            <span class="material-icons" style="font-size:16px;">list</span> ${product.btnText}
-                                        </button>`;
+                        optionsButton = `<button class="view-options-btn" onclick="openOptionsModal(${index})"><span class="material-icons" style="font-size:16px;">list</span> ${product.btnText}</button>`;
                     }
 
-                    // VIDEO BUTTON LOGIC
                     let videoButton = '';
                     if (product.video) {
-                        videoButton = `<button class="video-btn" onclick="openVideoModal('${product.video}')">
-                                        <span class="material-icons" style="font-size:18px;">play_circle_outline</span> Watch Demo
-                                       </button>`;
+                        videoButton = `<button class="video-btn" onclick="openVideoModal('${product.video}')"><span class="material-icons" style="font-size:18px;">play_circle_outline</span> Watch Demo</button>`;
                     }
 
                     let cardHTML = `
                         <div class="card">
                             <div class="card-img">
-                                <img src="images/${product.img}" 
-                                     alt="${product.name}" 
-                                     style="width:100%; height:100%; object-fit:contain;"
-                                     onerror="this.onerror=null; this.src='https://placehold.co/400x300?text=${product.brand}';">
+                                <img src="images/${product.img}" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;" onerror="this.onerror=null; this.src='https://placehold.co/400x300?text=${product.brand}';">
                             </div>
                             <div class="card-content">
                                 <p class="category">${product.brand}</p>
@@ -431,27 +475,17 @@
                                 <p class="product-desc">${product.desc}</p>
                                 ${optionsButton}
                                 ${videoButton}
-                                <div class="price-box">
-                                    <p class="price-label">Price</p>
-                                    <div class="price">${priceDisplay}</div>
-                                </div>
-                                <a href="tel:+919790345300" class="buy-now-btn">
-                                    <span class="material-icons">call</span> CALL TO BUY
-                                </a>
+                                <div class="price-box"><p class="price-label">Price</p><div class="price">${priceDisplay}</div></div>
+                                <a href="tel:+919790345300" class="buy-now-btn"><span class="material-icons">call</span> CALL TO BUY</a>
                             </div>
-                        </div>
-                    `;
+                        </div>`;
                     gridElement.innerHTML += cardHTML;
                 });
             } else {
-                 gridElement.innerHTML = `<div class="no-results">
-                    <span class="material-icons" style="font-size:48px; color:#dadce0;">search_off</span>
-                    <p style="margin-top:10px;">No products found matching your search.</p>
-                 </div>`;
+                 gridElement.innerHTML = `<div class="no-results"><span class="material-icons" style="font-size:48px; color:#dadce0;">search_off</span><p style="margin-top:10px;">No products found matching your search.</p></div>`;
             }
         }
 
-        // --- Brand Loading Logic ---
         function loadBrand(brandName) {
             closeMenu();
             document.getElementById("searchInput").value = ""; 
@@ -485,15 +519,10 @@
             }
         }
 
-        // --- Search Logic ---
         function filterProducts() {
             const query = document.getElementById('searchInput').value.toLowerCase();
             if (!query) { renderGrid(brandDataScope); return; }
-            const filteredItems = brandDataScope.filter(item => 
-                item.name.toLowerCase().includes(query) || 
-                item.desc.toLowerCase().includes(query) ||
-                item.brand.toLowerCase().includes(query)
-            );
+            const filteredItems = brandDataScope.filter(item => item.name.toLowerCase().includes(query) || item.desc.toLowerCase().includes(query) || item.brand.toLowerCase().includes(query));
             renderGrid(filteredItems);
         }
 
