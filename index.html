@@ -14,20 +14,55 @@
             --google-grey: #5f6368;
             --text-dark: #202124;
             --border-color: #dadce0;
+            --out-stock: #d93025;
+            --video-color: #c5221f; /* Youtube Red style for video button */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-        body { background-color: #ffffff; color: var(--text-dark); scroll-behavior: smooth; }
+
+        /* --- ULTRA-PREMIUM WHITE WAVE BACKGROUND --- */
+        body { 
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f1f3f4' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3Cpath fill='%23e8eaed' fill-opacity='0.5' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            color: var(--text-dark); 
+            scroll-behavior: smooth; 
+            overflow-x: hidden; 
+            min-height: 100vh;
+        }
 
         /* --- Navbar --- */
         nav {
-            padding: 15px 20px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center;
-            position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); z-index: 1000; gap: 20px;
+            padding: 10px 20px; 
+            border-bottom: 1px solid rgba(218, 220, 224, 0.5); 
+            display: flex; 
+            align-items: center;
+            justify-content: space-between; 
+            position: sticky; 
+            top: 0; 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px); 
+            z-index: 1000; 
         }
+        
+        .nav-left { display: flex; align-items: center; gap: 10px; }
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+
         .menu-btn { background: none; border: none; cursor: pointer; color: var(--google-grey); padding: 8px; border-radius: 50%; transition: 0.3s; display: flex; }
         .menu-btn:hover { background-color: #f1f3f4; }
-        .logo { font-size: 22px; font-weight: 500; color: var(--google-grey); flex-grow: 1; }
+        .logo { font-size: 20px; font-weight: 500; color: var(--google-grey); white-space: nowrap; }
         .logo b { color: var(--google-blue); font-weight: 700; }
+
+        /* --- COMPACT SEARCH BAR --- */
+        .nav-search-container { position: relative; width: 220px; }
+        .nav-search-input { width: 100%; padding: 8px 35px 8px 15px; background: #f1f3f4; border: 1px solid transparent; border-radius: 50px; font-size: 14px; color: var(--text-dark); transition: 0.3s; }
+        .nav-search-input:focus { background: #ffffff; border-color: var(--google-blue); box-shadow: 0 1px 4px rgba(0,0,0,0.1); outline: none; }
+        .nav-search-icon { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--google-grey); font-size: 18px; pointer-events: none; }
+
+        .nav-location { font-size: 14px; color: var(--google-grey); font-weight: 500; display: flex; align-items: center; white-space: nowrap; }
 
         /* --- Sidebar --- */
         .sidebar { height: 100%; width: 280px; position: fixed; z-index: 2000; top: 0; left: -300px; background: white; transition: 0.3s ease; box-shadow: 2px 0 12px rgba(0,0,0,0.15); padding-top: 20px; }
@@ -39,27 +74,33 @@
         .sidebar a { padding: 16px 24px; text-decoration: none; color: var(--text-dark); display: flex; gap: 15px; font-weight: 500; transition: 0.2s; }
         .sidebar a:hover { background-color: #e8f0fe; color: var(--google-blue); }
 
-        /* --- Hero --- */
-        .hero { background: linear-gradient(135deg, #e8f0fe 0%, #ffffff 100%); padding: 60px 20px 80px; display: flex; flex-direction: column; align-items: center; }
-        .hero-card { background: white; max-width: 900px; width: 100%; padding: 50px 40px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid var(--google-blue); }
+        /* --- Hero Section --- */
+        .hero { background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.0) 100%); padding: 40px 20px 60px; display: flex; flex-direction: column; align-items: center; }
+        .hero-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(5px); max-width: 900px; width: 100%; padding: 40px 30px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid var(--google-blue); border: 1px solid rgba(255,255,255,0.5); }
         .hero-badge { display: inline-block; background: #e6f4ea; color: #137333; padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; }
-        .hero-title { font-size: 38px; font-weight: 700; color: #202124; margin-bottom: 15px; line-height: 1.2; }
-        .hero-subtitle { font-size: 18px; color: var(--google-grey); margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .hero-title { font-size: 32px; font-weight: 700; color: #202124; margin-bottom: 15px; line-height: 1.2; }
+        .hero-subtitle { font-size: 16px; color: var(--google-grey); margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
         .cta-button { display: inline-flex; align-items: center; gap: 8px; background: var(--google-blue); color: white; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: 500; transition: 0.3s; box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3); }
         .cta-button:hover { background: var(--google-dark-blue); transform: translateY(-2px); }
-        .partners-row { margin-top: 40px; padding-top: 30px; border-top: 1px solid #f1f3f4; }
-        .brand-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-        .brand-tag { background: #f8f9fa; border: 1px solid #dadce0; color: var(--google-grey); padding: 6px 14px; border-radius: 6px; font-size: 14px; font-weight: 500; }
+        
+        /* --- SLIDESHOW (Marquee) --- */
+        .partners-row { margin-top: 40px; padding-top: 30px; border-top: 1px solid #f1f3f4; overflow: hidden; position: relative; }
+        .partners-label { font-size: 12px; color: #9aa0a6; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: block; }
+        .marquee-container { display: flex; width: 100%; overflow: hidden; white-space: nowrap; }
+        .marquee-track { display: flex; gap: 20px; animation: slide 25s linear infinite; min-width: 200%; }
+        .brand-tag { background: #f8f9fa; border: 1px solid #dadce0; color: var(--google-grey); padding: 8px 18px; border-radius: 6px; font-size: 14px; font-weight: 500; display: inline-block; flex-shrink: 0; }
+        @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         /* --- Product Grid --- */
         .container { max-width: 1200px; margin: -40px auto 80px; padding: 0 20px; position: relative; z-index: 10; }
         .section-title { font-size: 22px; font-weight: 500; margin-bottom: 25px; color: var(--text-dark); border-left: 5px solid var(--google-blue); padding-left: 15px; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+        .no-results { grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--google-grey); font-size: 16px; }
 
         /* --- Card Design --- */
-        .card { background: white; border: 1px solid var(--border-color); border-radius: 12px; transition: 0.3s; overflow: hidden; display: flex; flex-direction: column; }
-        .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateY(-5px); border-color: transparent; }
-        .card-img { height: 200px; background: white; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f1f3f4; padding: 10px; }
+        .card { background: white; border: 1px solid var(--border-color); border-radius: 12px; transition: 0.3s; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.04); }
+        .card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.1); transform: translateY(-5px); border-color: transparent; }
+        .card-img { height: 200px; background: white; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f1f3f4; padding: 10px; position: relative; }
         .card-content { padding: 20px; flex-grow: 1; }
         
         .category { font-size: 11px; font-weight: 700; color: var(--google-blue); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
@@ -70,17 +111,31 @@
         .price-label { font-size: 12px; color: var(--google-grey); }
         .price { font-size: 24px; font-weight: 700; color: #202124; }
         .no-price { font-size: 18px; color: var(--google-blue); font-weight: 500; }
+        .out-of-stock { font-size: 18px; color: var(--out-stock); font-weight: 700; }
 
-        /* Buttons */
-        .buy-now-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: white; color: var(--google-blue); border: 1px solid var(--border-color); text-decoration: none; padding: 10px; border-radius: 6px; font-weight: 500; transition: 0.2s; margin-top: 10px; }
-        .buy-now-btn:hover { background: #e8f0fe; border-color: var(--google-blue); }
+        .buy-now-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: white; color: var(--google-blue); border: 1px solid var(--google-blue); text-decoration: none; padding: 10px; border-radius: 6px; font-weight: 500; transition: 0.2s; margin-top: 10px; }
+        .buy-now-btn:hover { background: #e8f0fe; }
 
         .view-options-btn { width: 100%; padding: 8px; background-color: #f1f3f4; border: none; border-radius: 4px; color: #202124; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 10px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; }
         .view-options-btn:hover { background-color: #e8eaed; color: var(--google-blue); }
 
-        /* --- POPUP MODAL --- */
+        /* --- VIDEO BUTTON STYLE --- */
+        .video-btn {
+            width: 100%; padding: 8px; 
+            background-color: white; 
+            border: 1px solid var(--video-color); 
+            border-radius: 4px; 
+            color: var(--video-color); 
+            font-size: 13px; font-weight: 500; 
+            cursor: pointer; margin-bottom: 10px; 
+            transition: 0.2s; 
+            display: flex; justify-content: center; align-items: center; gap: 5px;
+        }
+        .video-btn:hover { background-color: #fce8e6; }
+
+        /* --- POPUP MODAL (General) --- */
         .modal-window { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
-        .modal-content { background-color: white; margin: 10% auto; padding: 0; border-radius: 12px; width: 90%; max-width: 500px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); animation: slideIn 0.3s; }
+        .modal-content { background-color: white; margin: 10% auto; padding: 0; border-radius: 12px; width: 90%; max-width: 500px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); animation: slideIn 0.3s; position: relative; }
         @keyframes slideIn { from {transform: translateY(20px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
         
         .modal-header { padding: 20px; border-bottom: 1px solid #f1f3f4; display: flex; justify-content: space-between; align-items: center; }
@@ -94,7 +149,17 @@
         .item-price { font-weight: 700; color: var(--google-blue); }
         .contact-price { font-size: 13px; color: var(--google-grey); font-weight: 500; }
 
+        /* --- VIDEO MODAL CONTENT --- */
+        .video-container { position: relative; width: 100%; padding-top: 56.25%; /* 16:9 Aspect Ratio */ background: black; }
+        .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
         footer { background: #f8f9fa; padding: 50px 20px; text-align: center; border-top: 1px solid var(--border-color); }
+        
+        @media (max-width: 600px) {
+            .logo { display: none; }
+            .nav-location { display: none; }
+            .nav-search-container { width: 100%; max-width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -106,10 +171,10 @@
         </div>
         <a href="#products" onclick="loadBrand('All Products')"><span class="material-icons">grid_view</span> All Products</a>
         <a href="#products" onclick="loadBrand('Abro')"><span class="material-icons">label</span> Abro</a>
+        <a href="#products" onclick="loadBrand('Bostik')"><span class="material-icons">label</span> Bostik</a>
         <a href="#products" onclick="loadBrand('Jubilant')"><span class="material-icons">label</span> Jubilant</a>
         <a href="#products" onclick="loadBrand('Atul')"><span class="material-icons">label</span> Atul</a>
         <a href="#products" onclick="loadBrand('Nerofix')"><span class="material-icons">label</span> Nerofix</a>
-        <a href="#products" onclick="loadBrand('Bostik')"><span class="material-icons">label</span> Bostik</a>
         <a href="#products" onclick="loadBrand('Itzu')"><span class="material-icons">label</span> Itzu</a>
         <a href="#products" onclick="loadBrand('A1')"><span class="material-icons">label</span> A1</a>
         <a href="#products" onclick="loadBrand('Astral')"><span class="material-icons">label</span> Astral</a>
@@ -122,18 +187,41 @@
                 <h3 id="modalTitle">Available Options</h3>
                 <span class="close-modal" onclick="closeModal()">&times;</span>
             </div>
-            <div class="modal-body" id="modalList">
-                </div>
+            <div class="modal-body" id="modalList"></div>
+        </div>
+    </div>
+
+    <div id="videoModal" class="modal-window">
+        <div class="modal-content" style="overflow: hidden; max-width: 700px;">
+            <div class="modal-header">
+                <h3>Product Demo</h3>
+                <span class="close-modal" onclick="closeVideoModal()">&times;</span>
+            </div>
+            <div class="video-container">
+                <video id="productVideo" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
     </div>
 
     <nav>
-        <button class="menu-btn" onclick="openMenu()">
-            <span class="material-icons" style="font-size: 28px;">menu</span>
-        </button>
-        <div class="logo">Rockfort <b>Agencies</b></div>
-        <div style="font-size: 14px; color: var(--google-grey); font-weight: 500;">
-            <i class="material-icons" style="font-size: 18px; vertical-align: middle;">location_on</i> Trichy
+        <div class="nav-left">
+            <button class="menu-btn" onclick="openMenu()">
+                <span class="material-icons" style="font-size: 28px;">menu</span>
+            </button>
+            <div class="logo">Rockfort <b>Agencies</b></div>
+        </div>
+        
+        <div class="nav-right">
+            <div class="nav-search-container">
+                <input type="text" id="searchInput" class="nav-search-input" placeholder="Search..." onkeyup="filterProducts()">
+                <span class="material-icons nav-search-icon">search</span>
+            </div>
+            <div class="nav-location">
+                <i class="material-icons" style="font-size: 18px; vertical-align: middle; margin-right: 2px;">location_on</i> Trichy
+            </div>
         </div>
     </nav>
 
@@ -142,11 +230,21 @@
             <span class="hero-badge"><span class="material-icons" style="font-size:14px; vertical-align:middle;">verified</span> Leading Supplier in Trichy</span>
             <h1 class="hero-title">Construction Chemicals, Adhesives & Sealants</h1>
             <p class="hero-subtitle">We are the leading suppliers of Tile Adhesives, Epoxy Grouts, Silicon Sealants, Waterproofing Solutions, and Industrial Tapes in Trichy.</p>
-            <a href="tel:+919489330306" class="cta-button"><span class="material-icons">call</span> Get a Quote</a>
+            <a href="tel:+919790345300" class="cta-button"><span class="material-icons">call</span> Get a Quote</a>
+            
             <div class="partners-row">
-                <div class="brand-tags">
-                    <span class="brand-tag">Saint-Gobain</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span>
-                    <span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Esdee</span>
+                <span class="partners-label">Our Authorized Partners</span>
+                <div class="marquee-container">
+                    <div class="marquee-track">
+                        <span class="brand-tag">Saint-Gobain</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span>
+                        <span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Nerofix</span>
+                        <span class="brand-tag">Astral</span><span class="brand-tag">Esdee</span><span class="brand-tag">Itzu</span>
+                        <span class="brand-tag">A1</span>
+                        <span class="brand-tag">Saint-Gobain</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span>
+                        <span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Nerofix</span>
+                        <span class="brand-tag">Astral</span><span class="brand-tag">Esdee</span><span class="brand-tag">Itzu</span>
+                        <span class="brand-tag">A1</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -160,166 +258,163 @@
     <footer>
         <p style="font-size: 18px; font-weight: 500; color: #202124; margin-bottom: 10px;">Rockfort Agencies</p>
         <p style="color: var(--google-grey); margin-bottom: 20px;">Wholesale & Retail Suppliers | Trichy</p>
-        <p style="color: var(--google-blue);">+91 94893 30306</p>
+        <p style="color: var(--google-blue);">+91 97903 45300</p>
         <div style="margin-top: 30px; font-size: 12px; color: #bdc1c6;">&copy; Copyright 2026 Naveennivas Sivakumar. All rights reserved.</div>
     </footer>
 
     <script>
-        // --- 1. Menu Functions ---
+        // --- Menu Functions ---
         function openMenu() { document.getElementById("mySidebar").classList.add("open"); document.getElementById("myOverlay").classList.add("show"); }
         function closeMenu() { document.getElementById("mySidebar").classList.remove("open"); document.getElementById("myOverlay").classList.remove("show"); }
 
-        // --- 2. Modal Functions (Popup) ---
+        // --- Modal Functions (Options) ---
         function openOptionsModal(productIndex) {
-            const product = currentItemsToRender[productIndex]; // Use globally stored filtered items
+            const product = displayedProducts[productIndex];
             const modalList = document.getElementById("modalList");
             const modalTitle = document.getElementById("modalTitle");
-            
             modalTitle.innerText = product.name + " - Options";
             modalList.innerHTML = ""; 
-
             product.options.forEach(item => {
                 let priceHtml = item.price ? `<span class="item-price">₹ ${item.price}</span>` : `<span class="contact-price">Contact for Rate</span>`;
-                let row = `
-                    <div class="modal-list-item">
-                        <span class="item-name">${item.variant}</span>
-                        ${priceHtml}
-                    </div>
-                `;
-                modalList.innerHTML += row;
+                modalList.innerHTML += `<div class="modal-list-item"><span class="item-name">${item.variant}</span>${priceHtml}</div>`;
             });
-
             document.getElementById("optionsModal").style.display = "block";
         }
-
         function closeModal() { document.getElementById("optionsModal").style.display = "none"; }
 
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("optionsModal")) { closeModal(); }
+        // --- Video Modal Functions ---
+        function openVideoModal(videoSrc) {
+            const modal = document.getElementById("videoModal");
+            const video = document.getElementById("productVideo");
+            video.src = videoSrc;
+            modal.style.display = "block";
+            video.play();
+        }
+        function closeVideoModal() { 
+            const modal = document.getElementById("videoModal");
+            const video = document.getElementById("productVideo");
+            video.pause();
+            modal.style.display = "none"; 
         }
 
-        // --- 3. Data & Render Logic ---
-        
-        // This will hold the items currently displayed on screen (so Modal knows which one to open)
-        let currentItemsToRender = []; 
+        window.onclick = function(event) { 
+            if (event.target == document.getElementById("optionsModal")) closeModal(); 
+            if (event.target == document.getElementById("videoModal")) closeVideoModal();
+        }
 
-        function loadBrand(brandName) {
-            closeMenu();
-            const titleElement = document.getElementById("gridTitle");
+        // --- GLOBAL DATA ---
+        let brandDataScope = []; 
+        let displayedProducts = []; 
+
+        // 1. ABRO DATA
+        const abroProducts = [
+            { name: "Abro Spray Paints (400ml)", price: "115 - 150", desc: "Quick drying high quality spray paint.", img: "abro_spray_group.jpeg", hasOptions: true, btnText: "View Available Colours", brand: "ABRO", options: [{ variant: "Gloss White", price: "115" }, { variant: "Gloss Black", price: "115" }, { variant: "Matt Black", price: "115" }, { variant: "Silver", price: "115" }, { variant: "Gold (Premium)", price: "150" }] },
+            { name: "Abro Packing Tapes (BOPP)", price: "", desc: "High adhesion BOPP Tapes.", img: "abro_pack_group.jpeg", hasOptions: true, btnText: "View Sizes & Types", brand: "ABRO", options: [{ variant: "2 Inch Clear", price: "" }, { variant: "2 Inch Brown", price: "" }, { variant: "3 Inch Clear", price: "" }, { variant: "3 Inch Brown", price: "" }] },
+            { name: "Abro Telescopic Runners", price: "", desc: "Heavy duty drawer slides.", img: "abro_runner_group.jpeg", hasOptions: true, btnText: "View Weight Capacity", brand: "ABRO", options: [{ variant: "35 Kg Capacity", price: "" }, { variant: "45 Kg Capacity", price: "" }] },
+            { name: "Abro 3123 Masking Tape", price: "115", desc: "Available sizes: 1\", 2\", 1/2\", 3/4\", 1.5\"", img: "abro_3123.jpeg", brand: "ABRO" },
+            { name: "Abro Ezpro Masking Tape", price: "100", desc: "Available sizes: 1\", 2\", 1/2\", 3/4\", 1.5\"", img: "abro_ezpro.jpeg", brand: "ABRO" },
+            { name: "Abro GHB Tape", price: "55", desc: "Thickness: 2mm, 1.2mm", img: "abro_ghb.jpeg", brand: "ABRO" },
+            { name: "Abro Lub. AB-80 (50ml)", price: "", desc: "Multi-purpose Lubricant Spray", img: "abro_ab80_50.jpeg", brand: "ABRO" },
+            { name: "Abro Lub. AB-80 (100ml)", price: "", desc: "Multi-purpose Lubricant Spray", img: "abro_ab80_100.jpeg", brand: "ABRO" },
+            { name: "Abro Cloth Roll (All Grit)", price: "1400", desc: "Available Grits: 60, 80, 100, 120", img: "abro_cloth_roll.jpeg", brand: "ABRO" },
+            { name: "Abro Cut-off Wheel Green (14\")", price: "110", desc: "Heavy duty cutting wheel", img: "abro_wheel_green_14.jpeg", brand: "ABRO" },
+            { name: "Abro Cut-off Wheel Black (14\")", price: "110", desc: "Heavy duty cutting wheel", img: "abro_wheel_black_14.jpeg", brand: "ABRO" },
+            { name: "Abro Cut-off Wheel Green (4\")", price: "11", desc: "Standard 4 inch wheel", img: "abro_wheel_green_4.jpeg", brand: "ABRO" },
+            { name: "Abro Cut-off Wheel Green (5\")", price: "13", desc: "Standard 5 inch wheel", img: "abro_wheel_green_5.jpeg", brand: "ABRO" },
+            { name: "Abro Cut-off Wheel Black (4\")", price: "11", desc: "Standard 4 inch wheel", img: "abro_wheel_black_4.jpeg", brand: "ABRO" },
+            { name: "Abro Drywall Tape (2 Inch)", price: "", desc: "Joint Tape for Drywall", img: "abro_drywall_2.jpeg", brand: "ABRO" },
+            { name: "Abro Drywall Tape (4 Inch)", price: "", desc: "Joint Tape for Drywall", img: "abro_drywall_4.jpeg", brand: "ABRO" },
+            { name: "Abro Drywall Tape (6 Inch)", price: "", desc: "Joint Tape for Drywall", img: "abro_drywall_6.jpeg", brand: "ABRO" },
+            { name: "Abro Fiber Disc (All Grit)", price: "13", desc: "Grits: 60, 80, 100, 120", img: "abro_fiber_disc.jpeg", brand: "ABRO" },
+            { name: "Abro Flap Disc (All Grit)", price: "", desc: "Grits: 60, 80 available", img: "abro_flap_disc.jpeg", brand: "ABRO" },
+            { name: "Abro GP 260ml", price: "100", desc: "Available Colors: Clear, White, Black", img: "abro_gp_260.jpeg", brand: "ABRO" },
+            { name: "Abro Latex Paper (All Grit)", price: "10", desc: "Grits: 100, 150, 160, 180, 220", img: "abro_latex.jpeg", brand: "ABRO" },
+            { name: "Abro Leakage Repair Tape (2\")", price: "120", desc: "Instant waterproof sealing", img: "abro_leakage_2.jpeg", brand: "ABRO" },
+            { name: "Abro Leakage Repair Tape (4\")", price: "280", desc: "Instant waterproof sealing", img: "abro_leakage_4.jpeg", brand: "ABRO" },
+            { name: "Abro Leakage Repair Tape (6\")", price: "250", desc: "Instant waterproof sealing", img: "abro_leakage_6.jpeg", brand: "ABRO" },
+            { name: "Abro Mirror Mounting Tape (1\")", price: "", desc: "Double sided high strength", img: "abro_mounting_1.jpeg", brand: "ABRO" },
+            { name: "Abro Mirror Mounting Tape (1/2\")", price: "", desc: "Double sided high strength", img: "abro_mounting_half.jpeg", brand: "ABRO" },
+            { name: "Abro PTFE Tape (5m)", price: "", desc: "Thread sealing tape", img: "abro_ptfe_5m.jpeg", brand: "ABRO" },
+            { name: "Abro PTFE Tape (10m)", price: "", desc: "Thread sealing tape", img: "abro_ptfe_10m.jpeg", brand: "ABRO" },
+            { name: "Abro PU Foam (750ml)", price: "300", desc: "Expanding polyurethane foam", img: "abro_pu_750.jpeg", brand: "ABRO" },
+            { name: "Abro PU Foam (450ml)", price: "175", desc: "Expanding polyurethane foam", img: "abro_pu_450.jpeg", brand: "ABRO" },
+            { name: "Abro Insulation Tape", price: "8.50", desc: "Colors: Red, Blue, Green, Yellow, White, Black", img: "abro_insulation.jpeg", brand: "ABRO" },
+            { name: "Abro Acrybond Sealant (280ml)", price: "80", desc: "Paintable acrylic sealant", img: "abro_acrybond.jpeg", brand: "ABRO" },
+            { name: "Abro Grinding Wheel", price: "26", desc: "Metal grinding disc", img: "abro_grinding.jpeg", brand: "ABRO" },
+            { name: "Abro Shuttering Tape", price: "75", desc: "PVC Shuttering tape", img: "abro_shuttering.jpeg", brand: "ABRO" },
+            { name: "Abro Weather 9895 Sealant", price: "", desc: "Weatherproof silicone sealant", img: "abro_weather_9895.jpeg", brand: "ABRO" }
+        ];
+
+        // 2. BOSTIK DATA
+        const bostikProducts = [
+            { 
+                name: "Bostik Anchor Grout (1kg)", price: "Out of Stock", isOutOfStock: true,
+                desc: "High strength polyester anchoring grout.", img: "bostik_anchor_grout.jpeg", brand: "BOSTIK",
+                video: "videos/bostik_anchor_grout.mp4" // Video Link
+            },
+            { name: "Bostik Base & Hardner (0.3 Kg)", price: "", desc: "Epoxy base and hardener for construction.", img: "bostik_base_hardner_0.3kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Base & Hardner (1.5 Kg)", price: "", desc: "Epoxy base and hardener for construction.", img: "bostik_base_hardner_1.5kg.jpeg", brand: "BOSTIK" },
+            { name: "Boscocem 475 (1 Litre)", price: "", desc: "Waterproofing liquid additive & bonding agent.", img: "bostik_475_1l.jpeg", brand: "BOSTIK" },
+            { name: "Boscocem 475 (5 Litre)", price: "", desc: "Waterproofing liquid additive & bonding agent.", img: "bostik_475_5l.jpeg", brand: "BOSTIK" },
+            { name: "Boscocem 475 (20 Litre)", price: "", desc: "Waterproofing liquid additive & bonding agent.", img: "bostik_475_20l.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Two in One (1 Litre)", price: "", desc: "Multipurpose waterproofing coating & bonding agent.", img: "bostik_two_in_one_1l.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Two in One (5 Litre)", price: "", desc: "Multipurpose waterproofing coating & bonding agent.", img: "bostik_two_in_one_5l.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Two in One (20 Litre)", price: "", desc: "Multipurpose waterproofing coating & bonding agent.", img: "bostik_two_in_one_20l.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Crack Filler (1 Kg)", price: "", desc: "For repairing cracks in plaster and masonry.", img: "bostik_crack_filler_1kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Crack Filler (5 Kg)", price: "", desc: "For repairing cracks in plaster and masonry.", img: "bostik_crack_filler_5kg.jpeg", brand: "BOSTIK" },
+            { name: "Efflorescence Coat (1 Litre)", price: "", desc: "Prevents salt formation on bricks and stones.", img: "bostik_efflorescence_1l.jpeg", brand: "BOSTIK" },
+            { name: "Efflorescence Coat (5 Litre)", price: "", desc: "Prevents salt formation on bricks and stones.", img: "bostik_efflorescence_5l.jpeg", brand: "BOSTIK" },
+            { name: "Efflorescence Coat (20 Litre)", price: "", desc: "Prevents salt formation on bricks and stones.", img: "bostik_efflorescence_20l.jpeg", brand: "BOSTIK" },
+            { name: "Elastocoat Waterproofing (5 Litre)", price: "", desc: "Available Colours: Terracotta, White.", img: "bostik_elastocoat_5l.jpeg", brand: "BOSTIK" },
+            { name: "Elastocoat Waterproofing (20 Litre)", price: "", desc: "Available Colours: Lite Grey, Terracotta, White.", img: "bostik_elastocoat_20l.jpeg", brand: "BOSTIK" },
+            { name: "EP-Bond (1kg)", price: "", desc: "Concrete bonding agent.", img: "bostik_ep_bond.jpeg", brand: "BOSTIK" },
+            { name: "Fill A Gap (1kg)", price: "", desc: "Acrylic sealant for gap filling.", img: "bostik_fill_a_gap.jpeg", brand: "BOSTIK" },
+            { name: "Epoxy Filler (Multi Colours)", price: "", desc: "Stain-free epoxy tile joint filler.", img: "bostik_epoxy_filler.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Available Colours", options: [{ variant: "Charcoal", price: "" }, { variant: "Golden Brown", price: "" }, { variant: "Ivory", price: "" }, { variant: "Neutral Grey", price: "" }, { variant: "Silver Grey", price: "" }, { variant: "White", price: "" }] },
+            { name: "Bostik Fixall Grey (5 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_5kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Fixall Grey (10 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_10kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Fixall Grey (20 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_20kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Fixall Grey (30 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_30kg.jpeg", brand: "BOSTIK" },
+            { name: "Fixall White (30kg)", price: "", desc: "White tile adhesive for marble/glass blocks.", img: "bostik_fixall_white.jpeg", brand: "BOSTIK" },
+            { name: "Super Fixall Grey (30kg)", price: "", desc: "High strength premium tile adhesive.", img: "bostik_super_fixall.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Tile Grout (1kg)", price: "", desc: "Cementitious tile joint filler.", img: "bostik_normal_grout.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Colours", options: [{ variant: "Ivory", price: "" }, { variant: "White", price: "" }] },
+            { name: "Bostik LW (1 Litre)", price: "", desc: "Integral waterproofing compound for concrete.", img: "bostik_lw.jpeg", brand: "BOSTIK" },
+            { name: "Moisture Seal (1kg)", price: "", desc: "Water barrier coating.", img: "bostik_moisture_seal.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Patchfix (30kg)", price: "", desc: "Non-shrink repair mortar.", img: "bostik_patchfix.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Plugleak (1kg)", price: "", desc: "Instant leak plugging compound.", img: "bostik_plugleak.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Plugleak (5kg)", price: "", desc: "Instant leak plugging compound.", img: "bostik_plugleak_5kg.jpeg", brand: "BOSTIK" },
+            { name: "PUD Mix (20 Litre)", price: "", desc: "Waterproofing admixture.", img: "bostik_pud_mix.jpeg", brand: "BOSTIK" },
+            { name: "Bostik UW Blue (5kg)", price: "", desc: "Underwater bonding agent/grout.", img: "bostik_uw_blue.jpeg", brand: "BOSTIK" },
+            { name: "Bostik ZRP (1kg)", price: "", desc: "Zinc Rich Primer for corrosion protection.", img: "bostik_zrp.jpeg", brand: "BOSTIK" }
+        ];
+
+        // --- Core Rendering Function ---
+        function renderGrid(productsList) {
             const gridElement = document.getElementById("productGrid");
-            
-            titleElement.innerText = (brandName === 'All Products') ? "All Products Catalog" : brandName + " Materials";
             gridElement.innerHTML = "";
+            displayedProducts = productsList;
 
-            // --- ABRO DATA (All .jpeg) ---
-            const abroProducts = [
-                { 
-                    name: "Abro Spray Paints (400ml)", 
-                    price: "115 - 150", 
-                    desc: "Quick drying high quality spray paint. Click below to see colours.", 
-                    img: "abro_spray_group.jpeg",
-                    hasOptions: true,
-                    btnText: "View Available Colours",
-                    brand: "ABRO",
-                    options: [
-                        { variant: "Gloss White", price: "115" },
-                        { variant: "Gloss Black", price: "115" },
-                        { variant: "Matt Black", price: "115" },
-                        { variant: "Silver", price: "115" },
-                        { variant: "Gold (Premium)", price: "150" }
-                    ]
-                },
-                {
-                    name: "Abro Packing Tapes (BOPP)",
-                    price: "", 
-                    desc: "High adhesion BOPP Tapes. Available in Clear & Brown.",
-                    img: "abro_pack_group.jpeg",
-                    hasOptions: true,
-                    btnText: "View Sizes & Types",
-                    brand: "ABRO",
-                    options: [
-                        { variant: "2 Inch Clear", price: "" },
-                        { variant: "2 Inch Brown", price: "" },
-                        { variant: "3 Inch Clear", price: "" },
-                        { variant: "3 Inch Brown", price: "" }
-                    ]
-                },
-                {
-                    name: "Abro Telescopic Runners",
-                    price: "", 
-                    desc: "Heavy duty drawer slides. Smooth operation.",
-                    img: "abro_runner_group.jpeg",
-                    hasOptions: true,
-                    btnText: "View Weight Capacity",
-                    brand: "ABRO",
-                    options: [
-                        { variant: "35 Kg Capacity", price: "" },
-                        { variant: "45 Kg Capacity", price: "" }
-                    ]
-                },
-                { name: "Abro 3123 Masking Tape", price: "115", desc: "Available sizes: 1\", 2\", 1/2\", 3/4\", 1.5\"", img: "abro_3123.jpeg", brand: "ABRO" },
-                { name: "Abro Ezpro Masking Tape", price: "100", desc: "Available sizes: 1\", 2\", 1/2\", 3/4\", 1.5\"", img: "abro_ezpro.jpeg", brand: "ABRO" },
-                { name: "Abro GHB Tape", price: "55", desc: "Thickness: 2mm, 1.2mm", img: "abro_ghb.jpeg", brand: "ABRO" },
-                { name: "Abro Lub. AB-80 (50ml)", price: "", desc: "Multi-purpose Lubricant Spray", img: "abro_ab80_50.jpeg", brand: "ABRO" },
-                { name: "Abro Lub. AB-80 (100ml)", price: "", desc: "Multi-purpose Lubricant Spray", img: "abro_ab80_100.jpeg", brand: "ABRO" },
-                { name: "Abro Cloth Roll (All Grit)", price: "1400", desc: "Available Grits: 60, 80, 100, 120", img: "abro_cloth_roll.jpeg", brand: "ABRO" },
-                { name: "Abro Cut-off Wheel Green (14\")", price: "110", desc: "Heavy duty cutting wheel", img: "abro_wheel_green_14.jpeg", brand: "ABRO" },
-                { name: "Abro Cut-off Wheel Black (14\")", price: "110", desc: "Heavy duty cutting wheel", img: "abro_wheel_black_14.jpeg", brand: "ABRO" },
-                { name: "Abro Cut-off Wheel Green (4\")", price: "11", desc: "Standard 4 inch wheel", img: "abro_wheel_green_4.jpeg", brand: "ABRO" },
-                { name: "Abro Cut-off Wheel Green (5\")", price: "13", desc: "Standard 5 inch wheel", img: "abro_wheel_green_5.jpeg", brand: "ABRO" },
-                { name: "Abro Cut-off Wheel Black (4\")", price: "11", desc: "Standard 4 inch wheel", img: "abro_wheel_black_4.jpeg", brand: "ABRO" },
-                { name: "Abro Drywall Tape (2 Inch)", price: "", desc: "Joint Tape for Drywall", img: "abro_drywall_2.jpeg", brand: "ABRO" },
-                { name: "Abro Drywall Tape (4 Inch)", price: "", desc: "Joint Tape for Drywall", img: "abro_drywall_4.jpeg", brand: "ABRO" },
-                { name: "Abro Drywall Tape (6 Inch)", price: "", desc: "Joint Tape for Drywall", img: "abro_drywall_6.jpeg", brand: "ABRO" },
-                { name: "Abro Fiber Disc (All Grit)", price: "13", desc: "Grits: 60, 80, 100, 120", img: "abro_fiber_disc.jpeg", brand: "ABRO" },
-                { name: "Abro Flap Disc (All Grit)", price: "", desc: "Grits: 60, 80 available", img: "abro_flap_disc.jpeg", brand: "ABRO" },
-                { name: "Abro GP 260ml", price: "100", desc: "Available Colors: Clear, White, Black", img: "abro_gp_260.jpeg", brand: "ABRO" },
-                { name: "Abro Latex Paper (All Grit)", price: "10", desc: "Grits: 100, 150, 160, 180, 220", img: "abro_latex.jpeg", brand: "ABRO" },
-                { name: "Abro Leakage Repair Tape (2\")", price: "120", desc: "Instant waterproof sealing", img: "abro_leakage_2.jpeg", brand: "ABRO" },
-                { name: "Abro Leakage Repair Tape (4\")", price: "280", desc: "Instant waterproof sealing", img: "abro_leakage_4.jpeg", brand: "ABRO" },
-                { name: "Abro Leakage Repair Tape (6\")", price: "250", desc: "Instant waterproof sealing", img: "abro_leakage_6.jpeg", brand: "ABRO" },
-                { name: "Abro Mirror Mounting Tape (1\")", price: "", desc: "Double sided high strength", img: "abro_mounting_1.jpeg", brand: "ABRO" },
-                { name: "Abro Mirror Mounting Tape (1/2\")", price: "", desc: "Double sided high strength", img: "abro_mounting_half.jpeg", brand: "ABRO" },
-                { name: "Abro PTFE Tape (5m)", price: "", desc: "Thread sealing tape", img: "abro_ptfe_5m.jpeg", brand: "ABRO" },
-                { name: "Abro PTFE Tape (10m)", price: "", desc: "Thread sealing tape", img: "abro_ptfe_10m.jpeg", brand: "ABRO" },
-                { name: "Abro PU Foam (750ml)", price: "300", desc: "Expanding polyurethane foam", img: "abro_pu_750.jpeg", brand: "ABRO" },
-                { name: "Abro PU Foam (450ml)", price: "175", desc: "Expanding polyurethane foam", img: "abro_pu_450.jpeg", brand: "ABRO" },
-                { name: "Abro Insulation Tape", price: "8.50", desc: "Colors: Red, Blue, Green, Yellow, White, Black", img: "abro_insulation.jpeg", brand: "ABRO" },
-                { name: "Abro Acrybond Sealant (280ml)", price: "80", desc: "Paintable acrylic sealant", img: "abro_acrybond.jpeg", brand: "ABRO" },
-                { name: "Abro Grinding Wheel", price: "26", desc: "Metal grinding disc", img: "abro_grinding.jpeg", brand: "ABRO" },
-                { name: "Abro Shuttering Tape", price: "75", desc: "PVC Shuttering tape", img: "abro_shuttering.jpeg", brand: "ABRO" },
-                { name: "Abro Weather 9895 Sealant", price: "", desc: "Weatherproof silicone sealant", img: "abro_weather_9895.jpeg", brand: "ABRO" }
-            ];
-
-            // --- FILTER LOGIC ---
-            // Reset the render list
-            currentItemsToRender = [];
-
-            if (brandName === 'Abro') {
-                // Show only Abro
-                currentItemsToRender = abroProducts;
-            } 
-            else if (brandName === 'All Products') {
-                // Show ABRO + (In future) Bostik + Jubilant + etc.
-                // Currently we only have Abro, so we add Abro to the list.
-                currentItemsToRender = currentItemsToRender.concat(abroProducts);
-            } 
-            else {
-                // For brands that have NO data yet (like Jubilant, Bostik), we show dummy data
-                // so the page isn't empty.
-                currentItemsToRender = []; // Keep empty or generate dummies below
-            }
-
-            // --- RENDER LOGIC ---
-            if (currentItemsToRender.length > 0) {
-                currentItemsToRender.forEach((product, index) => {
-                    let priceDisplay = product.price ? `₹ ${product.price}` : `<span class='no-price'>Contact for Rate</span>`;
+            if (productsList.length > 0) {
+                productsList.forEach((product, index) => {
+                    let priceDisplay;
+                    if (product.isOutOfStock) {
+                        priceDisplay = `<span class='out-of-stock'>Out of Stock</span>`;
+                    } else {
+                        priceDisplay = product.price ? `₹ ${product.price}` : `<span class='no-price'>Contact for Rate</span>`;
+                    }
                     
                     let optionsButton = '';
                     if (product.hasOptions) {
                         optionsButton = `<button class="view-options-btn" onclick="openOptionsModal(${index})">
                                             <span class="material-icons" style="font-size:16px;">list</span> ${product.btnText}
                                         </button>`;
+                    }
+
+                    // VIDEO BUTTON LOGIC
+                    let videoButton = '';
+                    if (product.video) {
+                        videoButton = `<button class="video-btn" onclick="openVideoModal('${product.video}')">
+                                        <span class="material-icons" style="font-size:18px;">play_circle_outline</span> Watch Demo
+                                       </button>`;
                     }
 
                     let cardHTML = `
@@ -335,11 +430,12 @@
                                 <h3 class="material-name">${product.name}</h3>
                                 <p class="product-desc">${product.desc}</p>
                                 ${optionsButton}
+                                ${videoButton}
                                 <div class="price-box">
                                     <p class="price-label">Price</p>
                                     <div class="price">${priceDisplay}</div>
                                 </div>
-                                <a href="tel:+919489330306" class="buy-now-btn">
+                                <a href="tel:+919790345300" class="buy-now-btn">
                                     <span class="material-icons">call</span> CALL TO BUY
                                 </a>
                             </div>
@@ -348,35 +444,59 @@
                     gridElement.innerHTML += cardHTML;
                 });
             } else {
-                // If "currentItemsToRender" is empty (meaning it's a brand like Jubilant with no data yet),
-                // Show Dummy Placeholders so page doesn't look broken.
-                for (let i = 1; i <= 6; i++) {
+                 gridElement.innerHTML = `<div class="no-results">
+                    <span class="material-icons" style="font-size:48px; color:#dadce0;">search_off</span>
+                    <p style="margin-top:10px;">No products found matching your search.</p>
+                 </div>`;
+            }
+        }
+
+        // --- Brand Loading Logic ---
+        function loadBrand(brandName) {
+            closeMenu();
+            document.getElementById("searchInput").value = ""; 
+            const titleElement = document.getElementById("gridTitle");
+            titleElement.innerText = (brandName === 'All Products') ? "All Products Catalog" : brandName + " Materials";
+            brandDataScope = []; 
+
+            if (brandName === 'Abro') { brandDataScope = abroProducts; } 
+            else if (brandName === 'Bostik') { brandDataScope = bostikProducts; }
+            else if (brandName === 'All Products') { brandDataScope = abroProducts.concat(bostikProducts); } 
+            
+            if(brandDataScope.length === 0 && brandName !== 'All Products') {
+                 const gridElement = document.getElementById("productGrid");
+                 gridElement.innerHTML = "";
+                 for (let i = 1; i <= 6; i++) {
                     let displayName = brandName + " Product " + i;
-                    let cardHTML = `
+                    gridElement.innerHTML += `
                         <div class="card">
-                            <div class="card-img">
-                                <span class="material-icons" style="font-size: 50px;">inventory_2</span>
-                            </div>
+                            <div class="card-img"><span class="material-icons" style="font-size: 50px;">inventory_2</span></div>
                             <div class="card-content">
                                 <p class="category">${brandName}</p>
                                 <h3 class="material-name">${displayName}</h3>
                                 <p class="product-desc">Coming soon to our catalogue.</p>
-                                <div class="price-box">
-                                    <p class="price-label">Price</p>
-                                    <div class="price">₹ --</div>
-                                </div>
-                                <a href="tel:+919489330306" class="buy-now-btn">
-                                    <span class="material-icons">call</span> CALL TO BUY
-                                </a>
+                                <div class="price-box"><p class="price-label">Price</p><div class="price">₹ --</div></div>
+                                <a href="tel:+919790345300" class="buy-now-btn"><span class="material-icons">call</span> CALL TO BUY</a>
                             </div>
-                        </div>
-                    `;
-                    gridElement.innerHTML += cardHTML;
+                        </div>`;
                 }
+            } else {
+                renderGrid(brandDataScope);
             }
         }
 
-        // Load Default Content
+        // --- Search Logic ---
+        function filterProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            if (!query) { renderGrid(brandDataScope); return; }
+            const filteredItems = brandDataScope.filter(item => 
+                item.name.toLowerCase().includes(query) || 
+                item.desc.toLowerCase().includes(query) ||
+                item.brand.toLowerCase().includes(query)
+            );
+            renderGrid(filteredItems);
+        }
+
         window.onload = function() { loadBrand('All Products'); };
     </script>
 
