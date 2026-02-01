@@ -101,25 +101,13 @@
         .buy-now-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: white; color: var(--google-blue); border: 1px solid var(--google-blue); text-decoration: none; padding: 10px; border-radius: 6px; font-weight: 500; transition: 0.2s; margin-top: 10px; }
         .buy-now-btn:hover { background: #e8f0fe; }
         
-        /* Buttons Styling */
         .view-options-btn { width: 100%; padding: 8px; background-color: #f1f3f4; border: none; border-radius: 4px; color: #202124; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 8px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; text-decoration: none; }
         .view-options-btn:hover { background-color: #e8eaed; color: var(--google-blue); }
         
         .video-btn { width: 100%; padding: 8px; background-color: white; border: 1px solid var(--video-color); border-radius: 4px; color: var(--video-color); font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 10px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; }
         .video-btn:hover { background-color: #fce8e6; }
         
-        /* Product Info Button Styling */
-        .info-btn { 
-            width: 100%; padding: 8px; 
-            background-color: white; 
-            border: 1px solid #dfe1e5; 
-            border-radius: 4px; 
-            color: #1a73e8; 
-            font-size: 13px; font-weight: 500; 
-            cursor: pointer; margin-bottom: 10px; 
-            transition: 0.2s; 
-            display: flex; justify-content: center; align-items: center; gap: 5px; 
-        }
+        .info-btn { width: 100%; padding: 8px; background-color: white; border: 1px solid #dfe1e5; border-radius: 4px; color: #1a73e8; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 10px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; }
         .info-btn:hover { background-color: #f8f9fa; border-color: #1a73e8; }
 
         /* --- POPUP MODAL --- */
@@ -133,7 +121,6 @@
         .modal-body strong { color: #202124; font-weight: 700; display: block; margin-top: 10px; margin-bottom: 5px; }
         .modal-body ul { padding-left: 20px; margin-bottom: 10px; }
         .modal-body li { margin-bottom: 4px; }
-        
         .modal-list-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f1f3f4; }
         .modal-list-item:last-child { border-bottom: none; }
         .item-name { font-weight: 500; color: #3c4043; }
@@ -170,54 +157,17 @@
     </div>
     <div id="myOverlay" class="overlay" onclick="closeMenu()"></div>
 
-    <div id="optionsModal" class="modal-window">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modalTitle">Available Options</h3>
-                <span class="close-modal" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="modal-body" id="modalList"></div>
-        </div>
-    </div>
-
-    <div id="infoModal" class="modal-window">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="infoTitle">Product Information</h3>
-                <span class="close-modal" onclick="closeInfoModal()">&times;</span>
-            </div>
-            <div class="modal-body" id="infoBody"></div>
-        </div>
-    </div>
-
-    <div id="videoModal" class="modal-window">
-        <div class="modal-content" style="overflow: hidden; max-width: 700px;">
-            <div class="modal-header">
-                <h3>Product Demo</h3>
-                <span class="close-modal" onclick="closeVideoModal()">&times;</span>
-            </div>
-            <div class="video-container">
-                <video id="productVideo" controls>
-                    <source src="" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </div>
+    <div id="optionsModal" class="modal-window"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle">Available Options</h3><span class="close-modal" onclick="closeModal()">&times;</span></div><div class="modal-body" id="modalList"></div></div></div>
+    <div id="infoModal" class="modal-window"><div class="modal-content"><div class="modal-header"><h3 id="infoTitle">Product Information</h3><span class="close-modal" onclick="closeInfoModal()">&times;</span></div><div class="modal-body" id="infoBody"></div></div></div>
+    <div id="videoModal" class="modal-window"><div class="modal-content" style="overflow: hidden; max-width: 700px;"><div class="modal-header"><h3>Product Demo</h3><span class="close-modal" onclick="closeVideoModal()">&times;</span></div><div class="video-container"><video id="productVideo" controls><source src="" type="video/mp4">Your browser does not support the video tag.</video></div></div></div>
 
     <nav>
         <div class="nav-left">
-            <button class="menu-btn" onclick="openMenu()">
-                <span class="material-icons" style="font-size: 28px;">menu</span>
-            </button>
+            <button class="menu-btn" onclick="openMenu()"><span class="material-icons" style="font-size: 28px;">menu</span></button>
             <div class="logo">Rockfort <b>Agencies</b></div>
         </div>
-        
         <div class="nav-right">
-            <div class="nav-search-container">
-                <span class="material-icons nav-search-icon">search</span>
-                <input type="text" id="searchInput" class="nav-search-input" placeholder="Search..." onkeyup="filterProducts()">
-            </div>
+            <div class="nav-search-container"><span class="material-icons nav-search-icon">search</span><input type="text" id="searchInput" class="nav-search-input" placeholder="Search..." onkeyup="filterProducts()"></div>
         </div>
     </nav>
 
@@ -227,17 +177,12 @@
             <h1 class="hero-title">Construction Chemicals, Adhesives & Sealants</h1>
             <p class="hero-subtitle">We are the leading suppliers of Tile Adhesives, Epoxy Grouts, Silicon Sealants, Waterproofing Solutions, and Industrial Tapes in Trichy.</p>
             <a href="tel:+919790345300" class="cta-button"><span class="material-icons">call</span> Get a Quote</a>
-            
             <div class="partners-row">
                 <span class="partners-label">Our Authorized Partners</span>
                 <div class="marquee-container">
                     <div class="marquee-track">
-                        <span class="brand-tag">Saint-Gobain (Weber)</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span>
-                        <span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Nerofix</span>
-                        <span class="brand-tag">Esdee</span>
-                        <span class="brand-tag">Saint-Gobain (Weber)</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span>
-                        <span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Nerofix</span>
-                        <span class="brand-tag">Esdee</span>
+                        <span class="brand-tag">Saint-Gobain (Weber)</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span><span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Nerofix</span><span class="brand-tag">Esdee</span>
+                        <span class="brand-tag">Saint-Gobain (Weber)</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span><span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Nerofix</span><span class="brand-tag">Esdee</span>
                     </div>
                 </div>
             </div>
@@ -259,165 +204,63 @@
     <script>
         function openMenu() { document.getElementById("mySidebar").classList.add("open"); document.getElementById("myOverlay").classList.add("show"); }
         function closeMenu() { document.getElementById("mySidebar").classList.remove("open"); document.getElementById("myOverlay").classList.remove("show"); }
+        function closeModal() { document.getElementById("optionsModal").style.display = "none"; }
+        function closeInfoModal() { document.getElementById("infoModal").style.display = "none"; }
+        function closeVideoModal() { document.getElementById("videoModal").style.display = "none"; document.getElementById("productVideo").pause(); }
 
-        function openOptionsModal(productIndex) {
-            const product = displayedProducts[productIndex];
-            const modalList = document.getElementById("modalList");
-            const modalTitle = document.getElementById("modalTitle");
-            modalTitle.innerText = product.name + " - Options";
-            modalList.innerHTML = ""; 
+        function openOptionsModal(index) {
+            const product = displayedProducts[index];
+            const list = document.getElementById("modalList");
+            document.getElementById("modalTitle").innerText = product.name + " - Options";
+            list.innerHTML = "";
             product.options.forEach(item => {
                 let priceHtml = item.price ? `<span class="item-price">₹ ${item.price}</span>` : `<span class="contact-price">Contact for Rate</span>`;
-                modalList.innerHTML += `<div class="modal-list-item"><span class="item-name">${item.variant}</span>${priceHtml}</div>`;
+                list.innerHTML += `<div class="modal-list-item"><span class="item-name">${item.variant}</span>${priceHtml}</div>`;
             });
             document.getElementById("optionsModal").style.display = "block";
         }
 
-        // INFO MODAL LOGIC
-        function openInfoModal(productIndex) {
-            const product = displayedProducts[productIndex];
-            const infoBody = document.getElementById("infoBody");
-            const infoTitle = document.getElementById("infoTitle");
-            infoTitle.innerText = product.name;
-            infoBody.innerHTML = product.details;
+        function openInfoModal(index) {
+            const product = displayedProducts[index];
+            document.getElementById("infoTitle").innerText = product.name;
+            document.getElementById("infoBody").innerHTML = product.details;
             document.getElementById("infoModal").style.display = "block";
         }
-        function closeInfoModal() { document.getElementById("infoModal").style.display = "none"; }
 
-        function openVideoModal(videoSrc) {
-            const modal = document.getElementById("videoModal");
-            const video = document.getElementById("productVideo");
-            video.src = videoSrc;
-            modal.style.display = "block";
-            video.play();
-        }
-        function closeVideoModal() { 
-            const modal = document.getElementById("videoModal");
-            const video = document.getElementById("productVideo");
-            video.pause();
-            modal.style.display = "none"; 
+        function openVideoModal(src) {
+            const v = document.getElementById("productVideo");
+            v.src = src;
+            document.getElementById("videoModal").style.display = "block";
+            v.play();
         }
 
-        function closeModal() { document.getElementById("optionsModal").style.display = "none"; }
-
-        window.onclick = function(event) { 
-            if (event.target == document.getElementById("optionsModal")) closeModal(); 
-            if (event.target == document.getElementById("videoModal")) closeVideoModal();
-            if (event.target == document.getElementById("infoModal")) closeInfoModal();
+        window.onclick = function(e) {
+            if (e.target == document.getElementById("optionsModal")) closeModal();
+            if (e.target == document.getElementById("videoModal")) closeVideoModal();
+            if (e.target == document.getElementById("infoModal")) closeInfoModal();
+            if (e.target == document.getElementById("myOverlay")) closeMenu();
         }
 
-        let brandDataScope = []; 
-        let displayedProducts = []; 
-
-        // --- ATUL PRODUCTS (Rich Details) ---
+        // --- DATA ARRAYS ---
         const atulProducts = [
-            { 
-                name: "Lacare AM 70", price: "", 
-                desc: "Multi-purpose maintenance spray.", 
-                img: "atul_lacare_am70.jpeg", brand: "Atul", 
-                hasOptions: true, btnText: "View Sizes", options: [{ variant: "85g", price: "" }, { variant: "400g", price: "" }],
-                details: `<strong>Description:</strong><br>Multi-purpose maintenance spray designed for preventive and corrective maintenance for industrial use, automobiles, and homes.<br><br><strong>Key Benefits:</strong><br>• Penetrates rust & loosens rusted nuts.<br>• Provides lubrication & removes stickiness.<br>• Displaces moisture & protects from corrosion.<br><br><strong>Applications:</strong><ul><li>Loosening rusted nuts and bolts</li><li>Cleaning spark plugs</li><li>Lubricating door locks, bolts, hinges, fans, mixers, zippers.</li></ul>`
-            },
-            { 
-                name: "Lapox Duratite (1.8 Kg)", price: "", 
-                desc: "Two-component, high strength epoxy adhesive.", 
-                img: "atul_lapox_duratite_1.8kg.jpeg", brand: "Atul",
-                details: `<strong>Description:</strong><br>A solvent-less, high viscous, fast-curing, high-strength epoxy adhesive with long pot life.<br><br><strong>Technical Specs:</strong><br>• Viscosity: 50,000 - 60,000 mPas<br>• Pot Life: 75 - 90 mins<br><br><strong>Applications:</strong><ul><li>Fixing granite, marble and wood</li><li>Sand broadcasting & Grouting steel railings</li><li>Bonding magnets to metals in audio speakers</li><li>Filling gaps in furniture joints</li></ul>`
-            },
-            { 
-                name: "Lapox Lacrete", price: "", 
-                desc: "Epoxy-based waterproofing & grouting system.", 
-                img: "atul_lapox_lacrete.jpeg", brand: "Atul", 
-                hasOptions: true, btnText: "View Sizes", options: [{ variant: "1.5 Kg", price: "" }, { variant: "7.5 Kg", price: "" }, { variant: "45 Kg", price: "" }],
-                details: `<strong>Description:</strong><br>Versatile epoxy system for waterproofing, grouting, and concrete repair.<br><br><strong>Technical Specs:</strong><br>• Viscosity: 800 - 1,200 cPs<br>• Pot Life: 65 - 85 mins<br><br><strong>Applications:</strong><ul><li>Waterproofing of terraces, bathrooms, water tanks</li><li>Anti-corrosive coating for steel bars</li><li>Concrete bonding & repair</li><li>Grouting of core-cut in bathrooms</li></ul>`
-            },
-            { 
-                name: "Lapox Procoat (5 Litre)", price: "", 
-                desc: "PU Top Coat for protection.", 
-                img: "atul_lapox_procoat_5l.jpeg", brand: "Atul",
-                details: `<strong>Description:</strong><br>Two-component Polyurethane protective coating used as a top coat over waterproofing systems.<br><br><strong>Key Benefits:</strong><br>• UV-resistant and durable finish.<br>• Glossy and decorative.<br>• Abrasion resistant.<br><br><strong>Applications:</strong><ul><li>Terrace and rooftop coating</li><li>Exterior concrete surfaces exposed to sunlight</li><li>Metal surfaces like steel structures</li><li>Protective coating for epoxy-coated surfaces</li></ul>`
-            },
-            { 
-                name: "Lapox Rapid & Clear (1 Kg)", price: "", 
-                desc: "Fast setting clear epoxy adhesive.", 
-                img: "atul_lapox_rapid_clear_1kg.jpeg", brand: "Atul",
-                details: `<strong>Description:</strong><br>Fast setting, multi-purpose epoxy system that forms a clear transparent bond within 5 minutes.<br><br><strong>Technical Specs:</strong><br>• Viscosity: 30,000 - 35,000 cPs<br>• Pot Life: 3 - 5 mins<br><br><strong>Applications:</strong><ul><li>Marble-to-marble bonding</li><li>Glass-to-glass & Wood-to-glass bonding</li><li>Jewellery & Handicrafts making</li><li>Ceramic bonding</li></ul>`
-            },
-            { 
-                name: "Lapox Ultra (1.8 Kg)", price: "", 
-                desc: "Premium high strength epoxy adhesive.", 
-                img: "atul_lapox_ultra_1.8kg.jpeg", brand: "Atul",
-                details: `<strong>Description:</strong><br>Premium, high strength, modified epoxy adhesive system.<br><br><strong>Technical Specs:</strong><br>• Viscosity: 30,000 - 35,000 cPs<br>• Pot Life: 75 - 90 mins<br><br><strong>Key Benefits:</strong><br>• Solvent-free, odour-free and non-hazardous.<br>• Water resistant & high bonding strength.<br><br><strong>Applications:</strong><ul><li>Fixing marble and granite</li><li>Wood-to-wood & Wood-to-glass bonding</li><li>Grouting steel railings</li></ul>`
-            },
-            { 
-                name: "Lapox Ultrabond CPVC (100ml)", price: "", 
-                desc: "Solvent cement for CPVC pipes.", 
-                img: "atul_lapox_ultrabond_cpvc.jpeg", brand: "Atul",
-                details: `<strong>Description:</strong><br>Formulated for joining CPVC pipes and fittings used in cold and hot water systems (up to 82°C).<br><br><strong>Technical Specs:</strong><br>• Viscosity: min 1,300 cPs<br><br><strong>Key Benefits:</strong><br>• Fast-setting & High strength.<br>• Low VOC emissions.<br><br><strong>Applications:</strong><ul><li>Commercial spaces</li><li>Industrial premises</li><li>Residential hot & cold water systems</li></ul>`
-            },
-            { 
-                name: "Lapox Ultrabond UPVC (100ml)", price: "", 
-                desc: "Solvent cement for UPVC pipes.", 
-                img: "atul_lapox_ultrabond_upvc.jpeg", brand: "Atul",
-                details: `<strong>Description:</strong><br>Solvent cement for joining UPVC pipes. Suitable for 6″ Schedule 40 and 4″ Schedule 80 pipes.<br><br><strong>Technical Specs:</strong><br>• Viscosity: min 600 cPs<br><br><strong>Key Benefits:</strong><br>• Fast-setting & Strong waterproof joint.<br><br><strong>Applications:</strong><ul><li>Conduits & Irrigation</li><li>Potable water & Sewers</li></ul>`
-            },
-            { 
-                name: "Lapox Ultrabond PVC (100ml)", price: "", 
-                desc: "Heavy-duty solvent cement for PVC.", 
-                img: "atul_lapox_ultrabond_pvc.jpeg", brand: "Atul",
-                details: `<strong>Description:</strong><br>Heavy-duty solvent cement for joining PVC pipes and fittings (up to 4″ diameter Schedule 40).<br><br><strong>Technical Specs:</strong><br>• Viscosity: min 120 cPs<br><br><strong>Key Benefits:</strong><br>• Strong, waterproof and durable joints.<br>• Fast-setting & Low VOC.<br><br><strong>Applications:</strong><ul><li>Irrigation pipes</li><li>Potable water pipes</li><li>Sewer fittings</li></ul>`
-            },
-            { 
-                name: "Lapox Ultra Fast", price: "", 
-                desc: "Instant adhesive.", 
-                img: "atul_lapox_ultra_fast.jpeg", brand: "Atul", 
-                hasOptions: true, btnText: "View Sizes", options: [{ variant: "20g", price: "" }, { variant: "50g", price: "" }],
-                details: `<strong>Description:</strong><br>Solvent-free, instant setting ethyl cyanoacrylate adhesive.<br><br><strong>Technical Specs:</strong><br>• Viscosity: max 5 mPas<br><br><strong>Key Benefits:</strong><br>• Instant bonding using contact pressure.<br>• Resistant to gasoline, kerosene, oils.<br>• No clamping required.<br><br><strong>Applications:</strong><ul><li>Bonding marble, glass, metal, wood</li><li>PVC door and furniture gap-filling</li><li>Flex banner bonding on MS frames</li></ul>`
-            },
-            { 
-                name: "Lapox Ultrafix (1.5 Kg)", price: "", 
-                desc: "High performance epoxy adhesive.", 
-                img: "atul_lapox_ultrafix_1.5kg.jpeg", brand: "Atul",
-                details: `<strong>Description:</strong><br>Two-component, high performance, fast-setting epoxy adhesive.<br><br><strong>Technical Specs:</strong><br>• Pot Life: 10 - 15 mins<br><br><strong>Key Benefits:</strong><br>• Superior Bond Strength.<br>• Excellent adhesion in wet/moist conditions.<br>• Rapid curing increases productivity.<br><br><strong>Applications:</strong><ul><li>Vertical cladding of granite/marble</li><li>Bonding concrete, plywood, metal</li><li>Anchoring grout for reinforced steel</li><li>Underwater tile fixing</li></ul>`
-            },
-            { 
-                name: "Polygrip Hotbond", price: "", 
-                desc: "High heat resistant adhesive.", 
-                img: "atul_polygrip_botbond.jpeg", brand: "Atul", 
-                hasOptions: true, btnText: "View Sizes", options: [{ variant: "200ml", price: "" }, { variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }, { variant: "2 Litre", price: "" }, { variant: "5 Litre", price: "" }],
-                details: `<strong>Description:</strong><br>High heat resistant adhesive for bonding wood, ply or laminate at temperatures up to 170°C.<br><br><strong>Technical Specs:</strong><br>• Viscosity: 2,500 - 3,000 cPs<br><br><strong>Key Benefits:</strong><br>• Heat resistance up to 170°C.<br>• Quick bonding & High strength.<br>• No masking tape or clamping required.<br><br><strong>Applications:</strong><ul><li>High heat exposure areas</li><li>Laminates to ply (vertical application)</li><li>HVAC ducting</li><li>Curved surfaces</li></ul>`
-            },
-            { 
-                name: "Polygrip MP 609", price: "", 
-                desc: "Multi-purpose adhesive.", 
-                img: "atul_polygrip_mp609.jpeg", brand: "Atul", 
-                hasOptions: true, btnText: "View Sizes", options: [{ variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }, { variant: "5 Litre", price: "" }],
-                details: `<strong>Description:</strong><br>Multi-purpose adhesive suitable for bonding foam to variety of substrates.<br><br><strong>Technical Specs:</strong><br>• Viscosity: 400 - 800 cPs<br><br><strong>Key Benefits:</strong><br>• Mild odour & Good tack retention.<br>• Contains no harmful benzene.<br><br><strong>Applications:</strong><ul><li>Carpet laying</li><li>Foam bonding in upholstery</li><li>HVAC ducting & Acoustic insulation</li><li>Bonding canvas, velvet, rubber, leather</li></ul>`
-            },
-            { 
-                name: "Polygrip Rapid", price: "", 
-                desc: "Fast setting adhesive.", 
-                img: "atul_polygrip_rapid.jpeg", brand: "Atul", 
-                hasOptions: true, btnText: "View Sizes", options: [{ variant: "4.5 Litre", price: "" }, { variant: "30 Litre", price: "" }],
-                details: `<strong>Description:</strong><br>Same high-performance qualities as Lapox Rapid & Clear in bulk packaging.<br><br><strong>Key Benefits:</strong><br>• Rapid setting.<br>• Transparent bond.<br>• High bonding strength.<br><br><strong>Applications:</strong><ul><li>Industrial bonding applications</li><li>Large scale handicrafts</li></ul>`
-            },
-            { 
-                name: "Polygrip S 709", price: "", 
-                desc: "Sprayable adhesive for HVAC.", 
-                img: "atul_polygrip_s709.jpeg", brand: "Atul", 
-                hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Litre", price: "" }, { variant: "5 Litre", price: "" }],
-                details: `<strong>Description:</strong><br>Multi-purpose adhesive suitable for bonding substrates like canvas, foam, paper, plastic, velvet, etc. Highly recommended for ducts and HVAC.<br><br><strong>Technical Specs:</strong><br>• Viscosity: 1,000 - 1,500 cPs<br><br><strong>Key Benefits:</strong><br>• Long tack retention time.<br>• Excellent water resistance.<br>• Good coverage.<br><br><strong>Applications:</strong><ul><li>HVAC ducting and insulation</li><li>Bonding foam, rubber, metal, wood</li><li>Over-deck / under-deck insulation</li></ul>`
-            },
-            { 
-                name: "Polygrip SR 409", price: "", 
-                desc: "Fast-drying foam adhesive.", 
-                img: "atul_polygrip_sr409.jpeg", brand: "Atul", 
-                hasOptions: true, btnText: "View Sizes", options: [{ variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }],
-                details: `<strong>Description:</strong><br>Light-coloured, fast-drying adhesive specially designed for foam-to-foam bonding in chairs and mattresses.<br><br><strong>Technical Specs:</strong><br>• Viscosity: 800 - 1,000 cPs<br><br><strong>Key Benefits:</strong><br>• Fast-drying & Strong bonding strength.<br>• Does not stain.<br>• Induces savings due to low wastage.<br><br><strong>Applications:</strong><ul><li>Bonding foam to rubber, metal, rexine, wood</li><li>Adhesives for Jewellery boxes</li><li>Mattresses and sofas</li></ul>`
-            }
+            { name: "Lacare AM 70", price: "", desc: "Multi-purpose maintenance spray.", img: "atul_lacare_am70.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "85g", price: "" }, { variant: "400g", price: "" }], details: `<strong>Description:</strong><br>Multi-purpose maintenance spray designed for preventive and corrective maintenance.<br><br><strong>Key Benefits:</strong><br>• Penetrates rust & loosens rusted nuts.<br>• Provides lubrication & removes stickiness.<br>• Displaces moisture & protects from corrosion.` },
+            { name: "Lapox Duratite (1.8 Kg)", price: "", desc: "Two-component, high strength epoxy adhesive.", img: "atul_lapox_duratite_1.8kg.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Solvent-less, high viscous, fast-curing epoxy adhesive.<br><br><strong>Technical Specs:</strong><br>• Viscosity: 50,000 - 60,000 mPas<br>• Pot Life: 75 - 90 mins` },
+            { name: "Lapox Lacrete", price: "", desc: "Epoxy-based waterproofing & grouting system.", img: "atul_lapox_lacrete.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1.5 Kg", price: "" }, { variant: "7.5 Kg", price: "" }, { variant: "45 Kg", price: "" }], details: `<strong>Description:</strong><br>Versatile epoxy system for waterproofing, grouting, and concrete repair.<br><br><strong>Applications:</strong><ul><li>Waterproofing of terraces, bathrooms</li><li>Anti-corrosive coating</li><li>Concrete bonding</li></ul>` },
+            { name: "Lapox Procoat (5 Litre)", price: "", desc: "PU Top Coat for protection.", img: "atul_lapox_procoat_5l.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Two-component Polyurethane protective coating.<br><br><strong>Key Benefits:</strong><br>• UV-resistant and durable finish.<br>• Glossy and decorative.` },
+            { name: "Lapox Rapid & Clear (1 Kg)", price: "", desc: "Fast setting clear epoxy adhesive.", img: "atul_lapox_rapid_clear_1kg.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Fast setting, multi-purpose epoxy system.<br><br><strong>Technical Specs:</strong><br>• Pot Life: 3 - 5 mins<br><br><strong>Applications:</strong><ul><li>Marble-to-marble bonding</li><li>Glass-to-glass bonding</li></ul>` },
+            { name: "Lapox Ultra (1.8 Kg)", price: "", desc: "Premium high strength epoxy adhesive.", img: "atul_lapox_ultra_1.8kg.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Premium, high strength, modified epoxy adhesive system.<br><br><strong>Key Benefits:</strong><br>• Solvent-free & odour-free.<br>• Water resistant & high bonding strength.` },
+            { name: "Lapox Ultrabond CPVC (100ml)", price: "", desc: "Solvent cement for CPVC pipes.", img: "atul_lapox_ultrabond_cpvc.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Formulated for joining CPVC pipes (up to 82°C).<br><br><strong>Key Benefits:</strong><br>• Fast-setting & High strength.<br>• Low VOC emissions.` },
+            { name: "Lapox Ultrabond UPVC (100ml)", price: "", desc: "Solvent cement for UPVC pipes.", img: "atul_lapox_ultrabond_upvc.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Solvent cement for joining UPVC pipes.<br><br><strong>Key Benefits:</strong><br>• Fast-setting & Strong waterproof joint.` },
+            { name: "Lapox Ultrabond PVC (100ml)", price: "", desc: "Heavy-duty solvent cement for PVC.", img: "atul_lapox_ultrabond_pvc.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Heavy-duty solvent cement for joining PVC pipes.<br><br><strong>Key Benefits:</strong><br>• Strong, waterproof and durable joints.` },
+            { name: "Lapox Ultra Fast", price: "", desc: "Instant adhesive.", img: "atul_lapox_ultra_fast.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "20g", price: "" }, { variant: "50g", price: "" }], details: `<strong>Description:</strong><br>Solvent-free, instant setting ethyl cyanoacrylate adhesive.<br><br><strong>Key Benefits:</strong><br>• Instant bonding using contact pressure.<br>• No clamping required.` },
+            { name: "Lapox Ultrafix (1.5 Kg)", price: "", desc: "High performance epoxy adhesive.", img: "atul_lapox_ultrafix_1.5kg.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Two-component, high performance, fast-setting epoxy adhesive.<br><br><strong>Key Benefits:</strong><br>• Superior Bond Strength.<br>• Rapid curing increases productivity.` },
+            { name: "Polygrip Hotbond", price: "", desc: "High heat resistant adhesive.", img: "atul_polygrip_botbond.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "200ml", price: "" }, { variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }, { variant: "2 Litre", price: "" }, { variant: "5 Litre", price: "" }], details: `<strong>Description:</strong><br>High heat resistant adhesive (up to 170°C).<br><br><strong>Applications:</strong><ul><li>High heat exposure areas</li><li>Laminates to ply</li><li>HVAC ducting</li></ul>` },
+            { name: "Polygrip MP 609", price: "", desc: "Multi-purpose adhesive.", img: "atul_polygrip_mp609.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }, { variant: "5 Litre", price: "" }], details: `<strong>Description:</strong><br>Multi-purpose adhesive suitable for bonding foam.<br><br><strong>Applications:</strong><ul><li>Carpet laying</li><li>Foam bonding</li><li>HVAC ducting</li></ul>` },
+            { name: "Polygrip Rapid", price: "", desc: "Fast setting adhesive.", img: "atul_polygrip_rapid.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "4.5 Litre", price: "" }, { variant: "30 Litre", price: "" }], details: `<strong>Description:</strong><br>Same high-performance qualities as Lapox Rapid & Clear in bulk packaging.` },
+            { name: "Polygrip S 709", price: "", desc: "Sprayable adhesive for HVAC.", img: "atul_polygrip_s709.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Litre", price: "" }, { variant: "5 Litre", price: "" }], details: `<strong>Description:</strong><br>Multi-purpose adhesive suitable for bonding substrates like canvas, foam, paper.<br><br><strong>Key Benefits:</strong><br>• Long tack retention time.<br>• Good coverage.` },
+            { name: "Polygrip SR 409", price: "", desc: "Fast-drying foam adhesive.", img: "atul_polygrip_sr409.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }], details: `<strong>Description:</strong><br>Light-coloured, fast-drying adhesive for foam-to-foam bonding.<br><br><strong>Key Benefits:</strong><br>• Fast-drying.<br>• Does not stain.` }
         ];
 
-        // --- WEBER PRODUCTS ---
         const weberProducts = [
             { name: "Weberdry ACR Seal (20L)", price: "", desc: "Waterproofing coating.", img: "weber_acr_seal_20l.jpeg", brand: "Weber", hasOptions: true, btnText: "View Colours", options: [{ variant: "Terracotta", price: "" }, { variant: "White", price: "" }] },
             { name: "Weber Colorfine (1kg)", price: "", desc: "Colored joint filler.", img: "weber_colorfine_1kg.jpeg", brand: "Weber", hasOptions: true, btnText: "View Colours", options: [{ variant: "Alpine Blue", price: "" }, { variant: "Beige", price: "" }, { variant: "Chocolate", price: "" }, { variant: "Desert Dune", price: "" }, { variant: "Emerald", price: "" }, { variant: "Graphite", price: "" }, { variant: "Grey", price: "" }, { variant: "Ivory", price: "" }, { variant: "Jet Black", price: "" }, { variant: "Misty Grey", price: "" }, { variant: "Mushroom", price: "" }, { variant: "Oceanic Blue", price: "" }, { variant: "Pink", price: "" }, { variant: "Pista", price: "" }, { variant: "Terracotta", price: "" }, { variant: "Tropical Glory", price: "" }, { variant: "Tuscan White", price: "" }, { variant: "White", price: "" }] },
@@ -439,7 +282,6 @@
             { name: "Tile Spacer", price: "", desc: "For uniform tile spacing.", img: "weber_tile_spacer.jpeg", brand: "Weber", hasOptions: true, btnText: "View Sizes", options: [{ variant: "2mm", price: "" }, { variant: "3mm", price: "" }, { variant: "4mm", price: "" }, { variant: "5mm", price: "" }] }
         ];
 
-        // --- A1 PRODUCTS ---
         const a1Products = [
             { name: "Polish Brush (2 Inch)", price: "", desc: "High quality polish brush.", img: "a1_polish_brush_2inch.jpeg", brand: "A1" },
             { name: "111 Brush (3 Inch)", price: "", desc: "Premium painting brush.", img: "a1_111_brush_3inch.jpeg", brand: "A1" },
@@ -458,7 +300,6 @@
             { name: "Handy Roller (9 Inch)", price: "", desc: "Limited Stock: Only 5 Left!", img: "a1_handy_roller_9inch.jpeg", brand: "A1" }
         ];
 
-        // --- NEROFIX PRODUCTS ---
         const nerofixProducts = [
             { name: "Turbofix PU 104 (25L)", price: "", desc: "High-performance wood adhesive.", img: "nerofix_turbofix_pu104_25l.jpeg", brand: "Nerofix" },
             { name: "Turbofix PU 301 (30kg)", price: "", desc: "Industrial grade adhesive.", img: "nerofix_turbofix_pu301_30kg.jpeg", brand: "Nerofix" },
@@ -466,13 +307,11 @@
             { name: "Turbocure H2 Hardner (1kg)", price: "", desc: "Hardener for PU 301.", img: "nerofix_turbocure_h2_1kg.jpeg", brand: "Nerofix" }
         ];
 
-        // --- ESDEE PRODUCTS ---
         const esdeeProducts = [
             { name: "Melamine Glossy Clear (20L)", price: "", desc: "High gloss clear finish.", img: "esdee_melamine_glossy_20l.jpeg", brand: "Esdee" },
             { name: "Sanding Sealer (20L)", price: "", desc: "Base coat for wood finishing.", img: "esdee_sanding_sealer_20l.jpeg", brand: "Esdee" }
         ];
 
-        // --- JUBILANT PRODUCTS ---
         const jubilantProducts = [
             { name: "Fast-X (5 Litre)", price: "", desc: "Fast setting adhesive.", img: "jubilant_fastx_5l.jpeg", brand: "Jubilant" },
             { name: "PVC Xtra (5 Kg)", price: "Out of Stock", isOutOfStock: true, desc: "Premium quality adhesive.", img: "jubilant_pvc_xtra_5kg.jpeg", brand: "Jubilant" },
@@ -482,15 +321,8 @@
             { name: "WGP 990 (50 Kg)", price: "", desc: "Premium wood adhesive.", img: "jubilant_wgp_990_50kg.jpeg", brand: "Jubilant" }
         ];
 
-        // --- ABRO WITH PDF ---
         const abroProducts = [
-            { 
-                name: "Abro Spray Paints (400ml)", price: "115 - 150", 
-                desc: "Quick drying high quality spray paint.", img: "abro_spray_group.jpeg", 
-                brand: "ABRO",
-                pdf: "catalogs/abro_spray_chart.pdf", 
-                btnText: "View Available Colours"
-            },
+            { name: "Abro Spray Paints (400ml)", price: "115 - 150", desc: "Quick drying high quality spray paint.", img: "abro_spray_group.jpeg", brand: "ABRO", pdf: "catalogs/abro_spray_chart.pdf", btnText: "View Available Colours" },
             { name: "Abro Packing Tapes (BOPP)", price: "", desc: "High adhesion BOPP Tapes.", img: "abro_pack_group.jpeg", hasOptions: true, btnText: "View Sizes & Types", brand: "ABRO", options: [{ variant: "2 Inch Clear", price: "" }, { variant: "2 Inch Brown", price: "" }, { variant: "3 Inch Clear", price: "" }, { variant: "3 Inch Brown", price: "" }] },
             { name: "Abro Telescopic Runners", price: "", desc: "Heavy duty drawer slides.", img: "abro_runner_group.jpeg", hasOptions: true, btnText: "View Weight Capacity", brand: "ABRO", options: [{ variant: "35 Kg Capacity", price: "" }, { variant: "45 Kg Capacity", price: "" }] },
             { name: "Abro 3123 Masking Tape", price: "115", desc: "Available sizes: 1\", 2\", 1/2\", 3/4\", 1.5\"", img: "abro_3123.jpeg", brand: "ABRO" },
@@ -527,6 +359,51 @@
             { name: "Abro Weather 9895 Sealant", price: "", desc: "Weatherproof silicone sealant", img: "abro_weather_9895.jpeg", brand: "ABRO" }
         ];
 
+        const bostikProducts = [
+            { 
+                name: "Bostik Anchor Grout (1kg)", price: "Out of Stock", isOutOfStock: true,
+                desc: "High strength polyester anchoring grout.", img: "bostik_anchor_grout.jpeg", brand: "BOSTIK",
+                video: "videos/bostik_anchor_grout.mp4" 
+            },
+            { name: "Bostik Base & Hardner (0.3 Kg)", price: "", desc: "Epoxy base and hardener for construction.", img: "bostik_base_hardner_0.3kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Base & Hardner (1.5 Kg)", price: "", desc: "Epoxy base and hardener for construction.", img: "bostik_base_hardner_1.5kg.jpeg", brand: "BOSTIK" },
+            { name: "Boscocem 475 (1 Litre)", price: "", desc: "Waterproofing liquid additive & bonding agent.", img: "bostik_475_1l.jpeg", brand: "BOSTIK" },
+            { name: "Boscocem 475 (5 Litre)", price: "", desc: "Waterproofing liquid additive & bonding agent.", img: "bostik_475_5l.jpeg", brand: "BOSTIK" },
+            { name: "Boscocem 475 (20 Litre)", price: "", desc: "Waterproofing liquid additive & bonding agent.", img: "bostik_475_20l.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Two in One (1 Litre)", price: "", desc: "Multipurpose waterproofing coating & bonding agent.", img: "bostik_two_in_one_1l.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Two in One (5 Litre)", price: "", desc: "Multipurpose waterproofing coating & bonding agent.", img: "bostik_two_in_one_5l.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Two in One (20 Litre)", price: "", desc: "Multipurpose waterproofing coating & bonding agent.", img: "bostik_two_in_one_20l.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Crack Filler (1 Kg)", price: "", desc: "For repairing cracks in plaster and masonry.", img: "bostik_crack_filler_1kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Crack Filler (5 Kg)", price: "", desc: "For repairing cracks in plaster and masonry.", img: "bostik_crack_filler_5kg.jpeg", brand: "BOSTIK" },
+            { name: "Efflorescence Coat (1 Litre)", price: "", desc: "Prevents salt formation on bricks and stones.", img: "bostik_efflorescence_1l.jpeg", brand: "BOSTIK" },
+            { name: "Efflorescence Coat (5 Litre)", price: "", desc: "Prevents salt formation on bricks and stones.", img: "bostik_efflorescence_5l.jpeg", brand: "BOSTIK" },
+            { name: "Efflorescence Coat (20 Litre)", price: "", desc: "Prevents salt formation on bricks and stones.", img: "bostik_efflorescence_20l.jpeg", brand: "BOSTIK" },
+            { name: "Elastocoat Waterproofing (5 Litre)", price: "", desc: "Available Colours: Terracotta, White.", img: "bostik_elastocoat_5l.jpeg", brand: "BOSTIK" },
+            { name: "Elastocoat Waterproofing (20 Litre)", price: "", desc: "Available Colours: Lite Grey, Terracotta, White.", img: "bostik_elastocoat_20l.jpeg", brand: "BOSTIK" },
+            { name: "EP-Bond (1kg)", price: "", desc: "Concrete bonding agent.", img: "bostik_ep_bond.jpeg", brand: "BOSTIK" },
+            { name: "Fill A Gap (1kg)", price: "", desc: "Acrylic sealant for gap filling.", img: "bostik_fill_a_gap.jpeg", brand: "BOSTIK" },
+            { name: "Epoxy Filler (Multi Colours)", price: "", desc: "Stain-free epoxy tile joint filler.", img: "bostik_epoxy_filler.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Available Colours", options: [{ variant: "Charcoal", price: "" }, { variant: "Golden Brown", price: "" }, { variant: "Ivory", price: "" }, { variant: "Neutral Grey", price: "" }, { variant: "Silver Grey", price: "" }, { variant: "White", price: "" }] },
+            { name: "Bostik Fixall Grey (5 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_5kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Fixall Grey (10 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_10kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Fixall Grey (20 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_20kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Fixall Grey (30 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_30kg.jpeg", brand: "BOSTIK" },
+            { name: "Super Fixall White (30kg)", price: "", desc: "White tile adhesive for marble/glass blocks.", img: "bostik_fixall_white.jpeg", brand: "BOSTIK" },
+            { name: "Super Fixall Grey (30kg)", price: "", desc: "High strength premium tile adhesive.", img: "bostik_super_fixall.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Tile Grout (1kg)", price: "", desc: "Cementitious tile joint filler.", img: "bostik_normal_grout.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Colours", options: [{ variant: "Ivory", price: "" }, { variant: "White", price: "" }] },
+            { name: "Bostik LW (1 Litre)", price: "", desc: "Integral waterproofing compound for concrete.", img: "bostik_lw.jpeg", brand: "BOSTIK" },
+            { name: "Moisture Seal (1kg)", price: "", desc: "Water barrier coating.", img: "bostik_moisture_seal.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Patchfix (30kg)", price: "", desc: "Non-shrink repair mortar.", img: "bostik_patchfix.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Plugleak (1kg)", price: "", desc: "Instant leak plugging compound.", img: "bostik_plugleak.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Plugleak (5kg)", price: "", desc: "Instant leak plugging compound.", img: "bostik_plugleak_5kg.jpeg", brand: "BOSTIK" },
+            { name: "PUD Mix (20 Litre)", price: "", desc: "Waterproofing admixture.", img: "bostik_pud_mix.jpeg", brand: "BOSTIK" },
+            { name: "Bostik UW Blue (5kg)", price: "", desc: "Underwater bonding agent/grout.", img: "bostik_uw_blue.jpeg", brand: "BOSTIK" },
+            { name: "Bostik ZRP (1kg)", price: "", desc: "Zinc Rich Primer for corrosion protection.", img: "bostik_zrp.jpeg", brand: "BOSTIK" },
+            { name: "Block P530 Boscoseal PU-D (20kg)", price: "", desc: "Waterproofing membrane.", img: "bostik_block_p530_20kg.jpeg", brand: "BOSTIK" }
+        ];
+
+        let brandDataScope = []; 
+        let displayedProducts = []; 
+
         function renderGrid(productsList) {
             const gridElement = document.getElementById("productGrid");
             gridElement.innerHTML = "";
@@ -548,7 +425,6 @@
                         optionsButton = `<button class="view-options-btn" onclick="openOptionsModal(${index})"><span class="material-icons" style="font-size:16px;">list</span> ${product.btnText}</button>`;
                     }
 
-                    // INFO BUTTON LOGIC
                     let infoButton = '';
                     if (product.details) {
                         infoButton = `<button class="info-btn" onclick="openInfoModal(${index})"><span class="material-icons" style="font-size:16px;">info</span> Product Info</button>`;
@@ -559,7 +435,6 @@
                         videoButton = `<button class="video-btn" onclick="openVideoModal('${product.video}')"><span class="material-icons" style="font-size:18px;">play_circle_outline</span> Watch Demo</button>`;
                     }
 
-                    // FOLDER SELECTION LOGIC
                     let imgFolder = "images"; 
                     if(product.brand === "A1" || product.brand === "ABRO") {
                         imgFolder = "images2"; 
