@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <meta name="theme-color" content="#ffffff">
     
     <title>Rockfort Agencies | Premium Construction Chemicals</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -19,6 +21,7 @@
             --out-stock: #d93025;
             --video-color: #c5221f;
             --info-color: #5f6368;
+            --whatsapp-green: #25d366;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
@@ -101,6 +104,7 @@
         .buy-now-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: white; color: var(--google-blue); border: 1px solid var(--google-blue); text-decoration: none; padding: 10px; border-radius: 6px; font-weight: 500; transition: 0.2s; margin-top: 10px; }
         .buy-now-btn:hover { background: #e8f0fe; }
         
+        /* Buttons Styling */
         .view-options-btn { width: 100%; padding: 8px; background-color: #f1f3f4; border: none; border-radius: 4px; color: #202124; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 8px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; text-decoration: none; }
         .view-options-btn:hover { background-color: #e8eaed; color: var(--google-blue); }
         
@@ -109,6 +113,31 @@
         
         .info-btn { width: 100%; padding: 8px; background-color: white; border: 1px solid #dfe1e5; border-radius: 4px; color: #1a73e8; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 10px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; }
         .info-btn:hover { background-color: #f8f9fa; border-color: #1a73e8; }
+
+        /* --- FLOATING BUTTONS --- */
+        .whatsapp-float {
+            position: fixed; bottom: 20px; right: 20px;
+            background: #25d366; color: white;
+            border-radius: 50%; width: 60px; height: 60px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 5000;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.4); }
+
+        .back-to-top {
+            position: fixed; bottom: 90px; right: 25px; 
+            background: var(--google-grey); color: white;
+            border: none;
+            border-radius: 50%; width: 50px; height: 50px;
+            display: none; 
+            align-items: center; justify-content: center;
+            cursor: pointer; z-index: 4999;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        .back-to-top:hover { background-color: var(--google-blue); transform: translateY(-3px); }
 
         /* --- POPUP MODAL --- */
         .modal-window { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
@@ -130,6 +159,8 @@
         .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         footer { background: #f8f9fa; padding: 50px 20px; text-align: center; border-top: 1px solid var(--border-color); }
+        .footer-link { color: var(--google-grey); text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px; }
+        .footer-link:hover { color: var(--google-blue); }
         
         @media (max-width: 600px) {
             .logo { font-size: 20px; } 
@@ -160,6 +191,14 @@
     <div id="optionsModal" class="modal-window"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle">Available Options</h3><span class="close-modal" onclick="closeModal()">&times;</span></div><div class="modal-body" id="modalList"></div></div></div>
     <div id="infoModal" class="modal-window"><div class="modal-content"><div class="modal-header"><h3 id="infoTitle">Product Information</h3><span class="close-modal" onclick="closeInfoModal()">&times;</span></div><div class="modal-body" id="infoBody"></div></div></div>
     <div id="videoModal" class="modal-window"><div class="modal-content" style="overflow: hidden; max-width: 700px;"><div class="modal-header"><h3>Product Demo</h3><span class="close-modal" onclick="closeVideoModal()">&times;</span></div><div class="video-container"><video id="productVideo" controls><source src="" type="video/mp4">Your browser does not support the video tag.</video></div></div></div>
+
+    <a href="https://wa.me/919790345300" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.506-.669-.516-.173-.009-.371-.009-.57-.009-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+    <button onclick="scrollToTop()" id="backToTopBtn" class="back-to-top">
+        <span class="material-icons">arrow_upward</span>
+    </button>
 
     <nav>
         <div class="nav-left">
@@ -196,8 +235,9 @@
 
     <footer>
         <p style="font-size: 18px; font-weight: 500; color: #202124; margin-bottom: 10px;">Rockfort Agencies</p>
-        <p style="color: var(--google-grey); margin-bottom: 20px;">Wholesale & Retail Suppliers | Tiruchirappalli</p>
+        <p style="color: var(--google-grey); margin-bottom: 10px;">Wholesale & Retail Suppliers | Tiruchirappalli</p>
         <p style="color: var(--google-blue);">+91 97903 45300</p>
+        <a href="mailto:rockkfortagencies@gmail.com" class="footer-link"><span class="material-icons" style="font-size:16px;">email</span> rockkfortagencies@gmail.com</a>
         <div style="margin-top: 30px; font-size: 12px; color: #bdc1c6;">&copy; Copyright 2026 Naveennivas Sivakumar. All rights reserved.</div>
     </footer>
 
@@ -207,6 +247,16 @@
         function closeModal() { document.getElementById("optionsModal").style.display = "none"; }
         function closeInfoModal() { document.getElementById("infoModal").style.display = "none"; }
         function closeVideoModal() { document.getElementById("videoModal").style.display = "none"; document.getElementById("productVideo").pause(); }
+
+        // Back to Top Scroll Logic
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                document.getElementById("backToTopBtn").style.display = "flex";
+            } else {
+                document.getElementById("backToTopBtn").style.display = "none";
+            }
+        };
+        function scrollToTop() { window.scrollTo({top: 0, behavior: 'smooth'}); }
 
         function openOptionsModal(index) {
             const product = displayedProducts[index];
@@ -509,6 +559,7 @@
             renderGrid(filteredItems);
         }
 
+        // Initialize All Products on Page Load
         window.onload = function() { loadBrand('All Products'); };
     </script>
 
