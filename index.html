@@ -467,7 +467,7 @@
 
         const itzuProducts = [
             { name: "Rollify 2 Inch", img: "itzu_rollify_2inch.jpeg", brand: "Itzu", desc: "Mini paint roller for trims." },
-            { name: "Jumbo Roller (Exterior) 9 Inch", img: "itzu_jumbo_roller_exterior_9inch.jpeg", brand: "Itzu", desc: "Heavy duty exterior roller." },
+            { name: "Jumbo Roller (Exterior) 9 Inch", img: "itzu_jumbo_roller_exterior_9inch.jpeg", brand: "Itzu", desc: "Heavy-duty roller for rough exterior walls." },
             { name: "Rollify Roller 6 Inch", img: "itzu_rollify_roller_6inch.jpeg", brand: "Itzu", desc: "Mid-size roller for doors and panels." },
             { name: "Pilot Roller 9 Inch", img: "itzu_pilot_roller_9inch.jpeg", brand: "Itzu", desc: "Professional roller for emulsion paints." },
             { name: "Jumbo Roller (Ragging) 9 Inch", img: "itzu_jumbo_roller_ragging_9inch.jpeg", brand: "Itzu", desc: "For textured ragging finish." },
@@ -544,8 +544,8 @@
             { name: "Abro PU Foam (750ml)", desc: "Expanding foam for filling large gaps.", img: "abro_pu_750.jpeg", brand: "ABRO" },
             { name: "Abro PU Foam (450ml)", desc: "Gap filler for windows and ACs.", img: "abro_pu_450.jpeg", brand: "ABRO" },
             { name: "Abro Insulation Tape", desc: "PVC tape for electrical wires.", img: "abro_insulation.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Colors", options: [{ variant: "Red", price: "" }, { variant: "Blue", price: "" }, { variant: "Green", price: "" }, { variant: "Yellow", price: "" }, { variant: "White", price: "" }, { variant: "Black", price: "" }] },
-            { name: "Abro Acrybond Sealant (280ml)", desc: "Paintable gap filler for walls.", img: "abro_acrybond.jpeg", brand: "ABRO" },
-            { name: "Abro Grinding Wheel", desc: "Wheel for smoothing metal edges.", img: "abro_grinding.jpeg", brand: "ABRO" },
+            { name: "Abro Acrybond Sealant (280ml)", desc: "Paintable acrylic sealant", img: "abro_acrybond.jpeg", brand: "ABRO" },
+            { name: "Abro Grinding Wheel", desc: "Metal grinding disc", img: "abro_grinding.jpeg", brand: "ABRO" },
             { name: "Abro Shuttering Tape", desc: "Prevents concrete slurry leakage.", img: "abro_shuttering.jpeg", brand: "ABRO" },
             { name: "Abro Weather 9895 Sealant", desc: "Exterior neutral silicone sealant.", img: "abro_weather_9895.jpeg", brand: "ABRO" }
         ];
@@ -566,7 +566,7 @@
             { name: "Efflorescence Coat (20 Litre)", desc: "Bulk salt protector.", img: "bostik_efflorescence_20l.jpeg", brand: "BOSTIK" },
             { name: "Elastocoat Waterproofing (5 Litre)", desc: "High performance roof waterproofing paint.", img: "bostik_elastocoat_5l.jpeg", brand: "BOSTIK" },
             { name: "Elastocoat Waterproofing (20 Litre)", desc: "Protective coating for terraces.", img: "bostik_elastocoat_20l.jpeg", brand: "BOSTIK" },
-            { name: "EP-Bond (1kg)", desc: "Epoxy for joining old to new concrete.", img: "bostik_ep_bond.jpeg", brand: "BOSTIK" },
+            { name: "EP-Bond (1kg)", desc: "Concrete bonding agent.", img: "bostik_ep_bond.jpeg", brand: "BOSTIK" },
             { name: "Fill A Gap (1kg)", desc: "Acrylic sealant for door frames.", img: "bostik_fill_a_gap.jpeg", brand: "BOSTIK" },
             { name: "Epoxy Filler (Multi Colours)", desc: "Stain-resistant epoxy for tile joints.", img: "bostik_epoxy_filler.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Available Colours", options: [{ variant: "Charcoal", price: "" }, { variant: "Golden Brown", price: "" }, { variant: "Ivory", price: "" }, { variant: "Neutral Grey", price: "" }, { variant: "Silver Grey", price: "" }, { variant: "White", price: "" }] },
             { name: "Bostik Fixall Grey (5 Kg)", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_5kg.jpeg", brand: "BOSTIK" },
@@ -578,7 +578,7 @@
             { name: "Bostik Tile Grout (1kg)", desc: "Cementitious tile joint filler.", img: "bostik_normal_grout.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Colours", options: [{ variant: "Ivory", price: "" }, { variant: "White", price: "Out of Stock" }] },
             { name: "Bostik LW (1 Litre)", desc: "Integral waterproofing compound for concrete.", img: "bostik_lw.jpeg", brand: "BOSTIK" },
             { name: "Moisture Seal (1kg)", desc: "Water barrier coating.", img: "bostik_moisture_seal.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Patchfix (30kg)", price: "Out of Stock", isOutOfStock: true, desc: "Non-shrink repair mortar.", img: "bostik_patchfix.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Patchfix (30kg)", isOutOfStock: true, desc: "Non-shrink repair mortar.", img: "bostik_patchfix.jpeg", brand: "BOSTIK" },
             { name: "Bostik Plugleak (1kg)", desc: "Instant leak plugging compound.", img: "bostik_plugleak.jpeg", brand: "BOSTIK" },
             { name: "Bostik Plugleak (5kg)", desc: "Instant leak plugging compound.", img: "bostik_plugleak_5kg.jpeg", brand: "BOSTIK" },
             { name: "Bostik UW Blue (5kg)", desc: "Underwater bonding agent/grout.", img: "bostik_uw_blue.jpeg", brand: "BOSTIK" },
@@ -678,6 +678,15 @@
                     let shareText = `*Product Check:* ${product.name}\n*Details:* ${product.desc}`;
                     let shareLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
 
+                    // --- PHONE NUMBER LOGIC ---
+                    let phoneNumber = "+919790345300"; // Default (Group 1: Bostik, Jubilant, Atul, Nerofix, Esdee)
+                    const brandLower = product.brand.toLowerCase();
+                    
+                    // Group 2 Check: Abro, Weber, Itzu, A1
+                    if (brandLower === 'abro' || brandLower === 'weber' || brandLower === 'itzu' || brandLower === 'a1') {
+                        phoneNumber = "+917092441687";
+                    }
+
                     let cardHTML = `
                         <div class="card">
                             ${badgeHtml}
@@ -693,7 +702,7 @@
                                 ${infoButton}
                                 ${videoButton}
                                 <div class="action-row">
-                                    <a href="tel:+919790345300" class="buy-now-btn"><span class="material-icons">call</span> CALL TO BUY</a>
+                                    <a href="tel:${phoneNumber}" class="buy-now-btn"><span class="material-icons">call</span> CALL TO BUY</a>
                                     <a href="${shareLink}" target="_blank" class="share-btn"><span class="material-icons">share</span></a>
                                 </div>
                             </div>
