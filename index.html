@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="images/logo.png">
     <meta name="theme-color" content="#ffffff">
     
-    <title>Rockfort Agencies | Premium Construction Chemicals</title>
+    <title>Rockfort Agencies | Wholesale Distributor</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
@@ -19,16 +19,17 @@
             --text-dark: #202124;
             --border-color: #dadce0;
             --out-stock: #d93025;
-            --video-color: #c5221f;
-            --info-color: #5f6368;
-            --whatsapp-green: #25d366;
+            --offer-color: #fbbc04;
+            --new-arrival: #34a853;
+            --best-seller: #ea4335;
+            --best-price: #9334e6;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
 
         body { 
             background-color: #ffffff;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f1f3f4' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3Cpath fill='%23e8eaed' fill-opacity='0.5' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f1f3f4' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3Cpath fill='%23e8eaed' fill-opacity='0.5' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/svg%3E");
             background-attachment: fixed;
             background-size: cover;
             background-position: bottom;
@@ -48,7 +49,7 @@
         .logo { font-size: 22px; font-weight: 500; color: var(--google-grey); white-space: nowrap; }
         .logo b { color: var(--google-blue); font-weight: 700; }
 
-        /* --- MAGIC SEARCH ICON --- */
+        /* --- Search --- */
         .nav-search-container { position: relative; width: 40px; height: 40px; background: #f1f3f4; border-radius: 50px; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); overflow: hidden; display: flex; align-items: center; border: 1px solid transparent; }
         .nav-search-container:hover, .nav-search-container:focus-within { width: 220px; background: #ffffff; border-color: #dadce0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .nav-search-input { width: 100%; height: 100%; padding: 0 15px 0 45px; background: transparent; border: none; font-size: 14px; color: var(--text-dark); outline: none; cursor: pointer; }
@@ -89,53 +90,108 @@
         .no-results { grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--google-grey); font-size: 16px; }
 
         /* --- Card Design --- */
-        .card { background: white; border: 1px solid var(--border-color); border-radius: 12px; transition: 0.3s; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.04); }
-        .card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.1); transform: translateY(-5px); border-color: transparent; }
-        .card-img { height: 200px; background: white; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f1f3f4; padding: 10px; position: relative; }
-        .card-content { padding: 20px; flex-grow: 1; }
+        .card { 
+            background: white; border: 1px solid var(--border-color); border-radius: 8px; 
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+            overflow: hidden; display: flex; flex-direction: column; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            position: relative;
+        }
+        .card:hover { 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12); 
+            transform: translateY(-5px); 
+            border-color: transparent; 
+        }
+        
+        .card-img { 
+            height: 200px; background: white; 
+            display: flex; align-items: center; justify-content: center; 
+            border-bottom: 1px solid #f1f3f4; padding: 15px; 
+            position: relative; overflow: hidden;
+        }
+        .card-img img {
+            transition: transform 0.4s ease;
+        }
+        .card:hover .card-img img {
+            transform: scale(1.08);
+        }
+
+        .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
         .category { font-size: 11px; font-weight: 700; color: var(--google-blue); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
         .material-name { font-size: 18px; font-weight: 500; margin-bottom: 8px; color: #3c4043; line-height: 1.4; }
-        .product-desc { font-size: 13px; color: #5f6368; margin-bottom: 15px; font-weight: 400; line-height: 1.5; min-height: 20px; }
-        .price-box { margin-bottom: 15px; }
-        .price-label { font-size: 12px; color: var(--google-grey); }
-        .price { font-size: 24px; font-weight: 700; color: #202124; }
-        .no-price { font-size: 18px; color: var(--google-blue); font-weight: 500; }
-        .out-of-stock { font-size: 18px; color: var(--out-stock); font-weight: 700; }
-        .buy-now-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: white; color: var(--google-blue); border: 1px solid var(--google-blue); text-decoration: none; padding: 10px; border-radius: 6px; font-weight: 500; transition: 0.2s; margin-top: 10px; }
-        .buy-now-btn:hover { background: #e8f0fe; }
+        .product-desc { font-size: 13px; color: #5f6368; margin-bottom: 20px; font-weight: 400; line-height: 1.5; min-height: 40px; flex-grow: 1; }
         
-        /* Buttons Styling */
-        .view-options-btn { width: 100%; padding: 8px; background-color: #f1f3f4; border: none; border-radius: 4px; color: #202124; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 8px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; text-decoration: none; }
-        .view-options-btn:hover { background-color: #e8eaed; color: var(--google-blue); }
+        /* Ribbons */
+        .ribbon {
+            position: absolute; top: 12px; left: 0;
+            padding: 4px 10px; font-size: 11px; font-weight: 700; color: white;
+            text-transform: uppercase; border-top-right-radius: 4px; border-bottom-right-radius: 4px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2); z-index: 10;
+        }
+        .ribbon.new { background-color: var(--new-arrival); }
+        .ribbon.best { background-color: var(--best-seller); }
+        .ribbon.offer { background-color: var(--offer-color); color: #202124; }
+        .ribbon.price { background-color: var(--best-price); }
+
+        .out-of-stock-label { font-size: 14px; color: var(--out-stock); font-weight: 700; display: block; margin-bottom: 10px; text-align: center; }
         
-        .video-btn { width: 100%; padding: 8px; background-color: white; border: 1px solid var(--video-color); border-radius: 4px; color: var(--video-color); font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 10px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; }
+        /* Action Buttons Container */
+        .action-row { display: flex; gap: 10px; margin-top: auto; }
+
+        /* SQUARY PROFESSIONAL BUY BUTTON */
+        .buy-now-btn { 
+            flex-grow: 1;
+            display: flex; align-items: center; justify-content: center; gap: 8px; 
+            background-color: var(--google-blue); 
+            color: white; border: none; 
+            text-decoration: none; padding: 12px 20px; 
+            border-radius: 6px; 
+            font-weight: 500; font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .buy-now-btn:hover { 
+            background-color: var(--google-dark-blue); 
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        /* SHARE BUTTON (SQUARY TO MATCH) */
+        .share-btn {
+            width: 45px; 
+            display: flex; align-items: center; justify-content: center;
+            background: #f1f3f4; color: var(--google-grey);
+            border-radius: 6px; border: 1px solid #dadce0;
+            cursor: pointer; transition: all 0.2s;
+            text-decoration: none;
+        }
+        .share-btn:hover { background: #25d366; color: white; border-color: #25d366; }
+        
+        /* Options & Info Buttons */
+        .view-options-btn { width: 100%; padding: 8px; background-color: #f8f9fa; border: 1px solid #dadce0; border-radius: 6px; color: #202124; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 8px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; text-decoration: none; }
+        .view-options-btn:hover { background-color: #e8f0fe; color: var(--google-blue); border-color: var(--google-blue); }
+        
+        .video-btn { width: 100%; padding: 8px; background-color: white; border: 1px solid var(--video-color); border-radius: 6px; color: var(--video-color); font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 10px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; }
         .video-btn:hover { background-color: #fce8e6; }
         
-        .info-btn { width: 100%; padding: 8px; background-color: white; border: 1px solid #dfe1e5; border-radius: 4px; color: #1a73e8; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 10px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; }
+        .info-btn { width: 100%; padding: 8px; background-color: white; border: 1px solid #dfe1e5; border-radius: 6px; color: #1a73e8; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 10px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; }
         .info-btn:hover { background-color: #f8f9fa; border-color: #1a73e8; }
 
         /* --- FLOATING BUTTONS --- */
+        .floating-container { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 5000; align-items: flex-end; }
         .whatsapp-float {
-            position: fixed; bottom: 20px; right: 20px;
-            background: #25d366; color: white;
-            border-radius: 50%; width: 60px; height: 60px;
+            background: #25d366; color: white; border-radius: 50%; width: 60px; height: 60px;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 5000;
-            transition: 0.3s;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2); transition: 0.3s;
             text-decoration: none;
         }
         .whatsapp-float:hover { transform: scale(1.1); box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.4); }
 
         .back-to-top {
-            position: fixed; bottom: 90px; right: 25px; 
-            background: var(--google-grey); color: white;
-            border: none;
-            border-radius: 50%; width: 50px; height: 50px;
-            display: none; 
-            align-items: center; justify-content: center;
-            cursor: pointer; z-index: 4999;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            transition: 0.3s;
+            background: var(--google-grey); color: white; border-radius: 50%; width: 50px; height: 50px;
+            display: none; align-items: center; justify-content: center; border: none; cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: 0.3s;
         }
         .back-to-top:hover { background-color: var(--google-blue); transform: translateY(-3px); }
 
@@ -153,14 +209,28 @@
         .modal-list-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f1f3f4; }
         .modal-list-item:last-child { border-bottom: none; }
         .item-name { font-weight: 500; color: #3c4043; }
-        .item-price { font-weight: 700; color: var(--google-blue); }
-        .contact-price { font-size: 13px; color: var(--google-grey); font-weight: 500; }
+        .out-stock-text { color: var(--out-stock); font-weight: 700; font-size: 13px; }
         .video-container { position: relative; width: 100%; padding-top: 56.25%; background: black; }
         .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        footer { background: #f8f9fa; padding: 50px 20px; text-align: center; border-top: 1px solid var(--border-color); }
-        .footer-link { color: var(--google-grey); text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px; }
-        .footer-link:hover { color: var(--google-blue); }
+        /* --- DARK FOOTER & DEV BUTTON --- */
+        footer { background: #202124; padding: 60px 20px; text-align: center; color: white; border-top: 5px solid var(--google-blue); }
+        .footer-title { font-size: 20px; font-weight: 500; margin-bottom: 10px; color: white; }
+        .footer-subtitle { color: #9aa0a6; margin-bottom: 20px; font-size: 14px; }
+        .footer-contact { color: #8ab4f8; font-size: 16px; font-weight: 500; margin-bottom: 10px; display: block; text-decoration: none;}
+        .footer-email { color: #9aa0a6; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px; transition: 0.2s; }
+        .footer-email:hover { color: #fff; }
+        .copyright { margin-top: 40px; font-size: 12px; color: #ffffff; border-top: 1px solid #3c4043; padding-top: 20px; } /* COLOR CHANGED TO WHITE */
+        
+        .developer-btn {
+            display: inline-block; margin-top: 15px; padding: 8px 16px;
+            background: rgba(255,255,255,0.1); color: #9aa0a6;
+            border: 1px solid #5f6368; border-radius: 20px;
+            font-size: 11px; text-decoration: none; letter-spacing: 0.5px;
+            transition: all 0.3s; cursor: pointer;
+        }
+        .developer-btn:hover { background: white; color: #202124; border-color: white; }
+
         
         @media (max-width: 600px) {
             .logo { font-size: 20px; } 
@@ -191,22 +261,42 @@
     <div id="optionsModal" class="modal-window"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle">Available Options</h3><span class="close-modal" onclick="closeModal()">&times;</span></div><div class="modal-body" id="modalList"></div></div></div>
     <div id="infoModal" class="modal-window"><div class="modal-content"><div class="modal-header"><h3 id="infoTitle">Product Information</h3><span class="close-modal" onclick="closeInfoModal()">&times;</span></div><div class="modal-body" id="infoBody"></div></div></div>
     <div id="videoModal" class="modal-window"><div class="modal-content" style="overflow: hidden; max-width: 700px;"><div class="modal-header"><h3>Product Demo</h3><span class="close-modal" onclick="closeVideoModal()">&times;</span></div><div class="video-container"><video id="productVideo" controls><source src="" type="video/mp4">Your browser does not support the video tag.</video></div></div></div>
+    
+    <div id="devModal" class="modal-window">
+        <div class="modal-content" style="text-align: center; padding: 40px 20px;">
+            <div class="modal-header" style="justify-content: center; border:none; padding-bottom:0;">
+                <span class="material-icons" style="font-size: 48px; color: var(--google-blue);">code</span>
+            </div>
+            <h3 style="font-size: 22px; margin: 10px 0;">Developer Contact</h3>
+            <p style="color: #5f6368; margin-bottom: 20px;">Designed & Developed by</p>
+            <h2 style="color: #202124; margin-bottom: 10px;">Naveen Nivas S</h2>
+            <p style="margin-bottom: 5px;"><strong>Contact:</strong> +91 94893 30306</p>
+            <p style="margin-bottom: 20px;"><strong>Email:</strong> naveennivas09@gmail.com</p>
+            <button onclick="document.getElementById('devModal').style.display='none'" class="buy-now-btn" style="width: auto; padding: 10px 30px;">Close</button>
+        </div>
+    </div>
 
-    <a href="https://wa.me/919790345300" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.506-.669-.516-.173-.009-.371-.009-.57-.009-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-    </a>
-
-    <button onclick="scrollToTop()" id="backToTopBtn" class="back-to-top">
-        <span class="material-icons">arrow_upward</span>
-    </button>
+    <div class="floating-container">
+        <button onclick="scrollToTop()" id="backToTopBtn" class="back-to-top">
+            <span class="material-icons">arrow_upward</span>
+        </button>
+        <a href="https://wa.me/919790345300" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.506-.669-.516-.173-.009-.371-.009-.57-.009-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        </a>
+    </div>
 
     <nav>
         <div class="nav-left">
-            <button class="menu-btn" onclick="openMenu()"><span class="material-icons" style="font-size: 28px;">menu</span></button>
+            <button class="menu-btn" onclick="openMenu()">
+                <span class="material-icons" style="font-size: 28px;">menu</span>
+            </button>
             <div class="logo">Rockfort <b>Agencies</b></div>
         </div>
         <div class="nav-right">
-            <div class="nav-search-container"><span class="material-icons nav-search-icon">search</span><input type="text" id="searchInput" class="nav-search-input" placeholder="Search..." onkeyup="filterProducts()"></div>
+            <div class="nav-search-container">
+                <span class="material-icons nav-search-icon">search</span>
+                <input type="text" id="searchInput" class="nav-search-input" placeholder="Search..." onkeyup="filterProducts()">
+            </div>
         </div>
     </nav>
 
@@ -216,12 +306,17 @@
             <h1 class="hero-title">Construction Chemicals, Adhesives & Sealants</h1>
             <p class="hero-subtitle">We are the leading suppliers of Tile Adhesives, Epoxy Grouts, Silicon Sealants, Waterproofing Solutions, and Industrial Tapes in Trichy.</p>
             <a href="tel:+919790345300" class="cta-button"><span class="material-icons">call</span> Get a Quote</a>
+            
             <div class="partners-row">
                 <span class="partners-label">Our Authorized Partners</span>
                 <div class="marquee-container">
                     <div class="marquee-track">
-                        <span class="brand-tag">Saint-Gobain (Weber)</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span><span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Nerofix</span><span class="brand-tag">Esdee</span>
-                        <span class="brand-tag">Saint-Gobain (Weber)</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span><span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Nerofix</span><span class="brand-tag">Esdee</span>
+                        <span class="brand-tag">Saint-Gobain (Weber)</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span>
+                        <span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Nerofix</span>
+                        <span class="brand-tag">Esdee</span>
+                        <span class="brand-tag">Saint-Gobain (Weber)</span><span class="brand-tag">Bostik</span><span class="brand-tag">Abro</span>
+                        <span class="brand-tag">Jubilant</span><span class="brand-tag">Atul</span><span class="brand-tag">Nerofix</span>
+                        <span class="brand-tag">Esdee</span>
                     </div>
                 </div>
             </div>
@@ -234,21 +329,69 @@
     </div>
 
     <footer>
-        <p style="font-size: 18px; font-weight: 500; color: #202124; margin-bottom: 10px;">Rockfort Agencies</p>
-        <p style="color: var(--google-grey); margin-bottom: 10px;">Wholesale & Retail Suppliers | Tiruchirappalli</p>
-        <p style="color: var(--google-blue);">+91 97903 45300</p>
-        <a href="mailto:rockkfortagencies@gmail.com" class="footer-link"><span class="material-icons" style="font-size:16px;">email</span> rockkfortagencies@gmail.com</a>
-        <div style="margin-top: 30px; font-size: 12px; color: #bdc1c6;">&copy; Copyright 2026 Naveennivas Sivakumar. All rights reserved.</div>
+        <p class="footer-title">Rockfort Agencies</p>
+        <p class="footer-subtitle">Wholesale & Retail Suppliers | Tiruchirappalli</p>
+        <a href="tel:+919790345300" class="footer-contact">+91 97903 45300</a>
+        <a href="mailto:rockkfortagencies@gmail.com" class="footer-email"><span class="material-icons" style="font-size:16px;">email</span> rockkfortagencies@gmail.com</a>
+        
+        <div class="copyright">&copy; Copyright 2026 Naveen Nivas Sivakumar. All rights reserved.</div>
+        <button onclick="document.getElementById('devModal').style.display='block'" class="developer-btn">
+            <span class="material-icons" style="font-size:12px; vertical-align:text-top; margin-right:4px;">code</span> Developer Details
+        </button>
     </footer>
 
     <script>
+        // GLOBAL FUNCTIONS (Must be outside)
         function openMenu() { document.getElementById("mySidebar").classList.add("open"); document.getElementById("myOverlay").classList.add("show"); }
         function closeMenu() { document.getElementById("mySidebar").classList.remove("open"); document.getElementById("myOverlay").classList.remove("show"); }
+
         function closeModal() { document.getElementById("optionsModal").style.display = "none"; }
         function closeInfoModal() { document.getElementById("infoModal").style.display = "none"; }
         function closeVideoModal() { document.getElementById("videoModal").style.display = "none"; document.getElementById("productVideo").pause(); }
 
-        // Back to Top Scroll Logic
+        function openOptionsModal(productIndex) {
+            const product = displayedProducts[productIndex];
+            const modalList = document.getElementById("modalList");
+            const modalTitle = document.getElementById("modalTitle");
+            modalTitle.innerText = product.name + " - Options";
+            modalList.innerHTML = ""; 
+            product.options.forEach(item => {
+                let priceHtml = "";
+                if (item.price === "Out of Stock") {
+                    priceHtml = `<span class="out-stock-text">Out of Stock</span>`;
+                }
+                modalList.innerHTML += `<div class="modal-list-item"><span class="item-name">${item.variant}</span>${priceHtml}</div>`;
+            });
+            document.getElementById("optionsModal").style.display = "block";
+        }
+
+        function openInfoModal(productIndex) {
+            const product = displayedProducts[productIndex];
+            const infoBody = document.getElementById("infoBody");
+            const infoTitle = document.getElementById("infoTitle");
+            infoTitle.innerText = product.name;
+            infoBody.innerHTML = product.details;
+            document.getElementById("infoModal").style.display = "block";
+        }
+
+        function openVideoModal(videoSrc) {
+            const modal = document.getElementById("videoModal");
+            const video = document.getElementById("productVideo");
+            video.src = videoSrc;
+            modal.style.display = "block";
+            video.play();
+        }
+
+        // Close on Outside Click
+        window.onclick = function(event) { 
+            if (event.target == document.getElementById("optionsModal")) closeModal(); 
+            if (event.target == document.getElementById("videoModal")) closeVideoModal();
+            if (event.target == document.getElementById("infoModal")) closeInfoModal();
+            if (event.target == document.getElementById("devModal")) document.getElementById('devModal').style.display = 'none';
+            if (event.target == document.getElementById("myOverlay")) closeMenu();
+        }
+
+        // Scroll to Top
         window.onscroll = function() {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 document.getElementById("backToTopBtn").style.display = "flex";
@@ -258,201 +401,239 @@
         };
         function scrollToTop() { window.scrollTo({top: 0, behavior: 'smooth'}); }
 
-        function openOptionsModal(index) {
-            const product = displayedProducts[index];
-            const list = document.getElementById("modalList");
-            document.getElementById("modalTitle").innerText = product.name + " - Options";
-            list.innerHTML = "";
-            product.options.forEach(item => {
-                let priceHtml = item.price ? `<span class="item-price">₹ ${item.price}</span>` : `<span class="contact-price">Contact for Rate</span>`;
-                list.innerHTML += `<div class="modal-list-item"><span class="item-name">${item.variant}</span>${priceHtml}</div>`;
-            });
-            document.getElementById("optionsModal").style.display = "block";
-        }
-
-        function openInfoModal(index) {
-            const product = displayedProducts[index];
-            document.getElementById("infoTitle").innerText = product.name;
-            document.getElementById("infoBody").innerHTML = product.details;
-            document.getElementById("infoModal").style.display = "block";
-        }
-
-        function openVideoModal(src) {
-            const v = document.getElementById("productVideo");
-            v.src = src;
-            document.getElementById("videoModal").style.display = "block";
-            v.play();
-        }
-
-        window.onclick = function(e) {
-            if (e.target == document.getElementById("optionsModal")) closeModal();
-            if (e.target == document.getElementById("videoModal")) closeVideoModal();
-            if (e.target == document.getElementById("infoModal")) closeInfoModal();
-            if (e.target == document.getElementById("myOverlay")) closeMenu();
-        }
-
         // --- DATA ARRAYS ---
+        let brandDataScope = []; 
+        let displayedProducts = []; 
+
         const atulProducts = [
-            { name: "Lacare AM 70", price: "", desc: "Multi-purpose maintenance spray.", img: "atul_lacare_am70.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "85g", price: "" }, { variant: "400g", price: "" }], details: `<strong>Description:</strong><br>Multi-purpose maintenance spray designed for preventive and corrective maintenance.<br><br><strong>Key Benefits:</strong><br>• Penetrates rust & loosens rusted nuts.<br>• Provides lubrication & removes stickiness.<br>• Displaces moisture & protects from corrosion.` },
-            { name: "Lapox Duratite (1.8 Kg)", price: "", desc: "Two-component, high strength epoxy adhesive.", img: "atul_lapox_duratite_1.8kg.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Solvent-less, high viscous, fast-curing epoxy adhesive.<br><br><strong>Technical Specs:</strong><br>• Viscosity: 50,000 - 60,000 mPas<br>• Pot Life: 75 - 90 mins` },
-            { name: "Lapox Lacrete", price: "", desc: "Epoxy-based waterproofing & grouting system.", img: "atul_lapox_lacrete.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1.5 Kg", price: "" }, { variant: "7.5 Kg", price: "" }, { variant: "45 Kg", price: "" }], details: `<strong>Description:</strong><br>Versatile epoxy system for waterproofing, grouting, and concrete repair.<br><br><strong>Applications:</strong><ul><li>Waterproofing of terraces, bathrooms</li><li>Anti-corrosive coating</li><li>Concrete bonding</li></ul>` },
-            { name: "Lapox Procoat (5 Litre)", price: "", desc: "PU Top Coat for protection.", img: "atul_lapox_procoat_5l.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Two-component Polyurethane protective coating.<br><br><strong>Key Benefits:</strong><br>• UV-resistant and durable finish.<br>• Glossy and decorative.` },
-            { name: "Lapox Rapid & Clear (1 Kg)", price: "", desc: "Fast setting clear epoxy adhesive.", img: "atul_lapox_rapid_clear_1kg.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Fast setting, multi-purpose epoxy system.<br><br><strong>Technical Specs:</strong><br>• Pot Life: 3 - 5 mins<br><br><strong>Applications:</strong><ul><li>Marble-to-marble bonding</li><li>Glass-to-glass bonding</li></ul>` },
-            { name: "Lapox Ultra (1.8 Kg)", price: "", desc: "Premium high strength epoxy adhesive.", img: "atul_lapox_ultra_1.8kg.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Premium, high strength, modified epoxy adhesive system.<br><br><strong>Key Benefits:</strong><br>• Solvent-free & odour-free.<br>• Water resistant & high bonding strength.` },
-            { name: "Lapox Ultrabond CPVC (100ml)", price: "", desc: "Solvent cement for CPVC pipes.", img: "atul_lapox_ultrabond_cpvc.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Formulated for joining CPVC pipes (up to 82°C).<br><br><strong>Key Benefits:</strong><br>• Fast-setting & High strength.<br>• Low VOC emissions.` },
-            { name: "Lapox Ultrabond UPVC (100ml)", price: "", desc: "Solvent cement for UPVC pipes.", img: "atul_lapox_ultrabond_upvc.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Solvent cement for joining UPVC pipes.<br><br><strong>Key Benefits:</strong><br>• Fast-setting & Strong waterproof joint.` },
-            { name: "Lapox Ultrabond PVC (100ml)", price: "", desc: "Heavy-duty solvent cement for PVC.", img: "atul_lapox_ultrabond_pvc.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Heavy-duty solvent cement for joining PVC pipes.<br><br><strong>Key Benefits:</strong><br>• Strong, waterproof and durable joints.` },
-            { name: "Lapox Ultra Fast", price: "", desc: "Instant adhesive.", img: "atul_lapox_ultra_fast.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "20g", price: "" }, { variant: "50g", price: "" }], details: `<strong>Description:</strong><br>Solvent-free, instant setting ethyl cyanoacrylate adhesive.<br><br><strong>Key Benefits:</strong><br>• Instant bonding using contact pressure.<br>• No clamping required.` },
-            { name: "Lapox Ultrafix (1.5 Kg)", price: "", desc: "High performance epoxy adhesive.", img: "atul_lapox_ultrafix_1.5kg.jpeg", brand: "Atul", details: `<strong>Description:</strong><br>Two-component, high performance, fast-setting epoxy adhesive.<br><br><strong>Key Benefits:</strong><br>• Superior Bond Strength.<br>• Rapid curing increases productivity.` },
-            { name: "Polygrip Hotbond", price: "", desc: "High heat resistant adhesive.", img: "atul_polygrip_botbond.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "200ml", price: "" }, { variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }, { variant: "2 Litre", price: "" }, { variant: "5 Litre", price: "" }], details: `<strong>Description:</strong><br>High heat resistant adhesive (up to 170°C).<br><br><strong>Applications:</strong><ul><li>High heat exposure areas</li><li>Laminates to ply</li><li>HVAC ducting</li></ul>` },
-            { name: "Polygrip MP 609", price: "", desc: "Multi-purpose adhesive.", img: "atul_polygrip_mp609.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }, { variant: "5 Litre", price: "" }], details: `<strong>Description:</strong><br>Multi-purpose adhesive suitable for bonding foam.<br><br><strong>Applications:</strong><ul><li>Carpet laying</li><li>Foam bonding</li><li>HVAC ducting</li></ul>` },
-            { name: "Polygrip Rapid", price: "", desc: "Fast setting adhesive.", img: "atul_polygrip_rapid.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "4.5 Litre", price: "" }, { variant: "30 Litre", price: "" }], details: `<strong>Description:</strong><br>Same high-performance qualities as Lapox Rapid & Clear in bulk packaging.` },
-            { name: "Polygrip S 709", price: "", desc: "Sprayable adhesive for HVAC.", img: "atul_polygrip_s709.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Litre", price: "" }, { variant: "5 Litre", price: "" }], details: `<strong>Description:</strong><br>Multi-purpose adhesive suitable for bonding substrates like canvas, foam, paper.<br><br><strong>Key Benefits:</strong><br>• Long tack retention time.<br>• Good coverage.` },
-            { name: "Polygrip SR 409", price: "", desc: "Fast-drying foam adhesive.", img: "atul_polygrip_sr409.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }], details: `<strong>Description:</strong><br>Light-coloured, fast-drying adhesive for foam-to-foam bonding.<br><br><strong>Key Benefits:</strong><br>• Fast-drying.<br>• Does not stain.` }
+            { name: "Lacare AM 70", img: "atul_lacare_am70.jpeg", brand: "Atul", desc: "Lubricates locks, loosens rusted nuts, and cleans spark plugs.", hasOptions: true, btnText: "View Sizes", options: [{ variant: "85g", price: "" }, { variant: "400g", price: "" }], details: "Multi-purpose spray for rust penetration, lubrication, and moisture displacement." },
+            { name: "Lapox Duratite (1.8 Kg)", img: "atul_lapox_duratite_1.8kg.jpeg", brand: "Atul", desc: "Heavy-duty epoxy for fixing granite, marble, and wood.", details: "Solvent-less, high viscous adhesive ideal for stone fixing and grouting steel railings." },
+            { name: "Lapox Lacrete", img: "atul_lapox_lacrete.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1.5 Kg", price: "" }, { variant: "7.5 Kg", price: "" }, { variant: "45 Kg", price: "" }], desc: "Waterproofing coating for terraces, bathrooms, and water tanks.", details: "Epoxy system for concrete bonding, waterproofing, and anti-corrosive coating." },
+            { name: "Lapox Procoat (5 Litre)", img: "atul_lapox_procoat_5l.jpeg", brand: "Atul", desc: "UV-resistant protective top coat for exterior surfaces.", details: "Polyurethane coating that provides a glossy, abrasion-resistant finish for rooftops." },
+            { name: "Lapox Rapid & Clear (1 Kg)", img: "atul_lapox_rapid_clear_1kg.jpeg", brand: "Atul", desc: "Fast-setting clear glue for glass, stone, and jewellery.", details: "Sets in 5 minutes. Transparent finish suitable for handicrafts and marble bonding." },
+            { name: "Lapox Ultra (1.8 Kg)", img: "atul_lapox_ultra_1.8kg.jpeg", brand: "Atul", desc: "Premium epoxy for high-strength stone and wood bonding.", details: "Water-resistant, solvent-free adhesive with high bonding strength." },
+            { name: "Lapox Ultrabond CPVC (100ml)", img: "atul_lapox_ultrabond_cpvc.jpeg", brand: "Atul", desc: "Solvent cement for joining hot & cold water CPVC pipes.", details: "Fast-setting solvent cement for high-temperature plumbing systems." },
+            { name: "Lapox Ultrabond UPVC (100ml)", img: "atul_lapox_ultrabond_upvc.jpeg", brand: "Atul", desc: "Adhesive for UPVC pipes in plumbing and irrigation.", details: "Creates strong waterproof joints for conduits and potable water pipes." },
+            { name: "Lapox Ultrabond PVC (100ml)", img: "atul_lapox_ultrabond_pvc.jpeg", brand: "Atul", desc: "Heavy-duty cement for PVC pipes and fittings.", details: "Ideal for agriculture and drainage systems." },
+            { name: "Lapox Ultra Fast", img: "atul_lapox_ultra_fast.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "20g", price: "" }, { variant: "50g", price: "" }], desc: "Instant glue for flex, plastic, rubber, and ceramic.", details: "One-drop instant adhesive. Bonds in seconds without clamping." },
+            { name: "Lapox Ultrafix (1.5 Kg)", img: "atul_lapox_ultrafix_1.5kg.jpeg", brand: "Atul", desc: "Fast-setting epoxy for vertical granite/marble cladding.", details: "High-performance adhesive that cures quickly, ideal for vertical applications." },
+            { name: "Polygrip Hotbond", img: "atul_polygrip_botbond.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "200ml", price: "" }, { variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }, { variant: "2 Litre", price: "" }, { variant: "5 Litre", price: "" }], desc: "Heat-resistant adhesive (170°C) for laminates and HVAC.", details: "Withstands high heat. Perfect for kitchen laminates and ductwork." },
+            { name: "Polygrip MP 609", img: "atul_polygrip_mp609.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }, { variant: "5 Litre", price: "" }], desc: "Rubber adhesive for foam, carpet, and upholstery.", details: "Multi-purpose adhesive for bonding foam to wood, metal, or cloth." },
+            { name: "Polygrip Rapid", img: "atul_polygrip_rapid.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "4.5 Litre", price: "" }, { variant: "30 Litre", price: "" }], desc: "Bulk epoxy adhesive for industrial stone bonding.", details: "Fast-setting epoxy in large packaging for commercial use." },
+            { name: "Polygrip S 709", img: "atul_polygrip_s709.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Litre", price: "" }, { variant: "5 Litre", price: "" }], desc: "Sprayable adhesive for HVAC duct insulation.", details: "Excellent coverage and tack retention for bonding insulation materials." },
+            { name: "Polygrip SR 409", img: "atul_polygrip_sr409.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }], desc: "Fast-drying adhesive for mattress and sofa manufacturing.", details: "Designed for foam-to-foam bonding. Does not stain." }
         ];
 
         const weberProducts = [
-            { name: "Weberdry ACR Seal (20L)", price: "", desc: "Waterproofing coating.", img: "weber_acr_seal_20l.jpeg", brand: "Weber", hasOptions: true, btnText: "View Colours", options: [{ variant: "Terracotta", price: "" }, { variant: "White", price: "" }] },
-            { name: "Weber Colorfine (1kg)", price: "", desc: "Colored joint filler.", img: "weber_colorfine_1kg.jpeg", brand: "Weber", hasOptions: true, btnText: "View Colours", options: [{ variant: "Alpine Blue", price: "" }, { variant: "Beige", price: "" }, { variant: "Chocolate", price: "" }, { variant: "Desert Dune", price: "" }, { variant: "Emerald", price: "" }, { variant: "Graphite", price: "" }, { variant: "Grey", price: "" }, { variant: "Ivory", price: "" }, { variant: "Jet Black", price: "" }, { variant: "Misty Grey", price: "" }, { variant: "Mushroom", price: "" }, { variant: "Oceanic Blue", price: "" }, { variant: "Pink", price: "" }, { variant: "Pista", price: "" }, { variant: "Terracotta", price: "" }, { variant: "Tropical Glory", price: "" }, { variant: "Tuscan White", price: "" }, { variant: "White", price: "" }] },
-            { name: "Weberwall Blockfix (40kg)", price: "", desc: "Thin joint block adhesive.", img: "weber_blockfix_40kg.jpeg", brand: "Weber" },
-            { name: "Weberklin Ceraplus (1L)", price: "", desc: "Tile cleaner.", img: "weber_klin_ceraplus_1l.jpeg", brand: "Weber" },
-            { name: "Weberset Classic", price: "", desc: "Tile adhesive.", img: "weber_set_classic.jpeg", brand: "Weber", hasOptions: true, btnText: "View Sizes", options: [{ variant: "20 Kg", price: "" }, { variant: "40 Kg", price: "" }] },
-            { name: "Webercolor SG Sanded Grout (10kg)", price: "", desc: "Sanded tile grout.", img: "weber_color_sg_10kg.jpeg", brand: "Weber" },
-            { name: "Webercolor Dewdrop (1kg)", price: "", desc: "Grout.", img: "weber_color_dewdrop_1kg.jpeg", brand: "Weber", hasOptions: true, btnText: "View Colours", options: [{ variant: "Misty Grey", price: "" }, { variant: "White", price: "" }] },
-            { name: "Weberset Firm (20kg)", price: "", desc: "Grey tile adhesive.", img: "weber_set_firm_20kg.jpeg", brand: "Weber" },
-            { name: "Weberset First White (40kg)", price: "", desc: "White tile adhesive.", img: "weber_set_first_white_40kg.jpeg", brand: "Weber" },
-            { name: "Groutadd (350ml)", price: "", desc: "Additive for colorfine grouts.", img: "weber_groutadd_350ml.jpeg", brand: "Weber" },
-            { name: "Weberset Nova (Grey)", price: "", desc: "Tile adhesive.", img: "weber_set_nova_grey.jpeg", brand: "Weber", hasOptions: true, btnText: "View Sizes", options: [{ variant: "20 Kg", price: "" }, { variant: "40 Kg", price: "" }] },
-            { name: "Weberset Nova (White 40kg)", price: "", desc: "White tile adhesive.", img: "weber_set_nova_white_40kg.jpeg", brand: "Weber" },
-            { name: "Weberset Plus White (20kg)", price: "", desc: "White tile adhesive.", img: "weber_set_plus_white_20kg.jpeg", brand: "Weber" },
-            { name: "Joint Poxyfill (3.635kg)", price: "", desc: "Epoxy tile grout.", img: "weber_joint_poxyfill_3kg.jpeg", brand: "Weber", hasOptions: true, btnText: "View Colours", options: [{ variant: "Alpine Blue", price: "" }, { variant: "Aqua", price: "" }, { variant: "Beige", price: "" }, { variant: "Celestial Blue", price: "" }, { variant: "Chocolate", price: "" }, { variant: "Dark Grey", price: "" }, { variant: "Desert Dune", price: "" }, { variant: "Emerald", price: "" }, { variant: "Graphite", price: "" }, { variant: "Grey", price: "" }, { variant: "Ivory", price: "" }, { variant: "Jet Black", price: "" }, { variant: "Misty Grey", price: "" }, { variant: "Mushroom", price: "" }, { variant: "Oceanic Blue", price: "" }, { variant: "Pearl White", price: "" }, { variant: "Royal Blue", price: "" }, { variant: "Saddle Brown", price: "" }, { variant: "Scarlet", price: "" }, { variant: "Snow White", price: "" }, { variant: "Taupe", price: "" }, { variant: "Tropical Glory", price: "" }, { variant: "Tuscan White", price: "" }, { variant: "White", price: "" }] },
-            { name: "Joint Poxyfill (727g)", price: "", desc: "Epoxy tile grout small pack.", img: "weber_joint_poxyfill_727g.jpeg", brand: "Weber", hasOptions: true, btnText: "View Colours", options: [{ variant: "Alpine Blue", price: "" }, { variant: "Aqua", price: "" }, { variant: "Beige", price: "" }, { variant: "Celestial Blue", price: "" }, { variant: "Chocolate", price: "" }, { variant: "Dark Grey", price: "" }, { variant: "Desert Dune", price: "" }, { variant: "Emerald", price: "" }, { variant: "Frost", price: "" }, { variant: "Graphite", price: "" }, { variant: "Grey", price: "" }, { variant: "Ivory", price: "" }, { variant: "Jet Black", price: "" }, { variant: "Misty Grey", price: "" }, { variant: "Pearl White", price: "" }, { variant: "Saddle Brown", price: "" }, { variant: "Terracotta", price: "" }, { variant: "Tropical Glory", price: "" }, { variant: "White", price: "" }] },
-            { name: "Weberset Premier", price: "", desc: "Premium tile adhesive.", img: "weber_set_premier.jpeg", brand: "Weber", hasOptions: true, btnText: "View Sizes", options: [{ variant: "20 Kg", price: "" }, { variant: "40 Kg", price: "" }] },
-            { name: "Webertec SBR Lit-X", price: "", desc: "Bonding agent.", img: "weber_tec_sbr_litx.jpeg", brand: "Weber", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Litre", price: "" }, { variant: "5 Litre", price: "" }] },
-            { name: "Tile Spacer", price: "", desc: "For uniform tile spacing.", img: "weber_tile_spacer.jpeg", brand: "Weber", hasOptions: true, btnText: "View Sizes", options: [{ variant: "2mm", price: "" }, { variant: "3mm", price: "" }, { variant: "4mm", price: "" }, { variant: "5mm", price: "" }] }
+            { name: "Weberdry ACR Seal (20L)", img: "weber_acr_seal_20l.jpeg", brand: "Weber", desc: "Roof waterproofing coating.", hasOptions: true, btnText: "View Colours", options: [{ variant: "Terracotta", price: "" }, { variant: "White", price: "" }] },
+            { name: "Weber Colorfine (1kg)", img: "weber_colorfine_1kg.jpeg", brand: "Weber", desc: "Fine joint filler for ceramic and vitrified tiles.", hasOptions: true, btnText: "View Colours", options: [{ variant: "Alpine Blue", price: "" }, { variant: "Beige", price: "" }, { variant: "Chocolate", price: "" }, { variant: "Desert Dune", price: "" }, { variant: "Emerald", price: "" }, { variant: "Graphite", price: "" }, { variant: "Grey", price: "" }, { variant: "Ivory", price: "" }, { variant: "Jet Black", price: "" }, { variant: "Misty Grey", price: "" }, { variant: "Mushroom", price: "" }, { variant: "Oceanic Blue", price: "" }, { variant: "Pink", price: "" }, { variant: "Pista", price: "" }, { variant: "Terracotta", price: "" }, { variant: "Tropical Glory", price: "" }, { variant: "Tuscan White", price: "" }, { variant: "White", price: "" }] },
+            { name: "Weberwall Blockfix (40kg)", img: "weber_blockfix_40kg.jpeg", brand: "Weber", desc: "Thin-bed mortar for AAC blocks and fly ash bricks." },
+            { name: "Weberklin Ceraplus (1L)", img: "weber_klin_ceraplus_1l.jpeg", brand: "Weber", desc: "Powerful cleaner for tile stains and cement residue." },
+            { name: "Weberset Classic", img: "weber_set_classic.jpeg", brand: "Weber", desc: "Adhesive for ceramic tiles on floors.", hasOptions: true, btnText: "View Sizes", options: [{ variant: "20 Kg", price: "" }, { variant: "40 Kg", price: "" }] },
+            { name: "Webercolor SG Sanded Grout (10kg)", img: "weber_color_sg_10kg.jpeg", brand: "Weber", desc: "Sanded grout for wide joints (5-50mm)." },
+            { name: "Webercolor Dewdrop (1kg)", img: "weber_color_dewdrop_1kg.jpeg", brand: "Weber", desc: "Premium grout for narrow joints.", hasOptions: true, btnText: "View Colours", options: [{ variant: "Misty Grey", price: "" }, { variant: "White", price: "" }] },
+            { name: "Weberset Firm (20kg)", img: "weber_set_firm_20kg.jpeg", brand: "Weber", desc: "High-strength adhesive for large tiles and stone." },
+            { name: "Weberset First White (40kg)", img: "weber_set_first_white_40kg.jpeg", brand: "Weber", desc: "White adhesive for marble and glass mosaic." },
+            { name: "Groutadd (350ml)", img: "weber_groutadd_350ml.jpeg", brand: "Weber", desc: "Additive to improve grout flexibility and waterproofing." },
+            { name: "Weberset Nova (Grey)", img: "weber_set_nova_grey.jpeg", brand: "Weber", desc: "Polymer-modified adhesive for external tiles.", hasOptions: true, btnText: "View Sizes", options: [{ variant: "20 Kg", price: "" }, { variant: "40 Kg", price: "" }] },
+            { name: "Weberset Nova (White 40kg)", img: "weber_set_nova_white_40kg.jpeg", brand: "Weber", desc: "White adhesive for exterior marble and cladding." },
+            { name: "Weberset Plus White (20kg)", img: "weber_set_plus_white_20kg.jpeg", brand: "Weber", desc: "Standard white adhesive for internal floor/wall." },
+            { name: "Joint Poxyfill (3.635kg)", img: "weber_joint_poxyfill_3kg.jpeg", brand: "Weber", desc: "Stain-free epoxy grout for hygiene areas.", hasOptions: true, btnText: "View Colours", options: [{ variant: "Alpine Blue", price: "" }, { variant: "Aqua", price: "" }, { variant: "Beige", price: "" }, { variant: "Celestial Blue", price: "" }, { variant: "Chocolate", price: "" }, { variant: "Dark Grey", price: "" }, { variant: "Desert Dune", price: "" }, { variant: "Emerald", price: "" }, { variant: "Graphite", price: "" }, { variant: "Grey", price: "" }, { variant: "Ivory", price: "" }, { variant: "Jet Black", price: "" }, { variant: "Misty Grey", price: "" }, { variant: "Mushroom", price: "" }, { variant: "Oceanic Blue", price: "" }, { variant: "Pearl White", price: "" }, { variant: "Royal Blue", price: "" }, { variant: "Saddle Brown", price: "" }, { variant: "Scarlet", price: "" }, { variant: "Snow White", price: "" }, { variant: "Taupe", price: "" }, { variant: "Tropical Glory", price: "" }, { variant: "Tuscan White", price: "" }, { variant: "White", price: "" }] },
+            { name: "Joint Poxyfill (727g)", img: "weber_joint_poxyfill_727g.jpeg", brand: "Weber", desc: "Small pack epoxy grout for touch-ups.", hasOptions: true, btnText: "View Colours", options: [{ variant: "Alpine Blue", price: "" }, { variant: "Aqua", price: "" }, { variant: "Beige", price: "" }, { variant: "Celestial Blue", price: "" }, { variant: "Chocolate", price: "" }, { variant: "Dark Grey", price: "" }, { variant: "Desert Dune", price: "" }, { variant: "Emerald", price: "" }, { variant: "Frost", price: "" }, { variant: "Graphite", price: "" }, { variant: "Grey", price: "" }, { variant: "Ivory", price: "" }, { variant: "Jet Black", price: "" }, { variant: "Misty Grey", price: "" }, { variant: "Pearl White", price: "" }, { variant: "Saddle Brown", price: "" }, { variant: "Terracotta", price: "" }, { variant: "Tropical Glory", price: "" }, { variant: "White", price: "" }] },
+            { name: "Weberset Premier", img: "weber_set_premier.jpeg", brand: "Weber", desc: "High-performance adhesive for swimming pools.", hasOptions: true, btnText: "View Sizes", options: [{ variant: "20 Kg", price: "" }, { variant: "40 Kg", price: "" }] },
+            { name: "Webertec SBR Lit-X", img: "weber_tec_sbr_litx.jpeg", brand: "Weber", desc: "Bonding agent for concrete repairs.", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Litre", price: "" }, { variant: "5 Litre", price: "" }] },
+            { name: "Tile Spacer", img: "weber_tile_spacer.jpeg", brand: "Weber", desc: "Cross spacers for uniform tile joints.", hasOptions: true, btnText: "View Sizes", options: [{ variant: "2mm", price: "" }, { variant: "3mm", price: "" }, { variant: "4mm", price: "" }, { variant: "5mm" }] },
+            { name: "Joint Poxy Resin & Hardner (273g)", img: "weber_joint_poxy_resin_273g.jpeg", brand: "Weber", desc: "Base resin & hardener component for epoxy grout." },
+            { name: "Joint Poxy Resin & Hardner (1.365kg)", img: "weber_joint_poxy_resin_1.365kg.jpeg", brand: "Weber", desc: "Bulk base resin & hardener component." }
         ];
 
         const a1Products = [
-            { name: "Polish Brush (2 Inch)", price: "", desc: "High quality polish brush.", img: "a1_polish_brush_2inch.jpeg", brand: "A1" },
-            { name: "111 Brush (3 Inch)", price: "", desc: "Premium painting brush.", img: "a1_111_brush_3inch.jpeg", brand: "A1" },
-            { name: "Premium Brush (3 Inch)", price: "", desc: "Durable paint brush.", img: "a1_premium_brush_3inch.jpeg", brand: "A1" },
-            { name: "111 Brush (1 Inch)", price: "", desc: "Precision painting brush.", img: "a1_111_brush_1inch.jpeg", brand: "A1" },
-            { name: "Epoxy Roller (4 Inch)", price: "", desc: "Specialized for epoxy application.", img: "a1_epoxy_roller_4inch.jpeg", brand: "A1" },
-            { name: "Vintage Roller (4 Inch)", price: "", desc: "Smooth finish roller.", img: "a1_vintage_roller_4inch.jpeg", brand: "A1" },
-            { name: "Magic Brush (3 Inch)", price: "", desc: "Synthetic filament brush.", img: "a1_magic_brush_3inch.jpeg", brand: "A1" },
-            { name: "Magic Brush (1 Inch)", price: "", desc: "Synthetic filament brush.", img: "a1_magic_brush_1inch.jpeg", brand: "A1" },
-            { name: "Handy Roller (4 Inch)", price: "", desc: "Compact paint roller.", img: "a1_handy_roller_4inch.jpeg", brand: "A1" },
-            { name: "Foam Roller (2 Inch)", price: "", desc: "For smooth surfaces.", img: "a1_foam_roller_2inch.jpeg", brand: "A1" },
-            { name: "Bluewhite Roller (9 Inch)", price: "", desc: "Heavy duty paint roller.", img: "a1_bluewhite_roller_9inch.jpeg", brand: "A1" },
-            { name: "Artist Flat Brush", price: "", desc: "For detailed work.", img: "a1_artist_flat_brush.jpeg", brand: "A1" },
-            { name: "Vintage Roller (9 Inch)", price: "", desc: "Large surface roller.", img: "a1_vintage_roller_9inch.jpeg", brand: "A1" },
-            { name: "Yellow White Roller (9 Inch)", price: "", desc: "Texture roller.", img: "a1_yellowwhite_roller_9inch.jpeg", brand: "A1" },
-            { name: "Handy Roller (9 Inch)", price: "", desc: "Limited Stock: Only 5 Left!", img: "a1_handy_roller_9inch.jpeg", brand: "A1" }
+            { name: "Polish Brush (2 Inch)", img: "a1_polish_brush_2inch.jpeg", brand: "A1", desc: "Soft bristle brush for wood polishing." },
+            { name: "111 Brush (3 Inch)", img: "a1_111_brush_3inch.jpeg", brand: "A1", desc: "Standard paint brush for walls." },
+            { name: "Premium Brush (3 Inch)", img: "a1_premium_brush_3inch.jpeg", brand: "A1", desc: "Durable brush for smooth finish." },
+            { name: "111 Brush (1 Inch)", img: "a1_111_brush_1inch.jpeg", brand: "A1", desc: "Small brush for edges and corners." },
+            { name: "Epoxy Roller (4 Inch)", img: "a1_epoxy_roller_4inch.jpeg", brand: "A1", desc: "Spiked roller for epoxy flooring." },
+            { name: "Vintage Roller (4 Inch)", img: "a1_vintage_roller_4inch.jpeg", brand: "A1", desc: "Design roller for pattern effects." },
+            { name: "Magic Brush (3 Inch)", img: "a1_magic_brush_3inch.jpeg", brand: "A1", desc: "High-density synthetic brush." },
+            { name: "Magic Brush (1 Inch)", img: "a1_magic_brush_1inch.jpeg", brand: "A1", desc: "Precision synthetic brush." },
+            { name: "Handy Roller (4 Inch)", img: "a1_handy_roller_4inch.jpeg", brand: "A1", desc: "Small roller for doors and cabinets." },
+            { name: "Foam Roller (2 Inch)", img: "a1_foam_roller_2inch.jpeg", brand: "A1", desc: "Mini foam roller for touch-ups." },
+            { name: "Bluewhite Roller (9 Inch)", img: "a1_bluewhite_roller_9inch.jpeg", brand: "A1", desc: "Standard exterior wall roller." },
+            { name: "Artist Flat Brush", img: "a1_artist_flat_brush.jpeg", brand: "A1", desc: "Fine tip brush for detailing." },
+            { name: "Vintage Roller (9 Inch)", img: "a1_vintage_roller_9inch.jpeg", brand: "A1", desc: "Large texture roller for walls." },
+            { name: "Yellow White Roller (9 Inch)", img: "a1_yellowwhite_roller_9inch.jpeg", brand: "A1", desc: "Rough surface paint roller." },
+            { name: "Handy Roller (9 Inch)", img: "a1_handy_roller_9inch.jpeg", brand: "A1", desc: "All-purpose wall paint roller." }
+        ];
+
+        const itzuProducts = [
+            { name: "Rollify 2 Inch", img: "itzu_rollify_2inch.jpeg", brand: "Itzu", desc: "Mini paint roller for trims." },
+            { name: "Jumbo Roller (Exterior) 9 Inch", img: "itzu_jumbo_roller_exterior_9inch.jpeg", brand: "Itzu", desc: "Heavy duty exterior roller." },
+            { name: "Rollify Roller 6 Inch", img: "itzu_rollify_roller_6inch.jpeg", brand: "Itzu", desc: "Mid-size roller for doors and panels." },
+            { name: "Pilot Roller 9 Inch", img: "itzu_pilot_roller_9inch.jpeg", brand: "Itzu", desc: "Professional roller for emulsion paints." },
+            { name: "Jumbo Roller (Ragging) 9 Inch", img: "itzu_jumbo_roller_ragging_9inch.jpeg", brand: "Itzu", desc: "For textured ragging finish." },
+            { name: "Rollraza Roller (Interior) 9 Inch", img: "itzu_rollraza_interior_9inch.jpeg", brand: "Itzu", desc: "Best for interior walls." },
+            { name: "Trendy Brush 3 Inch", img: "itzu_trendy_brush_3inch.jpeg", brand: "Itzu", desc: "Synthetic brush for water-based paints." },
+            { name: "Rollraza Roller (Exterior) 9 Inch", img: "itzu_rollraza_exterior_9inch.jpeg", brand: "Itzu", desc: "Durable fabric roller for exterior weather coats." },
+            { name: "Prestige Brush 4 Inch", img: "itzu_prestige_brush_4inch.jpeg", brand: "Itzu", desc: "Premium quality brush." },
+            { name: "Jumbo Roller 4 Inch", img: "itzu_jumbo_roller_4inch.jpeg", brand: "Itzu", desc: "Small heavy duty roller." },
+            { name: "Rollify Roller (2+1 Foam) 6 Inch", img: "itzu_rollify_2plus1_foam_6inch.jpeg", brand: "Itzu", desc: "Roller set with extra foam refill." },
+            { name: "Trendy Brush 4 Inch", img: "itzu_trendy_brush_4inch.jpeg", brand: "Itzu", desc: "Wide coverage brush." },
+            { name: "Trendy Brush 2 Inch", img: "itzu_trendy_brush_2inch.jpeg", brand: "Itzu", desc: "Precision work brush." },
+            { name: "Delco Roller 9 Inch", img: "itzu_delco_roller_9inch.jpeg", brand: "Itzu", desc: "Standard paint roller." },
+            { name: "Rollraza Roller (Rap) 9 Inch", img: "itzu_rollraza_rap_9inch.jpeg", brand: "Itzu", desc: "Specialized application roller." },
+            { name: "Rollraza Roller (Bottle) 9 Inch", img: "itzu_rollraza_bottle_9inch.jpeg", brand: "Itzu", desc: "Unique texture roller." },
+            { name: "Delco Roller (Rap) 9 Inch", img: "itzu_delco_rap_9inch.jpeg", brand: "Itzu", desc: "Texture application roller." }
         ];
 
         const nerofixProducts = [
-            { name: "Turbofix PU 104 (25L)", price: "", desc: "High-performance wood adhesive.", img: "nerofix_turbofix_pu104_25l.jpeg", brand: "Nerofix" },
-            { name: "Turbofix PU 301 (30kg)", price: "", desc: "Industrial grade adhesive.", img: "nerofix_turbofix_pu301_30kg.jpeg", brand: "Nerofix" },
-            { name: "Turbocure H2 Hardner (500ml)", price: "", desc: "Hardener for PU 104.", img: "nerofix_turbocure_h2_500ml.jpeg", brand: "Nerofix" },
-            { name: "Turbocure H2 Hardner (1kg)", price: "", desc: "Hardener for PU 301.", img: "nerofix_turbocure_h2_1kg.jpeg", brand: "Nerofix" }
+            { name: "Turbofix PU 104 (25L)", img: "nerofix_turbofix_pu104_25l.jpeg", brand: "Nerofix", desc: "Water-resistant wood adhesive (D3 Standard)." },
+            { name: "Turbofix PU 301 (30kg)", img: "nerofix_turbofix_pu301_30kg.jpeg", brand: "Nerofix", desc: "High-strength adhesive for wood and PVC." },
+            { name: "Turbocure H2 Hardner (500ml)", img: "nerofix_turbocure_h2_500ml.jpeg", brand: "Nerofix", desc: "Hardener for PU 104." },
+            { name: "Turbocure H2 Hardner (1kg)", img: "nerofix_turbocure_h2_1kg.jpeg", brand: "Nerofix", desc: "Hardener for PU 301." }
         ];
 
         const esdeeProducts = [
-            { name: "Melamine Glossy Clear (20L)", price: "", desc: "High gloss clear finish.", img: "esdee_melamine_glossy_20l.jpeg", brand: "Esdee" },
-            { name: "Sanding Sealer (20L)", price: "", desc: "Base coat for wood finishing.", img: "esdee_sanding_sealer_20l.jpeg", brand: "Esdee" }
+            { name: "Melamine Glossy Clear (20L)", img: "esdee_melamine_glossy_20l.jpeg", brand: "Esdee", desc: "High gloss clear finish for wood furniture." },
+            { name: "Sanding Sealer (20L)", img: "esdee_sanding_sealer_20l.jpeg", brand: "Esdee", desc: "Base coat sealer for preparing wood surfaces." }
         ];
 
         const jubilantProducts = [
-            { name: "Fast-X (5 Litre)", price: "", desc: "Fast setting adhesive.", img: "jubilant_fastx_5l.jpeg", brand: "Jubilant" },
-            { name: "PVC Xtra (5 Kg)", price: "Out of Stock", isOutOfStock: true, desc: "Premium quality adhesive.", img: "jubilant_pvc_xtra_5kg.jpeg", brand: "Jubilant" },
-            { name: "PVC Xtra (1 Kg)", price: "", desc: "Premium quality adhesive.", img: "jubilant_pvc_xtra_1kg.jpeg", brand: "Jubilant" },
-            { name: "WGP 740 (50 Kg)", price: "", desc: "Wood glue.", img: "jubilant_wgp_740_50kg.jpeg", brand: "Jubilant" },
-            { name: "WGP 880 (50 Kg)", price: "", desc: "High strength wood glue.", img: "jubilant_wgp_880_50kg.jpeg", brand: "Jubilant" },
-            { name: "WGP 990 (50 Kg)", price: "", desc: "Premium wood adhesive.", img: "jubilant_wgp_990_50kg.jpeg", brand: "Jubilant" }
+            { name: "Fast-X (5 Litre)", img: "jubilant_fastx_5l.jpeg", brand: "Jubilant", desc: "Fast-setting synthetic resin adhesive." },
+            { name: "PVC Xtra (5 Kg)", img: "jubilant_pvc_xtra_5kg.jpeg", brand: "Jubilant", desc: "Heavy-duty adhesive for plywood and laminates.", isOutOfStock: true },
+            { name: "PVC Xtra (1 Kg)", img: "jubilant_pvc_xtra_1kg.jpeg", brand: "Jubilant", desc: "Adhesive for vertical lamination." },
+            { name: "WGP 740 (50 Kg)", img: "jubilant_wgp_740_50kg.jpeg", brand: "Jubilant", desc: "Water-based glue for general woodworking." },
+            { name: "WGP 880 (50 Kg)", img: "jubilant_wgp_880_50kg.jpeg", brand: "Jubilant", desc: "High-strength waterproof wood glue." },
+            { name: "WGP 990 (50 Kg)", img: "jubilant_wgp_990_50kg.jpeg", brand: "Jubilant", desc: "Premium anti-termite wood adhesive." }
         ];
 
         const abroProducts = [
-            { name: "Abro Spray Paints (400ml)", price: "115 - 150", desc: "Quick drying high quality spray paint.", img: "abro_spray_group.jpeg", brand: "ABRO", pdf: "catalogs/abro_spray_chart.pdf", btnText: "View Available Colours" },
-            { name: "Abro Packing Tapes (BOPP)", price: "", desc: "High adhesion BOPP Tapes.", img: "abro_pack_group.jpeg", hasOptions: true, btnText: "View Sizes & Types", brand: "ABRO", options: [{ variant: "2 Inch Clear", price: "" }, { variant: "2 Inch Brown", price: "" }, { variant: "3 Inch Clear", price: "" }, { variant: "3 Inch Brown", price: "" }] },
-            { name: "Abro Telescopic Runners", price: "", desc: "Heavy duty drawer slides.", img: "abro_runner_group.jpeg", hasOptions: true, btnText: "View Weight Capacity", brand: "ABRO", options: [{ variant: "35 Kg Capacity", price: "" }, { variant: "45 Kg Capacity", price: "" }] },
-            { name: "Abro 3123 Masking Tape", price: "115", desc: "Available sizes: 1\", 2\", 1/2\", 3/4\", 1.5\"", img: "abro_3123.jpeg", brand: "ABRO" },
-            { name: "Abro Ezpro Masking Tape", price: "100", desc: "Available sizes: 1\", 2\", 1/2\", 3/4\", 1.5\"", img: "abro_ezpro.jpeg", brand: "ABRO" },
-            { name: "Abro GHB Tape", price: "55", desc: "Thickness: 2mm, 1.2mm", img: "abro_ghb.jpeg", brand: "ABRO" },
-            { name: "Abro Lub. AB-80 (50ml)", price: "", desc: "Multi-purpose Lubricant Spray", img: "abro_ab80_50.jpeg", brand: "ABRO" },
-            { name: "Abro Lub. AB-80 (100ml)", price: "", desc: "Multi-purpose Lubricant Spray", img: "abro_ab80_100.jpeg", brand: "ABRO" },
-            { name: "Abro Cloth Roll (All Grit)", price: "1400", desc: "Available Grits: 60, 80, 100, 120", img: "abro_cloth_roll.jpeg", brand: "ABRO" },
-            { name: "Abro Cut-off Wheel Green (14\")", price: "110", desc: "Heavy duty cutting wheel", img: "abro_wheel_green_14.jpeg", brand: "ABRO" },
-            { name: "Abro Cut-off Wheel Black (14\")", price: "110", desc: "Heavy duty cutting wheel", img: "abro_wheel_black_14.jpeg", brand: "ABRO" },
-            { name: "Abro Cut-off Wheel Green (4\")", price: "11", desc: "Standard 4 inch wheel", img: "abro_wheel_green_4.jpeg", brand: "ABRO" },
-            { name: "Abro Cut-off Wheel Green (5\")", price: "13", desc: "Standard 5 inch wheel", img: "abro_wheel_green_5.jpeg", brand: "ABRO" },
-            { name: "Abro Cut-off Wheel Black (4\")", price: "11", desc: "Standard 4 inch wheel", img: "abro_wheel_black_4.jpeg", brand: "ABRO" },
-            { name: "Abro Drywall Tape (2 Inch)", price: "", desc: "Joint Tape for Drywall", img: "abro_drywall_2.jpeg", brand: "ABRO" },
-            { name: "Abro Drywall Tape (4 Inch)", price: "", desc: "Joint Tape for Drywall", img: "abro_drywall_4.jpeg", brand: "ABRO" },
-            { name: "Abro Drywall Tape (6 Inch)", price: "", desc: "Joint Tape for Drywall", img: "abro_drywall_6.jpeg", brand: "ABRO" },
-            { name: "Abro Fiber Disc (All Grit)", price: "13", desc: "Grits: 60, 80, 100, 120", img: "abro_fiber_disc.jpeg", brand: "ABRO" },
-            { name: "Abro Flap Disc (All Grit)", price: "", desc: "Grits: 60, 80 available", img: "abro_flap_disc.jpeg", brand: "ABRO" },
-            { name: "Abro GP 260ml", price: "100", desc: "Available Colors: Clear, White, Black", img: "abro_gp_260.jpeg", brand: "ABRO" },
-            { name: "Abro Latex Paper (All Grit)", price: "10", desc: "Grits: 100, 150, 160, 180, 220", img: "abro_latex.jpeg", brand: "ABRO" },
-            { name: "Abro Leakage Repair Tape (2\")", price: "120", desc: "Instant waterproof sealing", img: "abro_leakage_2.jpeg", brand: "ABRO" },
-            { name: "Abro Leakage Repair Tape (4\")", price: "280", desc: "Instant waterproof sealing", img: "abro_leakage_4.jpeg", brand: "ABRO" },
-            { name: "Abro Leakage Repair Tape (6\")", price: "250", desc: "Instant waterproof sealing", img: "abro_leakage_6.jpeg", brand: "ABRO" },
-            { name: "Abro Mirror Mounting Tape (1\")", price: "", desc: "Double sided high strength", img: "abro_mounting_1.jpeg", brand: "ABRO" },
-            { name: "Abro Mirror Mounting Tape (1/2\")", price: "", desc: "Double sided high strength", img: "abro_mounting_half.jpeg", brand: "ABRO" },
-            { name: "Abro PTFE Tape (5m)", price: "", desc: "Thread sealing tape", img: "abro_ptfe_5m.jpeg", brand: "ABRO" },
-            { name: "Abro PTFE Tape (10m)", price: "", desc: "Thread sealing tape", img: "abro_ptfe_10m.jpeg", brand: "ABRO" },
-            { name: "Abro PU Foam (750ml)", price: "300", desc: "Expanding polyurethane foam", img: "abro_pu_750.jpeg", brand: "ABRO" },
-            { name: "Abro PU Foam (450ml)", price: "175", desc: "Expanding polyurethane foam", img: "abro_pu_450.jpeg", brand: "ABRO" },
-            { name: "Abro Insulation Tape", price: "8.50", desc: "Colors: Red, Blue, Green, Yellow, White, Black", img: "abro_insulation.jpeg", brand: "ABRO" },
-            { name: "Abro Acrybond Sealant (280ml)", price: "80", desc: "Paintable acrylic sealant", img: "abro_acrybond.jpeg", brand: "ABRO" },
-            { name: "Abro Grinding Wheel", price: "26", desc: "Metal grinding disc", img: "abro_grinding.jpeg", brand: "ABRO" },
-            { name: "Abro Shuttering Tape", price: "75", desc: "PVC Shuttering tape", img: "abro_shuttering.jpeg", brand: "ABRO" },
-            { name: "Abro Weather 9895 Sealant", price: "", desc: "Weatherproof silicone sealant", img: "abro_weather_9895.jpeg", brand: "ABRO" }
+            { 
+                name: "Abro Spray Paints (400ml)", 
+                desc: "Quick-drying paint for metal, wood, and car touch-ups.", img: "abro_spray_group.jpeg", 
+                brand: "ABRO",
+                pdf: "catalogs/abro_spray_chart.pdf", 
+                btnText: "View Available Colours"
+            },
+            { name: "Abro Packing Tapes (BOPP)", desc: "Strong tape for carton sealing and packaging.", img: "abro_pack_group.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Sizes & Types", options: [{ variant: "2 Inch Clear", price: "" }, { variant: "2 Inch Brown", price: "" }, { variant: "3 Inch Clear", price: "" }, { variant: "3 Inch Brown", price: "" }] },
+            { name: "Abro Telescopic Runners", desc: "Smooth sliding channels for drawers.", img: "abro_runner_group.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Weight Capacity", options: [{ variant: "35 Kg Capacity", price: "" }, { variant: "45 Kg Capacity", price: "" }] },
+            { name: "Abro 3123 Masking Tape", desc: "General purpose masking tape for painting.", img: "abro_3123.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Inch", price: "" }, { variant: "2 Inch", price: "" }, { variant: "1/2 Inch", price: "" }, { variant: "3/4 Inch", price: "" }, { variant: "1.5 Inch", price: "" }] },
+            { name: "Abro Ezpro Masking Tape", desc: "Easy removal tape for carpentry and painting.", img: "abro_ezpro.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Inch", price: "" }, { variant: "2 Inch", price: "" }, { variant: "1/2 Inch", price: "" }, { variant: "3/4 Inch", price: "" }, { variant: "1.5 Inch", price: "" }] },
+            { name: "Abro GHB Tape", desc: "High-strength bonding tape (Screw replacement).", img: "abro_ghb.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Thickness", options: [{ variant: "2mm", price: "" }, { variant: "1.2mm", price: "" }] },
+            { name: "Abro Lub. AB-80 (50ml)", desc: "Loosens rusted parts and stops squeaks.", img: "abro_ab80_50.jpeg", brand: "ABRO" },
+            { name: "Abro Lub. AB-80 (100ml)", desc: "Lubricant spray for chains and hinges.", img: "abro_ab80_100.jpeg", brand: "ABRO" },
+            { name: "Abro Cloth Roll", desc: "Abrasive cloth for metal cleaning.", img: "abro_cloth_roll.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Grits", options: [{ variant: "Grit 60", price: "" }, { variant: "Grit 80", price: "" }, { variant: "Grit 100", price: "" }, { variant: "Grit 120", price: "" }] },
+            { name: "Abro Cut-off Wheel Green (14\")", desc: "Heavy-duty metal cutting wheel.", img: "abro_wheel_green_14.jpeg", brand: "ABRO" },
+            { name: "Abro Cut-off Wheel Black (14\")", desc: "Standard metal cutting wheel.", img: "abro_wheel_black_14.jpeg", brand: "ABRO" },
+            { name: "Abro Cut-off Wheel Green (4\")", desc: "Stainless steel cutting wheel.", img: "abro_wheel_green_4.jpeg", brand: "ABRO" },
+            { name: "Abro Cut-off Wheel Green (5\")", desc: "Stainless steel cutting wheel.", img: "abro_wheel_green_5.jpeg", brand: "ABRO" },
+            { name: "Abro Cut-off Wheel Black (4\")", desc: "General metal cutting wheel.", img: "abro_wheel_black_4.jpeg", brand: "ABRO" },
+            { name: "Abro Drywall Tape (2 Inch)", desc: "Joint tape for gypsum board gaps.", img: "abro_drywall_2.jpeg", brand: "ABRO" },
+            { name: "Abro Drywall Tape (4 Inch)", desc: "Wide joint tape for large cracks.", img: "abro_drywall_4.jpeg", brand: "ABRO" },
+            { name: "Abro Drywall Tape (6 Inch)", desc: "Extra wide tape for wall repair.", img: "abro_drywall_6.jpeg", brand: "ABRO" },
+            { name: "Abro Fiber Disc", desc: "Grinding disc for welding removal.", img: "abro_fiber_disc.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Grits", options: [{ variant: "Grit 60", price: "" }, { variant: "Grit 80", price: "" }, { variant: "Grit 100", price: "" }, { variant: "Grit 120", price: "" }] },
+            { name: "Abro Flap Disc", desc: "Finishing disc for smooth surfaces.", img: "abro_flap_disc.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Grits", options: [{ variant: "Grit 60", price: "" }, { variant: "Grit 80" }] },
+            { name: "Abro GP 260ml", desc: "Silicone sealant for glass and aluminium.", img: "abro_gp_260.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Colors", options: [{ variant: "Clear", price: "" }, { variant: "White", price: "" }, { variant: "Black", price: "" }] },
+            { name: "Abro Latex Paper", desc: "Waterproof sanding paper for polishing.", img: "abro_latex.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Grits", options: [{ variant: "Grit 100", price: "" }, { variant: "Grit 150", price: "" }, { variant: "Grit 160", price: "" }, { variant: "Grit 180", price: "" }, { variant: "Grit 220", price: "" }] },
+            { name: "Abro Leakage Repair Tape (2\")", desc: "Waterproof tape for roof leaks.", img: "abro_leakage_2.jpeg", brand: "ABRO" },
+            { name: "Abro Leakage Repair Tape (4\")", desc: "Sealing tape for pipes and tanks.", img: "abro_leakage_4.jpeg", brand: "ABRO" },
+            { name: "Abro Leakage Repair Tape (6\")", desc: "Wide tape for large crack sealing.", img: "abro_leakage_6.jpeg", brand: "ABRO" },
+            { name: "Abro Mirror Mounting Tape (1\")", desc: "Double-sided tape for fixing mirrors.", img: "abro_mounting_1.jpeg", brand: "ABRO" },
+            { name: "Abro Mirror Mounting Tape (1/2\")", desc: "Slim tape for lightweight mounting.", img: "abro_mounting_half.jpeg", brand: "ABRO" },
+            { name: "Abro PTFE Tape (5m)", desc: "Teflon tape for sealing pipe threads.", img: "abro_ptfe_5m.jpeg", brand: "ABRO" },
+            { name: "Abro PTFE Tape (10m)", desc: "Extra length Teflon tape for plumbing.", img: "abro_ptfe_10m.jpeg", brand: "ABRO" },
+            { name: "Abro PU Foam (750ml)", desc: "Expanding foam for filling large gaps.", img: "abro_pu_750.jpeg", brand: "ABRO" },
+            { name: "Abro PU Foam (450ml)", desc: "Gap filler for windows and ACs.", img: "abro_pu_450.jpeg", brand: "ABRO" },
+            { name: "Abro Insulation Tape", desc: "PVC tape for electrical wires.", img: "abro_insulation.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Colors", options: [{ variant: "Red", price: "" }, { variant: "Blue", price: "" }, { variant: "Green", price: "" }, { variant: "Yellow", price: "" }, { variant: "White", price: "" }, { variant: "Black", price: "" }] },
+            { name: "Abro Acrybond Sealant (280ml)", desc: "Paintable gap filler for walls.", img: "abro_acrybond.jpeg", brand: "ABRO" },
+            { name: "Abro Grinding Wheel", desc: "Wheel for smoothing metal edges.", img: "abro_grinding.jpeg", brand: "ABRO" },
+            { name: "Abro Shuttering Tape", desc: "Prevents concrete slurry leakage.", img: "abro_shuttering.jpeg", brand: "ABRO" },
+            { name: "Abro Weather 9895 Sealant", desc: "Exterior neutral silicone sealant.", img: "abro_weather_9895.jpeg", brand: "ABRO" }
         ];
 
         const bostikProducts = [
-            { 
-                name: "Bostik Anchor Grout (1kg)", price: "Out of Stock", isOutOfStock: true,
-                desc: "High strength polyester anchoring grout.", img: "bostik_anchor_grout.jpeg", brand: "BOSTIK",
-                video: "videos/bostik_anchor_grout.mp4" 
-            },
-            { name: "Bostik Base & Hardner (0.3 Kg)", price: "", desc: "Epoxy base and hardener for construction.", img: "bostik_base_hardner_0.3kg.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Base & Hardner (1.5 Kg)", price: "", desc: "Epoxy base and hardener for construction.", img: "bostik_base_hardner_1.5kg.jpeg", brand: "BOSTIK" },
-            { name: "Boscocem 475 (1 Litre)", price: "", desc: "Waterproofing liquid additive & bonding agent.", img: "bostik_475_1l.jpeg", brand: "BOSTIK" },
-            { name: "Boscocem 475 (5 Litre)", price: "", desc: "Waterproofing liquid additive & bonding agent.", img: "bostik_475_5l.jpeg", brand: "BOSTIK" },
-            { name: "Boscocem 475 (20 Litre)", price: "", desc: "Waterproofing liquid additive & bonding agent.", img: "bostik_475_20l.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Two in One (1 Litre)", price: "", desc: "Multipurpose waterproofing coating & bonding agent.", img: "bostik_two_in_one_1l.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Two in One (5 Litre)", price: "", desc: "Multipurpose waterproofing coating & bonding agent.", img: "bostik_two_in_one_5l.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Two in One (20 Litre)", price: "", desc: "Multipurpose waterproofing coating & bonding agent.", img: "bostik_two_in_one_20l.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Crack Filler (1 Kg)", price: "", desc: "For repairing cracks in plaster and masonry.", img: "bostik_crack_filler_1kg.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Crack Filler (5 Kg)", price: "", desc: "For repairing cracks in plaster and masonry.", img: "bostik_crack_filler_5kg.jpeg", brand: "BOSTIK" },
-            { name: "Efflorescence Coat (1 Litre)", price: "", desc: "Prevents salt formation on bricks and stones.", img: "bostik_efflorescence_1l.jpeg", brand: "BOSTIK" },
-            { name: "Efflorescence Coat (5 Litre)", price: "", desc: "Prevents salt formation on bricks and stones.", img: "bostik_efflorescence_5l.jpeg", brand: "BOSTIK" },
-            { name: "Efflorescence Coat (20 Litre)", price: "", desc: "Prevents salt formation on bricks and stones.", img: "bostik_efflorescence_20l.jpeg", brand: "BOSTIK" },
-            { name: "Elastocoat Waterproofing (5 Litre)", price: "", desc: "Available Colours: Terracotta, White.", img: "bostik_elastocoat_5l.jpeg", brand: "BOSTIK" },
-            { name: "Elastocoat Waterproofing (20 Litre)", price: "", desc: "Available Colours: Lite Grey, Terracotta, White.", img: "bostik_elastocoat_20l.jpeg", brand: "BOSTIK" },
-            { name: "EP-Bond (1kg)", price: "", desc: "Concrete bonding agent.", img: "bostik_ep_bond.jpeg", brand: "BOSTIK" },
-            { name: "Fill A Gap (1kg)", price: "", desc: "Acrylic sealant for gap filling.", img: "bostik_fill_a_gap.jpeg", brand: "BOSTIK" },
-            { name: "Epoxy Filler (Multi Colours)", price: "", desc: "Stain-free epoxy tile joint filler.", img: "bostik_epoxy_filler.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Available Colours", options: [{ variant: "Charcoal", price: "" }, { variant: "Golden Brown", price: "" }, { variant: "Ivory", price: "" }, { variant: "Neutral Grey", price: "" }, { variant: "Silver Grey", price: "" }, { variant: "White", price: "" }] },
-            { name: "Bostik Fixall Grey (5 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_5kg.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Fixall Grey (10 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_10kg.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Fixall Grey (20 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_20kg.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Fixall Grey (30 Kg)", price: "", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_30kg.jpeg", brand: "BOSTIK" },
-            { name: "Super Fixall White (30kg)", price: "", desc: "White tile adhesive for marble/glass blocks.", img: "bostik_fixall_white.jpeg", brand: "BOSTIK" },
-            { name: "Super Fixall Grey (30kg)", price: "", desc: "High strength premium tile adhesive.", img: "bostik_super_fixall.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Tile Grout (1kg)", price: "", desc: "Cementitious tile joint filler.", img: "bostik_normal_grout.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Colours", options: [{ variant: "Ivory", price: "" }, { variant: "White", price: "" }] },
-            { name: "Bostik LW (1 Litre)", price: "", desc: "Integral waterproofing compound for concrete.", img: "bostik_lw.jpeg", brand: "BOSTIK" },
-            { name: "Moisture Seal (1kg)", price: "", desc: "Water barrier coating.", img: "bostik_moisture_seal.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Patchfix (30kg)", price: "", desc: "Non-shrink repair mortar.", img: "bostik_patchfix.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Plugleak (1kg)", price: "", desc: "Instant leak plugging compound.", img: "bostik_plugleak.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Plugleak (5kg)", price: "", desc: "Instant leak plugging compound.", img: "bostik_plugleak_5kg.jpeg", brand: "BOSTIK" },
-            { name: "PUD Mix (20 Litre)", price: "", desc: "Waterproofing admixture.", img: "bostik_pud_mix.jpeg", brand: "BOSTIK" },
-            { name: "Bostik UW Blue (5kg)", price: "", desc: "Underwater bonding agent/grout.", img: "bostik_uw_blue.jpeg", brand: "BOSTIK" },
-            { name: "Bostik ZRP (1kg)", price: "", desc: "Zinc Rich Primer for corrosion protection.", img: "bostik_zrp.jpeg", brand: "BOSTIK" },
-            { name: "Block P530 Boscoseal PU-D (20kg)", price: "", desc: "Waterproofing membrane.", img: "bostik_block_p530_20kg.jpeg", brand: "BOSTIK" }
+            { name: "Bostik Anchor Grout (1kg)", isOutOfStock: true, desc: "High strength polyester anchoring grout.", img: "bostik_anchor_grout.jpeg", brand: "BOSTIK", video: "videos/bostik_anchor_grout.mp4" },
+            { name: "Bostik Base & Hardner (0.3 Kg)", desc: "Epoxy bonding agent for concrete repair.", img: "bostik_base_hardner_0.3kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Base & Hardner (1.5 Kg)", desc: "Bulk epoxy pack for structural bonding.", img: "bostik_base_hardner_1.5kg.jpeg", brand: "BOSTIK" },
+            { name: "Boscocem 475 (1 Litre)", desc: "Waterproofing liquid additive & bonding agent.", img: "bostik_475_1l.jpeg", brand: "BOSTIK" },
+            { name: "Boscocem 475 (5 Litre)", desc: "Bonding agent for plastering.", img: "bostik_475_5l.jpeg", brand: "BOSTIK" },
+            { name: "Boscocem 475 (20 Litre)", desc: "Bulk waterproofing admixture.", img: "bostik_475_20l.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Two in One (1 Litre)", desc: "Waterproofing and bonding agent combined.", img: "bostik_two_in_one_1l.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Two in One (5 Litre)", desc: "Multi-use SBR latex for construction.", img: "bostik_two_in_one_5l.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Two in One (20 Litre)", desc: "Bulk SBR latex for large sites.", img: "bostik_two_in_one_20l.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Crack Filler (1 Kg)", desc: "Fills static cracks in walls.", img: "bostik_crack_filler_1kg.jpeg", brand: "BOSTIK" },
+            { name: "Efflorescence Coat (1 Litre)", desc: "Prevents white patches on brick walls.", img: "bostik_efflorescence_1l.jpeg", brand: "BOSTIK" },
+            { name: "Efflorescence Coat (5 Litre)", desc: "Salt protection for stone masonry.", img: "bostik_efflorescence_5l.jpeg", brand: "BOSTIK" },
+            { name: "Efflorescence Coat (20 Litre)", desc: "Bulk salt protector.", img: "bostik_efflorescence_20l.jpeg", brand: "BOSTIK" },
+            { name: "Elastocoat Waterproofing (5 Litre)", desc: "High performance roof waterproofing paint.", img: "bostik_elastocoat_5l.jpeg", brand: "BOSTIK" },
+            { name: "Elastocoat Waterproofing (20 Litre)", desc: "Protective coating for terraces.", img: "bostik_elastocoat_20l.jpeg", brand: "BOSTIK" },
+            { name: "EP-Bond (1kg)", desc: "Epoxy for joining old to new concrete.", img: "bostik_ep_bond.jpeg", brand: "BOSTIK" },
+            { name: "Fill A Gap (1kg)", desc: "Acrylic sealant for door frames.", img: "bostik_fill_a_gap.jpeg", brand: "BOSTIK" },
+            { name: "Epoxy Filler (Multi Colours)", desc: "Stain-resistant epoxy for tile joints.", img: "bostik_epoxy_filler.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Available Colours", options: [{ variant: "Charcoal", price: "" }, { variant: "Golden Brown", price: "" }, { variant: "Ivory", price: "" }, { variant: "Neutral Grey", price: "" }, { variant: "Silver Grey", price: "" }, { variant: "White", price: "" }] },
+            { name: "Bostik Fixall Grey (5 Kg)", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_5kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Fixall Grey (10 Kg)", desc: "Standard grey tile adhesive.", img: "bostik_fixall_grey_10kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Fixall Grey (20 Kg)", desc: "Tile adhesive for ceramic tiles.", img: "bostik_fixall_grey_20kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Fixall Grey (30 Kg)", desc: "Bulk pack tile adhesive.", img: "bostik_fixall_grey_30kg.jpeg", brand: "BOSTIK" },
+            { name: "Super Fixall White (30kg)", desc: "White tile adhesive for marble/glass blocks.", img: "bostik_fixall_white.jpeg", brand: "BOSTIK" },
+            { name: "Super Fixall Grey (30kg)", desc: "High strength premium tile adhesive.", img: "bostik_super_fixall.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Tile Grout (1kg)", desc: "Cementitious tile joint filler.", img: "bostik_normal_grout.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Colours", options: [{ variant: "Ivory", price: "" }, { variant: "White", price: "Out of Stock" }] },
+            { name: "Bostik LW (1 Litre)", desc: "Integral waterproofing compound for concrete.", img: "bostik_lw.jpeg", brand: "BOSTIK" },
+            { name: "Moisture Seal (1kg)", desc: "Water barrier coating.", img: "bostik_moisture_seal.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Patchfix (30kg)", price: "Out of Stock", isOutOfStock: true, desc: "Non-shrink repair mortar.", img: "bostik_patchfix.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Plugleak (1kg)", desc: "Instant leak plugging compound.", img: "bostik_plugleak.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Plugleak (5kg)", desc: "Instant leak plugging compound.", img: "bostik_plugleak_5kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik UW Blue (5kg)", desc: "Underwater bonding agent/grout.", img: "bostik_uw_blue.jpeg", brand: "BOSTIK" },
+            { name: "Bostik ZRP (1kg)", desc: "Zinc Rich Primer for corrosion protection.", img: "bostik_zrp.jpeg", brand: "BOSTIK" },
+            { name: "Block P530 Boscoseal PU-D (20kg)", desc: "Waterproofing membrane.", img: "bostik_block_p530_20kg.jpeg", brand: "BOSTIK" }
         ];
 
-        let brandDataScope = []; 
-        let displayedProducts = []; 
+        function getBadge(product) {
+            const name = product.name.toLowerCase();
+            const brand = product.brand.toLowerCase();
+
+            // 1. BEST SELLER
+            if (
+                name.includes("spray paint") || 
+                name.includes("3123") || 
+                name.includes("ezpro") || 
+                name.includes("ghb tape") || 
+                name.includes("drywall tape") || 
+                (name.includes("leakage") && (name.includes("4") || name.includes("6"))) ||
+                name.includes("pu foam") ||
+                name.includes("fixall") ||
+                name.includes("premier") ||
+                name.includes("colorfine")
+            ) {
+                return `<div class="ribbon best">Best Seller</div>`;
+            }
+
+            // 2. OFFER
+            if (
+                (name.includes("cut-off") && name.includes("4") && (name.includes("green") || name.includes("black"))) ||
+                name.includes("latex paper") ||
+                name.includes("acrylic sealant") ||
+                name.includes("base & hardner") ||
+                name.includes("epoxy filler") ||
+                name.includes("uw blue") ||
+                name.includes("plus white") ||
+                name.includes("first white") ||
+                name.includes("sanding sealer") ||
+                name.includes("glossy clear")
+            ) {
+                return `<div class="ribbon offer">Offer</div>`;
+            }
+
+            // 3. BEST PRICE
+            if (brand === "itzu" || brand === "a1") {
+                return `<div class="ribbon price">Best Price</div>`;
+            }
+
+            // 4. NEW ARRIVAL
+            if (brand === "atul") {
+                return `<div class="ribbon new">New Arrival</div>`;
+            }
+
+            return "";
+        }
 
         function renderGrid(productsList) {
             const gridElement = document.getElementById("productGrid");
@@ -461,13 +642,14 @@
 
             if (productsList.length > 0) {
                 productsList.forEach((product, index) => {
-                    let priceDisplay;
+                    
+                    let outOfStockHtml = '';
                     if (product.isOutOfStock) {
-                        priceDisplay = `<span class='out-of-stock'>Out of Stock</span>`;
-                    } else {
-                        priceDisplay = product.price ? `₹ ${product.price}` : `<span class='no-price'>Contact for Rate</span>`;
+                        outOfStockHtml = `<span class='out-of-stock-label'>Out of Stock</span>`;
                     }
                     
+                    let badgeHtml = getBadge(product);
+
                     let optionsButton = '';
                     if (product.pdf) {
                         optionsButton = `<a href="${product.pdf}" target="_blank" class="view-options-btn"><span class="material-icons" style="font-size:16px;">picture_as_pdf</span> ${product.btnText}</a>`;
@@ -486,12 +668,19 @@
                     }
 
                     let imgFolder = "images"; 
-                    if(product.brand === "A1" || product.brand === "ABRO") {
+                    if (product.brand === "Itzu") {
+                        imgFolder = "images3";
+                    } else if (product.brand === "A1" || product.brand === "ABRO") {
                         imgFolder = "images2"; 
                     }
 
+                    // Share Text
+                    let shareText = `*Product Check:* ${product.name}\n*Details:* ${product.desc}`;
+                    let shareLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+
                     let cardHTML = `
                         <div class="card">
+                            ${badgeHtml}
                             <div class="card-img">
                                 <img src="${imgFolder}/${product.img}" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;" onerror="this.onerror=null; this.src='https://placehold.co/400x300?text=${product.brand}';">
                             </div>
@@ -499,11 +688,14 @@
                                 <p class="category">${product.brand}</p>
                                 <h3 class="material-name">${product.name}</h3>
                                 <p class="product-desc">${product.desc}</p>
+                                ${outOfStockHtml}
                                 ${optionsButton}
                                 ${infoButton}
                                 ${videoButton}
-                                <div class="price-box"><p class="price-label">Price</p><div class="price">${priceDisplay}</div></div>
-                                <a href="tel:+919790345300" class="buy-now-btn"><span class="material-icons">call</span> CALL TO BUY</a>
+                                <div class="action-row">
+                                    <a href="tel:+919790345300" class="buy-now-btn"><span class="material-icons">call</span> CALL TO BUY</a>
+                                    <a href="${shareLink}" target="_blank" class="share-btn"><span class="material-icons">share</span></a>
+                                </div>
                             </div>
                         </div>`;
                     gridElement.innerHTML += cardHTML;
@@ -528,28 +720,10 @@
             else if (brandName === 'Esdee') { brandDataScope = esdeeProducts; }
             else if (brandName === 'Nerofix') { brandDataScope = nerofixProducts; } 
             else if (brandName === 'Jubilant') { brandDataScope = jubilantProducts; } 
-            else if (brandName === 'All Products') { brandDataScope = abroProducts.concat(bostikProducts, a1Products, atulProducts, weberProducts, esdeeProducts, nerofixProducts, jubilantProducts); } 
+            else if (brandName === 'Itzu') { brandDataScope = itzuProducts; }
+            else if (brandName === 'All Products') { brandDataScope = abroProducts.concat(bostikProducts, a1Products, atulProducts, weberProducts, esdeeProducts, nerofixProducts, jubilantProducts, itzuProducts); } 
             
-            if(brandDataScope.length === 0 && brandName !== 'All Products') {
-                 const gridElement = document.getElementById("productGrid");
-                 gridElement.innerHTML = "";
-                 for (let i = 1; i <= 6; i++) {
-                    let displayName = brandName + " Product " + i;
-                    gridElement.innerHTML += `
-                        <div class="card">
-                            <div class="card-img"><span class="material-icons" style="font-size: 50px;">inventory_2</span></div>
-                            <div class="card-content">
-                                <p class="category">${brandName}</p>
-                                <h3 class="material-name">${displayName}</h3>
-                                <p class="product-desc">Coming soon to our catalogue.</p>
-                                <div class="price-box"><p class="price-label">Price</p><div class="price">₹ --</div></div>
-                                <a href="tel:+919790345300" class="buy-now-btn"><span class="material-icons">call</span> CALL TO BUY</a>
-                            </div>
-                        </div>`;
-                }
-            } else {
-                renderGrid(brandDataScope);
-            }
+            renderGrid(brandDataScope);
         }
 
         function filterProducts() {
@@ -559,8 +733,9 @@
             renderGrid(filteredItems);
         }
 
-        // Initialize All Products on Page Load
-        window.onload = function() { loadBrand('All Products'); };
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBrand('All Products');
+        });
     </script>
 
 </body>
