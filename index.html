@@ -40,30 +40,54 @@
             min-height: 100vh;
         }
 
-        /* --- Navbar --- */
-        nav { padding: 8px 15px; border-bottom: 1px solid rgba(218, 220, 224, 0.5); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); z-index: 1000; height: 65px; }
+        /* --- GLASSMORPHISM NAVBAR --- */
+        nav { 
+            padding: 8px 15px; 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+            display: flex; align-items: center; justify-content: space-between; 
+            position: sticky; top: 0; 
+            /* Glass Effect */
+            background: rgba(255, 255, 255, 0.75); 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000; height: 65px; 
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
         .nav-left { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
         .nav-right { display: flex; align-items: center; justify-content: flex-end; flex-shrink: 0; }
         .menu-btn { background: none; border: none; cursor: pointer; color: var(--google-grey); padding: 5px; border-radius: 50%; transition: 0.3s; display: flex; }
-        .menu-btn:hover { background-color: #f1f3f4; }
+        .menu-btn:hover { background-color: rgba(0,0,0,0.05); }
         .logo { font-size: 22px; font-weight: 500; color: var(--google-grey); white-space: nowrap; }
         .logo b { color: var(--google-blue); font-weight: 700; }
 
         /* --- Search --- */
-        .nav-search-container { position: relative; width: 40px; height: 40px; background: #f1f3f4; border-radius: 50px; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); overflow: hidden; display: flex; align-items: center; border: 1px solid transparent; }
+        .nav-search-container { position: relative; width: 40px; height: 40px; background: rgba(241, 243, 244, 0.8); border-radius: 50px; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); overflow: hidden; display: flex; align-items: center; border: 1px solid transparent; }
         .nav-search-container:hover, .nav-search-container:focus-within { width: 220px; background: #ffffff; border-color: #dadce0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .nav-search-input { width: 100%; height: 100%; padding: 0 15px 0 45px; background: transparent; border: none; font-size: 14px; color: var(--text-dark); outline: none; cursor: pointer; }
         .nav-search-input:focus { cursor: text; }
         .nav-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--google-grey); font-size: 20px; pointer-events: none; }
 
-        /* --- Sidebar --- */
-        .sidebar { height: 100%; width: 280px; position: fixed; z-index: 2000; top: 0; left: -300px; background: white; transition: 0.3s ease; box-shadow: 2px 0 12px rgba(0,0,0,0.15); padding-top: 20px; }
+        /* --- Sidebar (HEAVY FROSTED GLASS) --- */
+        .sidebar { 
+            height: 100%; width: 280px; 
+            position: fixed; z-index: 2000; top: 0; left: -300px; 
+            
+            /* Enhanced Glass Effect */
+            background: rgba(255, 255, 255, 0.65); /* More Transparency */
+            backdrop-filter: blur(25px) saturate(180%); /* Strong Blur & Saturation */
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border-right: 1px solid rgba(255, 255, 255, 0.6); /* White Glass Border */
+            
+            transition: 0.3s ease; 
+            box-shadow: 10px 0 30px rgba(0,0,0,0.2); /* Stronger Shadow */
+            padding-top: 20px; 
+        }
         .sidebar.open { left: 0; }
         .overlay { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.5); z-index: 1500; }
         .overlay.show { display: block; }
-        .sidebar-header { padding: 0 24px 20px; font-size: 20px; font-weight: 500; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; }
+        .sidebar-header { padding: 0 24px 20px; font-size: 20px; font-weight: 500; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; justify-content: space-between; }
         .sidebar a { padding: 16px 24px; text-decoration: none; color: var(--text-dark); display: flex; align-items: center; gap: 15px; font-weight: 500; transition: 0.2s; }
-        .sidebar a:hover { background-color: #e8f0fe; color: var(--google-blue); }
+        .sidebar a:hover { background-color: rgba(255, 255, 255, 0.5); color: var(--google-blue); border-left: 4px solid var(--google-blue); }
         .sidebar-badge { font-size: 10px; background-color: #d93025; color: white; padding: 2px 8px; border-radius: 12px; margin-left: auto; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
 
         /* --- Hero --- */
@@ -89,17 +113,27 @@
         .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
         .no-results { grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--google-grey); font-size: 16px; }
 
-        /* --- Card Design --- */
+        /* --- SCROLL REVEAL ANIMATION + CARD --- */
         .card { 
             background: white; border: 1px solid var(--border-color); border-radius: 8px; 
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
             overflow: hidden; display: flex; flex-direction: column; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
             position: relative;
+            
+            /* Animation Initial State */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
         }
+        /* Active State (Added by JS) */
+        .card.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .card:hover { 
             box-shadow: 0 15px 30px rgba(0,0,0,0.12); 
-            transform: translateY(-5px); 
+            transform: translateY(-5px) !important;
             border-color: transparent; 
         }
         
@@ -110,10 +144,27 @@
             position: relative; overflow: hidden;
         }
         .card-img img {
-            transition: transform 0.4s ease;
+            transition: transform 0.4s ease, opacity 0.3s ease;
+            opacity: 0; /* Hidden initially for skeleton */
+            z-index: 2;
         }
         .card:hover .card-img img {
             transform: scale(1.08);
+        }
+
+        /* --- SKELETON LOADING ANIMATION --- */
+        .skeleton {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #f0f0f0;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            z-index: 1;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
 
         .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
@@ -569,21 +620,21 @@
             { name: "EP-Bond (1kg)", desc: "Concrete bonding agent.", img: "bostik_ep_bond.jpeg", brand: "BOSTIK" },
             { name: "Fill A Gap (1kg)", desc: "Acrylic sealant for door frames.", img: "bostik_fill_a_gap.jpeg", brand: "BOSTIK" },
             { name: "Epoxy Filler (Multi Colours)", desc: "Stain-resistant epoxy for tile joints.", img: "bostik_epoxy_filler.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Available Colours", options: [{ variant: "Charcoal", price: "" }, { variant: "Golden Brown", price: "" }, { variant: "Ivory", price: "" }, { variant: "Neutral Grey", price: "" }, { variant: "Silver Grey", price: "" }, { variant: "White", price: "" }] },
-            { name: "Bostik Fixall Grey (5 Kg)", desc: "Polymer tile adhesive for floors.", img: "bostik_fixall_grey_5kg.jpeg", brand: "BOSTIK" },
+            { name: "Bostik Fixall Grey (5 Kg)", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_5kg.jpeg", brand: "BOSTIK" },
             { name: "Bostik Fixall Grey (10 Kg)", desc: "Standard grey tile adhesive.", img: "bostik_fixall_grey_10kg.jpeg", brand: "BOSTIK" },
             { name: "Bostik Fixall Grey (20 Kg)", desc: "Tile adhesive for ceramic tiles.", img: "bostik_fixall_grey_20kg.jpeg", brand: "BOSTIK" },
             { name: "Bostik Fixall Grey (30 Kg)", desc: "Bulk pack tile adhesive.", img: "bostik_fixall_grey_30kg.jpeg", brand: "BOSTIK" },
-            { name: "Super Fixall White (30kg)", desc: "Adhesive for marble and glass blocks.", img: "bostik_fixall_white.jpeg", brand: "BOSTIK" },
-            { name: "Super Fixall Grey (30kg)", desc: "High strength adhesive for large tiles.", img: "bostik_super_fixall.jpeg", brand: "BOSTIK" },
+            { name: "Super Fixall White (30kg)", desc: "White tile adhesive for marble/glass blocks.", img: "bostik_fixall_white.jpeg", brand: "BOSTIK" },
+            { name: "Super Fixall Grey (30kg)", desc: "High strength premium tile adhesive.", img: "bostik_super_fixall.jpeg", brand: "BOSTIK" },
             { name: "Bostik Tile Grout (1kg)", desc: "Cement-based joint filler.", img: "bostik_normal_grout.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Colours", options: [{ variant: "Ivory", price: "" }, { variant: "White", price: "Out of Stock" }] },
             { name: "Bostik LW (1 Litre)", desc: "Integral waterproofing compound for concrete.", img: "bostik_lw.jpeg", brand: "BOSTIK" },
-            { name: "Moisture Seal (1kg)", desc: "Coating to stop rising dampness.", img: "bostik_moisture_seal.jpeg", brand: "BOSTIK" },
+            { name: "Moisture Seal (1kg)", desc: "Water barrier coating.", img: "bostik_moisture_seal.jpeg", brand: "BOSTIK" },
             { name: "Bostik Patchfix (30kg)", isOutOfStock: true, desc: "High strength repair mortar.", img: "bostik_patchfix.jpeg", brand: "BOSTIK" },
             { name: "Bostik Plugleak (1kg)", desc: "Stops running water leaks instantly.", img: "bostik_plugleak.jpeg", brand: "BOSTIK" },
             { name: "Bostik Plugleak (5kg)", desc: "Fast setting water plug.", img: "bostik_plugleak_5kg.jpeg", brand: "BOSTIK" },
             { name: "Bostik UW Blue (5kg)", desc: "Underwater bonding agent/grout.", img: "bostik_uw_blue.jpeg", brand: "BOSTIK" },
             { name: "Bostik ZRP (1kg)", desc: "Zinc Rich Primer for corrosion protection.", img: "bostik_zrp.jpeg", brand: "BOSTIK" },
-            { name: "Block P530 Boscoseal PU-D (20kg)", desc: "Waterproofing membrane.", img: "bostik_block_p530_20kg.jpeg", brand: "BOSTIK" }
+            { name: "Block P530 Boscoseal PU-D (20kg)", desc: "Bitumen-PU waterproofing membrane.", img: "bostik_block_p530_20kg.jpeg", brand: "BOSTIK" }
         ];
 
         function getBadge(product) {
@@ -691,7 +742,8 @@
                         <div class="card">
                             ${badgeHtml}
                             <div class="card-img">
-                                <img src="${imgFolder}/${product.img}" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;" onerror="this.onerror=null; this.src='https://placehold.co/400x300?text=${product.brand}';">
+                                <div class="skeleton"></div>
+                                <img src="${imgFolder}/${product.img}" alt="${product.name}" style="width:100%; height:100%; object-fit:contain;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';" onerror="this.onerror=null; this.src='https://placehold.co/400x300?text=${product.brand}';">
                             </div>
                             <div class="card-content">
                                 <p class="category">${product.brand}</p>
@@ -709,9 +761,29 @@
                         </div>`;
                     gridElement.innerHTML += cardHTML;
                 });
+                
+                // Add Scroll Reveal Logic
+                observeCards();
             } else {
                  gridElement.innerHTML = `<div class="no-results"><span class="material-icons" style="font-size:48px; color:#dadce0;">search_off</span><p style="margin-top:10px;">No products found matching your search.</p></div>`;
             }
+        }
+
+        // SCROLL REVEAL OBSERVER (ALWAYS ON)
+        function observeCards() {
+            const cards = document.querySelectorAll('.card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal');
+                    } else {
+                        // REMOVE class when scrolling out to re-trigger animation next time
+                        entry.target.classList.remove('reveal');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => observer.observe(card));
         }
 
         function loadBrand(brandName) {
