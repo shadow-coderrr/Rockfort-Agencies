@@ -9,24 +9,29 @@
     
     <title>Rockfort Agencies Trichy | Wholesale Construction Chemicals Distributor</title>
     
-    <meta name="description" content="Rockfort Agencies Trichy - Leading Wholesale Distributor of Construction Chemicals, Tile Adhesives (Weber), Sealants (Bostik), and Tapes (Abro). Best price in Trichy market.">
-    <meta name="keywords" content="Rockfort Agencies Trichy, Rockfort Agencies, Construction Chemicals Trichy, Wholesale Distributor Trichy, Weber Dealer Trichy, Bostik Dealer Trichy, Abro Tapes Trichy, Araldite Dealer, Tile Adhesive Trichy">
+    <meta name="description" content="Rockfort Agencies Trichy - Leading Wholesale Distributor of Construction Chemicals, Tile Adhesives (Weber), Sealants (Bostik), Anabond and Tapes (Abro). Best price in Trichy market.">
+    <meta name="keywords" content="Rockfort Agencies Trichy, Construction Chemicals Trichy, Wholesale Distributor Trichy, Weber Dealer Trichy, Bostik Dealer Trichy, Abro Tapes Trichy, Anabond Dealer, Araldite Dealer, Tile Adhesive Trichy">
     <meta name="author" content="Rockfort Agencies">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
+    
     <meta name="geo.region" content="IN-TN" />
     <meta name="geo.placename" content="Tiruchirappalli" />
-    <meta name="geo.position" content="10.7905;78.7047" /> <meta name="ICBM" content="10.7905, 78.7047" />
+    <meta name="geo.position" content="10.7905;78.7047" /> 
+    <meta name="ICBM" content="10.7905, 78.7047" />
+    
     <meta property="og:title" content="Rockfort Agencies Trichy - Wholesale Distributor">
-    <meta property="og:description" content="Authorized Dealer for Weber, Bostik, Abro, Jubilant, Atul & More. Best Prices in Trichy.">
-    <meta property="og:image" content="https://naveennivas.github.io/rockfort-agencies/images/logo.png"> <meta property="og:url" content="https://naveennivas.github.io/rockfort-agencies/">
+    <meta property="og:description" content="Authorized Dealer for Weber, Bostik, Abro, Anabond, Jubilant, Atul & More. Best Prices in Trichy.">
+    <meta property="og:image" content="https://naveennivas.github.io/rockfort-agencies/images/logo.png"> 
+    <meta property="og:url" content="https://naveennivas.github.io/rockfort-agencies/">
     <meta property="og:type" content="website">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     <style>
         :root {
+            /* Google Brand Colors */
             --google-blue: #1a73e8;
             --google-dark-blue: #174ea6;
             --google-grey: #5f6368;
@@ -38,9 +43,9 @@
             --best-seller: #ea4335;
             --best-price: #9334e6;
             
-            /* --- iOS 26 GLOSSY VARIABLES --- */
-            --glass-bg: rgba(255, 255, 255, 0.75);
-            --glass-border: rgba(255, 255, 255, 0.5);
+            /* iOS 26 GLOSSY VARIABLES */
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.6);
             --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
         }
 
@@ -55,7 +60,7 @@
             position: relative;
         }
 
-        /* --- T4TEQ STYLE DOT ANIMATION --- */
+        /* --- TINY DOT ANIMATION (Background) --- */
         .background-animation {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1; overflow: hidden; background: #ffffff;
@@ -66,15 +71,14 @@
             background: transparent;
             border-radius: 50%;
             pointer-events: none;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             animation: floatUp linear infinite;
             opacity: 0;
         }
         @keyframes floatUp {
             0% { transform: translateY(0) scale(1); opacity: 0; }
-            10% { opacity: 0.8; } 
-            90% { opacity: 0.6; }
-            100% { transform: translateY(-110vh) scale(1.2); opacity: 0; }
+            20% { opacity: 0.8; } 
+            80% { opacity: 0.6; }
+            100% { transform: translateY(-110vh) scale(1); opacity: 0; }
         }
 
         /* --- NAVBAR (iOS GLOSSY) --- */
@@ -83,7 +87,6 @@
             display: flex; align-items: center; justify-content: space-between; 
             position: sticky; top: 0; 
             z-index: 1000; height: 65px; 
-            
             background: var(--glass-bg);
             backdrop-filter: blur(25px) saturate(200%); 
             -webkit-backdrop-filter: blur(25px) saturate(200%);
@@ -92,19 +95,42 @@
         }
         .nav-left { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
         .nav-right { display: flex; align-items: center; justify-content: flex-end; flex-shrink: 0; }
-        .menu-btn { background: none; border: none; cursor: pointer; color: var(--google-grey); padding: 5px; border-radius: 50%; transition: 0.3s; display: flex; }
+        
+        .menu-btn { 
+            background: none; border: none; cursor: pointer; 
+            color: var(--google-grey); padding: 5px; border-radius: 50%; 
+            transition: 0.3s; display: flex; 
+        }
         .menu-btn:hover { background-color: rgba(0,0,0,0.05); }
+        
         .logo { font-size: 22px; font-weight: 500; color: var(--google-grey); white-space: nowrap; }
         .logo b { color: var(--google-blue); font-weight: 700; }
 
-        /* --- Search --- */
-        .nav-search-container { position: relative; width: 40px; height: 40px; background: rgba(241, 243, 244, 0.8); border-radius: 50px; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); overflow: hidden; display: flex; align-items: center; border: 1px solid transparent; }
-        .nav-search-container:hover, .nav-search-container:focus-within { width: 220px; background: #ffffff; border-color: #dadce0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .nav-search-input { width: 100%; height: 100%; padding: 0 15px 0 45px; background: transparent; border: none; font-size: 14px; color: var(--text-dark); outline: none; cursor: pointer; }
+        /* --- SEARCH BAR --- */
+        .nav-search-container { 
+            position: relative; width: 40px; height: 40px; 
+            background: rgba(241, 243, 244, 0.8); border-radius: 50px; 
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+            overflow: hidden; display: flex; align-items: center; 
+            border: 1px solid transparent; 
+        }
+        .nav-search-container:hover, .nav-search-container:focus-within { 
+            width: 220px; background: #ffffff; border-color: #dadce0; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+        }
+        .nav-search-input { 
+            width: 100%; height: 100%; padding: 0 15px 0 45px; 
+            background: transparent; border: none; font-size: 14px; 
+            color: var(--text-dark); outline: none; cursor: pointer; 
+        }
         .nav-search-input:focus { cursor: text; }
-        .nav-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--google-grey); font-size: 20px; pointer-events: none; }
+        .nav-search-icon { 
+            position: absolute; left: 10px; top: 50%; 
+            transform: translateY(-50%); color: var(--google-grey); 
+            font-size: 20px; pointer-events: none; 
+        }
 
-        /* --- Sidebar (iOS GLOSSY) --- */
+        /* --- SIDEBAR (iOS GLOSSY) --- */
         .sidebar { 
             height: 100%; width: 280px; 
             position: fixed; z-index: 2000; top: 0; left: -300px; 
@@ -118,12 +144,13 @@
         .sidebar.open { left: 0; }
         .overlay { position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.5); z-index: 1500; }
         .overlay.show { display: block; }
+        
         .sidebar-header { padding: 0 24px 20px; font-size: 20px; font-weight: 500; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; justify-content: space-between; }
         .sidebar a { padding: 16px 24px; text-decoration: none; color: var(--text-dark); display: flex; align-items: center; gap: 15px; font-weight: 500; transition: 0.2s; }
         .sidebar a:hover { background-color: rgba(255, 255, 255, 0.6); color: var(--google-blue); border-left: 4px solid var(--google-blue); }
         .sidebar-badge { font-size: 10px; background-color: #d93025; color: white; padding: 2px 8px; border-radius: 12px; margin-left: auto; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* --- Hero --- */
+        /* --- HERO SECTION --- */
         .hero { background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.0) 100%); padding: 40px 20px 60px; display: flex; flex-direction: column; align-items: center; }
         .hero-card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); max-width: 900px; width: 100%; padding: 40px 30px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid var(--google-blue); border: 1px solid rgba(255,255,255,0.5); }
         .hero-badge { display: inline-block; background: #e6f4ea; color: #137333; padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; }
@@ -133,25 +160,38 @@
         .cta-button:hover { background: var(--google-dark-blue); transform: translateY(-2px); }
         
         /* --- ABOUT US (PREMIUM SECTION) --- */
-        .about-section {
-            max-width: 1200px; margin: 0 auto 60px; padding: 20px;
-        }
+        .about-section { max-width: 1200px; margin: 0 auto 60px; padding: 20px; }
         .about-header { text-align: center; margin-bottom: 40px; }
         .about-header h2 { font-size: 28px; font-weight: 800; color: #1a73e8; margin-bottom: 10px; }
         .about-header p { color: #5f6368; font-size: 16px; max-width: 600px; margin: 0 auto; }
         
-        .about-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
-        }
-        .about-card {
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        
+        /* Shared Animation Class for Products AND About Cards */
+        .about-card, .card {
             background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px; padding: 25px;
+            border-radius: 12px; 
+            
+            /* Initial Animation State */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+        }
+
+        /* Active Animation State */
+        .about-card.reveal, .card.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-card {
+            padding: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-left: 4px solid var(--google-blue);
-            transition: transform 0.3s ease;
             backdrop-filter: blur(5px);
         }
-        .about-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .about-card:hover { transform: translateY(-5px) !important; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
         .ac-icon { font-size: 32px; color: var(--google-blue); margin-bottom: 15px; }
         .ac-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #202124; }
         .ac-text { font-size: 14px; color: #5f6368; line-height: 1.6; }
@@ -173,17 +213,16 @@
         .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
         .no-results { grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--google-grey); font-size: 16px; }
 
-        /* --- SCROLL REVEAL ANIMATION + CARD --- */
+        /* --- PRODUCT CARD SPECIFIC --- */
         .card { 
-            background: white; border: 1px solid var(--border-color); border-radius: 8px; 
-            overflow: hidden; display: flex; flex-direction: column; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
-            position: relative;
-            opacity: 0; transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color); 
+            display: flex; flex-direction: column; 
         }
-        .card.reveal { opacity: 1; transform: translateY(0); }
-        .card:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.12); transform: translateY(-5px) !important; border-color: transparent; }
+        .card:hover { 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12); 
+            transform: translateY(-5px) !important; 
+            border-color: transparent; 
+        }
         
         .card-img { 
             height: 200px; background: white; 
@@ -196,7 +235,6 @@
 
         .skeleton {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: #f0f0f0;
             background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
             background-size: 200% 100%; animation: shimmer 1.5s infinite; z-index: 1;
         }
@@ -218,7 +256,6 @@
         .ribbon.price { background-color: var(--best-price); }
 
         .out-of-stock-label { font-size: 14px; color: var(--out-stock); font-weight: 700; display: block; margin-bottom: 10px; text-align: center; }
-        
         .action-row { display: flex; gap: 10px; margin-top: auto; }
 
         .buy-now-btn { 
@@ -246,28 +283,24 @@
         .info-btn { width: 100%; padding: 8px; background-color: white; border: 1px solid #dfe1e5; border-radius: 6px; color: #1a73e8; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 10px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 5px; }
         .info-btn:hover { background-color: #f8f9fa; border-color: #1a73e8; }
 
-        /* --- FLOATING BUTTONS --- */
+        /* --- FLOATING BUTTONS (STACKED RIGHT) --- */
         .floating-container { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 5000; align-items: flex-end; }
         
-        .whatsapp-float, .mail-float {
+        .whatsapp-float, .mail-float, .back-to-top {
             color: white; border-radius: 50%; width: 55px; height: 55px;
             display: flex; align-items: center; justify-content: center;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.3); transition: 0.3s;
-            text-decoration: none;
+            text-decoration: none; border: none; cursor: pointer;
         }
-        .whatsapp-float { background: #25d366; }
-        .whatsapp-float:hover { transform: scale(1.1); background: #20b85a; }
 
-        .mail-float { background: #d93025; } /* Gmail Red */
+        .back-to-top { background: var(--google-grey); display: none; } 
+        .back-to-top:hover { background-color: var(--google-blue); transform: translateY(-3px); }
+
+        .mail-float { background: #d93025; } 
         .mail-float:hover { transform: scale(1.1); background: #c5221f; }
 
-
-        .back-to-top {
-            background: var(--google-grey); color: white; border-radius: 50%; width: 50px; height: 50px;
-            display: none; align-items: center; justify-content: center; border: none; cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: 0.3s;
-        }
-        .back-to-top:hover { background-color: var(--google-blue); transform: translateY(-3px); }
+        .whatsapp-float { background: #25d366; }
+        .whatsapp-float:hover { transform: scale(1.1); background: #20b85a; }
 
         /* --- POPUP MODAL --- */
         .modal-window { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
@@ -287,7 +320,7 @@
         .video-container { position: relative; width: 100%; padding-top: 56.25%; background: black; }
         .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        /* --- DARK FOOTER & DEV BUTTON --- */
+        /* --- DARK FOOTER --- */
         footer { background: #202124; padding: 60px 20px; text-align: center; color: white; border-top: 5px solid var(--google-blue); }
         .footer-title { font-size: 24px; font-weight: 700; margin-bottom: 10px; color: white; letter-spacing: 0.5px; }
         .footer-subtitle { color: #9aa0a6; margin-bottom: 20px; font-size: 14px; }
@@ -320,8 +353,7 @@
 </head>
 <body>
 
-    <div class="background-animation">
-        </div>
+    <div class="background-animation"></div>
 
     <div id="mySidebar" class="sidebar">
         <div class="sidebar-header">
@@ -493,26 +525,23 @@
     </footer>
 
     <script>
-        // --- BACKGROUND ANIMATION LOGIC ---
+        // --- BACKGROUND ANIMATION (TINY DOTS) ---
         function createDots() {
             const bg = document.querySelector('.background-animation');
-            // HIGH CONTRAST COLORS: Red, Blue, Green, Yellow, Purple, Cyan
             const colors = ['#ff0000', '#0000ff', '#00ff00', '#ffff00', '#ff00ff', '#00ffff']; 
             
-            for (let i = 0; i < 40; i++) { // Increased count to 40
+            for (let i = 0; i < 15; i++) { 
                 let span = document.createElement('span');
-                span.classList.add('dot'); // Use CSS class for animation
+                span.classList.add('dot'); 
                 
-                // SMALL SIZE: Random between 3px and 8px
-                let size = Math.random() * 5 + 3; 
+                let size = Math.random() * 3 + 2; 
                 
                 span.style.width = size + 'px';
                 span.style.height = size + 'px';
                 span.style.left = Math.random() * 100 + '%';
                 span.style.background = colors[Math.floor(Math.random() * colors.length)];
                 
-                // Randomize animation duration and delay for natural look
-                span.style.animationDuration = (Math.random() * 10 + 10) + 's'; // 10s to 20s
+                span.style.animationDuration = (Math.random() * 15 + 15) + 's'; 
                 span.style.animationDelay = (Math.random() * 10) + 's';
                 
                 bg.appendChild(span);
@@ -907,7 +936,7 @@
 
         // SCROLL REVEAL OBSERVER (ALWAYS ON)
         function observeCards() {
-            const cards = document.querySelectorAll('.card');
+            const cards = document.querySelectorAll('.card, .about-card'); // Target both products and about cards
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
