@@ -10,7 +10,7 @@
     <title>Rockfort Agencies Trichy | Wholesale Construction Chemicals Distributor</title>
     
     <meta name="description" content="Rockfort Agencies Trichy - Leading Wholesale Distributor of Construction Chemicals, Tile Adhesives (Weber), Sealants (Bostik), Anabond and Tapes (Abro). Best price in Trichy market.">
-    <meta name="keywords" content="Rockfort Agencies Trichy, Construction Chemicals Trichy, Wholesale Distributor Trichy, Weber Dealer Trichy, Bostik Dealer Trichy, Abro Tapes Trichy, Anabond Dealer, Araldite Dealer, Tile Adhesive Trichy">
+    <meta name="keywords" content="Rockfort Agencies Trichy, Construction Chemicals Trichy, Wholesale Distributor Trichy, Weber Dealer Trichy, Bostik Dealer Trichy, Abro Tapes Trichy, Anabond Dealer, Araldite Dealer, Tile Adhesive Trichy, Spray Paint Wholesale">
     <meta name="author" content="Rockfort Agencies">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
@@ -81,7 +81,7 @@
             100% { transform: translateY(-110vh) scale(1); opacity: 0; }
         }
 
-        /* --- NAVBAR (iOS GLOSSY) --- */
+        /* --- NAVBAR (iOS GLOSSY FINISH) --- */
         nav { 
             padding: 8px 15px; 
             display: flex; align-items: center; justify-content: space-between; 
@@ -130,7 +130,7 @@
             font-size: 20px; pointer-events: none; 
         }
 
-        /* --- SIDEBAR (iOS GLOSSY) --- */
+        /* --- SIDEBAR (iOS GLOSSY FINISH) --- */
         .sidebar { 
             height: 100%; width: 280px; 
             position: fixed; z-index: 2000; top: 0; left: -300px; 
@@ -171,7 +171,6 @@
         .about-card, .card {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 12px; 
-            
             /* Initial Animation State */
             opacity: 0;
             transform: translateY(30px);
@@ -256,6 +255,33 @@
         .ribbon.price { background-color: var(--best-price); }
 
         .out-of-stock-label { font-size: 14px; color: var(--out-stock); font-weight: 700; display: block; margin-bottom: 10px; text-align: center; }
+        
+        /* NEW CART & QTY STYLES */
+        .cart-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; flex-wrap: wrap; }
+        
+        /* Styled Dropdown */
+        .variant-select {
+            width: 100%; padding: 10px; margin-bottom: 10px;
+            border: 1px solid #dadce0; border-radius: 6px;
+            font-size: 14px; background: #f8f9fa; outline: none; cursor: pointer;
+            transition: 0.2s;
+        }
+        .variant-select:focus { border-color: var(--google-blue); background: white; }
+
+        .qty-input {
+            width: 70px; padding: 10px; border: 1px solid #dadce0; border-radius: 6px; 
+            text-align: center; font-weight: 500; outline: none; transition: 0.2s;
+        }
+        .qty-input:focus { border-color: var(--google-blue); }
+        
+        .add-cart-btn {
+            flex-grow: 1; background: #34a853; color: white; border: none;
+            padding: 10px; border-radius: 6px; font-weight: 500; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 5px;
+            transition: 0.2s;
+        }
+        .add-cart-btn:hover { background: #2d8f45; transform: translateY(-1px); }
+
         .action-row { display: flex; gap: 10px; margin-top: auto; }
 
         .buy-now-btn { 
@@ -286,11 +312,11 @@
         /* --- FLOATING BUTTONS (STACKED RIGHT) --- */
         .floating-container { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 5000; align-items: flex-end; }
         
-        .whatsapp-float, .mail-float, .back-to-top {
+        .whatsapp-float, .mail-float, .back-to-top, .cart-float {
             color: white; border-radius: 50%; width: 55px; height: 55px;
             display: flex; align-items: center; justify-content: center;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.3); transition: 0.3s;
-            text-decoration: none; border: none; cursor: pointer;
+            text-decoration: none; border: none; cursor: pointer; position: relative;
         }
 
         .back-to-top { background: var(--google-grey); display: none; } 
@@ -301,6 +327,14 @@
 
         .whatsapp-float { background: #25d366; }
         .whatsapp-float:hover { transform: scale(1.1); background: #20b85a; }
+
+        .cart-float { background: #1a73e8; }
+        .cart-float:hover { transform: scale(1.1); background: #1558b0; }
+        .cart-count { 
+            position: absolute; top: -5px; right: -5px; background: #d93025; color: white;
+            font-size: 11px; font-weight: bold; width: 22px; height: 22px; 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white;
+        }
 
         /* --- POPUP MODAL --- */
         .modal-window { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
@@ -313,7 +347,7 @@
         .modal-body strong { color: #202124; font-weight: 700; display: block; margin-top: 10px; margin-bottom: 5px; }
         .modal-body ul { padding-left: 20px; margin-bottom: 10px; }
         .modal-body li { margin-bottom: 4px; }
-        .modal-list-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f1f3f4; }
+        .modal-list-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f1f3f4; align-items: center; }
         .modal-list-item:last-child { border-bottom: none; }
         .item-name { font-weight: 500; color: #3c4043; }
         .out-stock-text { color: var(--out-stock); font-weight: 700; font-size: 13px; }
@@ -378,6 +412,18 @@
     <div id="infoModal" class="modal-window"><div class="modal-content"><div class="modal-header"><h3 id="infoTitle">Product Information</h3><span class="close-modal" onclick="closeInfoModal()">&times;</span></div><div class="modal-body" id="infoBody"></div></div></div>
     <div id="videoModal" class="modal-window"><div class="modal-content" style="overflow: hidden; max-width: 700px;"><div class="modal-header"><h3>Product Demo</h3><span class="close-modal" onclick="closeVideoModal()">&times;</span></div><div class="video-container"><video id="productVideo" controls><source src="" type="video/mp4">Your browser does not support the video tag.</video></div></div></div>
     
+    <div id="cartModal" class="modal-window">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Your Enquiry List</h3><span class="close-modal" onclick="closeCartModal()">&times;</span></div>
+            <div class="modal-body" id="cartBody">
+                <div id="cartItemsList"></div>
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #f1f3f4;">
+                <button onclick="sendCartToWhatsapp()" class="buy-now-btn" style="background:#25d366; color:white; width:100%;"><span class="material-icons">whatsapp</span> Send Enquiry on WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
     <div id="devModal" class="modal-window">
         <div class="modal-content" style="text-align: center; padding: 40px 20px;">
             <div class="modal-header" style="justify-content: center; border:none; padding-bottom:0;">
@@ -395,6 +441,11 @@
     <div class="floating-container">
         <button onclick="scrollToTop()" id="backToTopBtn" class="back-to-top">
             <span class="material-icons">arrow_upward</span>
+        </button>
+
+        <button onclick="openCartModal()" class="cart-float" title="View Enquiry List">
+            <span class="material-icons" style="font-size: 28px;">shopping_cart</span>
+            <span class="cart-count" id="cartCount">0</span>
         </button>
 
         <a href="mailto:rockkfortagencies@gmail.com" class="mail-float" title="Send Email">
@@ -456,40 +507,34 @@
                 <h3 class="ac-title">Since 2011</h3>
                 <p class="ac-text">Over a decade of industry leadership in Trichy. We have established ourselves as a <span class="highlight-text">trusted name</span> known for reliability and service excellence.</p>
             </div>
-
             <div class="about-card">
                 <span class="material-icons ac-icon">groups</span>
                 <h3 class="ac-title">Happy Clients</h3>
                 <span class="stat-big">3584+</span>
                 <p class="ac-text">Active customers across Trichy trust us for their construction needs. Our reputation speaks for itself.</p>
             </div>
-
             <div class="about-card">
                 <span class="material-icons ac-icon">inventory_2</span>
                 <h3 class="ac-title">Wide Range</h3>
                 <span class="stat-big">200+</span>
                 <p class="ac-text">High-quality materials from top global brands like Weber, Bostik, and Abro available under one roof.</p>
             </div>
-
             <div class="about-card">
                 <span class="material-icons ac-icon">local_shipping</span>
                 <h3 class="ac-title">Free Delivery</h3>
                 <p class="ac-text">We provide <strong>Free Local Shipping</strong> and ensure on-time delivery. We value your time and schedule.</p>
             </div>
-
             <div class="about-card">
                 <span class="material-icons ac-icon">payments</span>
                 <h3 class="ac-title">Best Price & Billing</h3>
                 <p class="ac-text">We offer the <strong>Best Price in Trichy</strong> with proper GST billing. Special <span class="highlight-text">CD (Cash Discount)</span> available for immediate payments.</p>
             </div>
-
             <div class="about-card" style="border-left-color: #34a853;">
                 <span class="material-icons ac-icon" style="color: #34a853;">water_drop</span>
                 <h3 class="ac-title">Waterproofing Experts</h3>
                 <p class="ac-text">We have a specialized team for waterproofing services using world-class materials at an <span class="highlight-text">affordable price</span> range with warranty.</p>
                 <span class="wp-badge">Best Team</span>
             </div>
-
             <div class="about-card">
                 <span class="material-icons ac-icon">schedule</span>
                 <h3 class="ac-title">Working Hours</h3>
@@ -525,53 +570,147 @@
     </footer>
 
     <script>
-        // --- BACKGROUND ANIMATION (TINY DOTS) ---
+        // --- CART SYSTEM ---
+        let cart = [];
+
+        function addToCart(index) {
+            const qtyInput = document.getElementById(`qty-${index}`);
+            const qty = parseInt(qtyInput.value);
+            const product = displayedProducts[index];
+            let selectedVariant = "";
+
+            // Check Dropdown
+            const dropdown = document.getElementById(`var-${index}`);
+            if (dropdown) {
+                if (dropdown.value === "") {
+                    alert("Please select an option/color first.");
+                    return;
+                }
+                selectedVariant = dropdown.value;
+            }
+
+            if(!qty || qty < 1) {
+                alert("Please enter a valid quantity.");
+                return;
+            }
+
+            const itemName = selectedVariant ? `${product.name} (${selectedVariant})` : product.name;
+            const existingItem = cart.find(item => item.uniqueName === itemName);
+
+            if(existingItem) {
+                existingItem.qty += qty;
+            } else {
+                cart.push({
+                    uniqueName: itemName,
+                    name: product.name,
+                    brand: product.brand,
+                    variant: selectedVariant,
+                    qty: qty
+                });
+            }
+
+            const btn = document.getElementById(`btn-${index}`);
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `<span class="material-icons">check</span> Added`;
+            btn.style.backgroundColor = "#202124";
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.backgroundColor = "#34a853";
+            }, 1500);
+
+            updateCartCount();
+            qtyInput.value = '';
+            if(dropdown) dropdown.value = ""; 
+        }
+
+        function updateCartCount() {
+            document.getElementById('cartCount').innerText = cart.length;
+        }
+
+        function openCartModal() {
+            const modal = document.getElementById('cartModal');
+            const list = document.getElementById('cartItemsList');
+            list.innerHTML = "";
+
+            if(cart.length === 0) {
+                list.innerHTML = "<p style='text-align:center; padding:20px; color:#5f6368;'>Your list is empty.</p>";
+            } else {
+                cart.forEach((item, i) => {
+                    list.innerHTML += `
+                        <div class="modal-list-item">
+                            <div>
+                                <span class="item-name">${item.name}</span><br>
+                                <small>${item.brand} ${item.variant ? `| ${item.variant}` : ''} | Qty: <strong>${item.qty}</strong></small>
+                            </div>
+                            <span class="material-icons" style="color:#d93025; cursor:pointer;" onclick="removeFromCart(${i})">delete</span>
+                        </div>
+                    `;
+                });
+            }
+            modal.style.display = "block";
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            openCartModal();
+            updateCartCount();
+        }
+
+        function closeCartModal() {
+            document.getElementById('cartModal').style.display = "none";
+        }
+
+        function sendCartToWhatsapp() {
+            if(cart.length === 0) return alert("List is empty!");
+            let message = "Hello Rockfort Agencies, I would like to enquire about:%0a%0a";
+            cart.forEach((item, i) => {
+                const varText = item.variant ? `(${item.variant})` : "";
+                message += `${i+1}. ${item.name} ${varText} - Qty: ${item.qty}%0a`;
+            });
+            message += "%0aPlease provide the best price.";
+            window.open(`https://wa.me/919790345300?text=${message}`, '_blank');
+        }
+
+        // --- DOT ANIMATION ---
         function createDots() {
             const bg = document.querySelector('.background-animation');
             const colors = ['#ff0000', '#0000ff', '#00ff00', '#ffff00', '#ff00ff', '#00ffff']; 
-            
             for (let i = 0; i < 15; i++) { 
                 let span = document.createElement('span');
                 span.classList.add('dot'); 
-                
                 let size = Math.random() * 3 + 2; 
-                
                 span.style.width = size + 'px';
                 span.style.height = size + 'px';
                 span.style.left = Math.random() * 100 + '%';
                 span.style.background = colors[Math.floor(Math.random() * colors.length)];
-                
                 span.style.animationDuration = (Math.random() * 15 + 15) + 's'; 
                 span.style.animationDelay = (Math.random() * 10) + 's';
-                
                 bg.appendChild(span);
             }
         }
 
-        // GLOBAL FUNCTIONS (Must be outside)
+        // --- GLOBAL FUNCS ---
         function openMenu() { document.getElementById("mySidebar").classList.add("open"); document.getElementById("myOverlay").classList.add("show"); }
         function closeMenu() { document.getElementById("mySidebar").classList.remove("open"); document.getElementById("myOverlay").classList.remove("show"); }
-
         function closeModal() { document.getElementById("optionsModal").style.display = "none"; }
         function closeInfoModal() { document.getElementById("infoModal").style.display = "none"; }
         function closeVideoModal() { document.getElementById("videoModal").style.display = "none"; document.getElementById("productVideo").pause(); }
 
         function openOptionsModal(productIndex) {
-            const product = displayedProducts[productIndex];
-            const modalList = document.getElementById("modalList");
-            const modalTitle = document.getElementById("modalTitle");
-            modalTitle.innerText = product.name + " - Options";
-            modalList.innerHTML = ""; 
-            if (product.options) {
-                product.options.forEach(item => {
-                    let priceHtml = "";
-                    if (item.price === "Out of Stock") {
-                        priceHtml = `<span class="out-stock-text">Out of Stock</span>`;
-                    }
-                    modalList.innerHTML += `<div class="modal-list-item"><span class="item-name">${item.variant}</span>${priceHtml}</div>`;
-                });
-            }
-            document.getElementById("optionsModal").style.display = "block";
+            try {
+                const product = displayedProducts[productIndex];
+                const modalList = document.getElementById("modalList");
+                const modalTitle = document.getElementById("modalTitle");
+                modalTitle.innerText = product.name + " - Options";
+                modalList.innerHTML = ""; 
+                if (product.options) {
+                    product.options.forEach(item => {
+                        let priceHtml = item.price === "Out of Stock" ? `<span class="out-stock-text">Out of Stock</span>` : "";
+                        modalList.innerHTML += `<div class="modal-list-item"><span class="item-name">${item.variant}</span>${priceHtml}</div>`;
+                    });
+                }
+                document.getElementById("optionsModal").style.display = "block";
+            } catch(e) { console.log(e); }
         }
 
         function openInfoModal(productIndex) {
@@ -591,16 +730,15 @@
             video.play();
         }
 
-        // Close on Outside Click
         window.onclick = function(event) { 
             if (event.target == document.getElementById("optionsModal")) closeModal(); 
             if (event.target == document.getElementById("videoModal")) closeVideoModal();
             if (event.target == document.getElementById("infoModal")) closeInfoModal();
+            if (event.target == document.getElementById("cartModal")) closeCartModal();
             if (event.target == document.getElementById("devModal")) document.getElementById('devModal').style.display = 'none';
             if (event.target == document.getElementById("myOverlay")) closeMenu();
         }
 
-        // Scroll to Top
         window.onscroll = function() {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 document.getElementById("backToTopBtn").style.display = "flex";
@@ -610,10 +748,21 @@
         };
         function scrollToTop() { window.scrollTo({top: 0, behavior: 'smooth'}); }
 
-        // --- DATA ARRAYS ---
+        // --- DATA ---
         let brandDataScope = []; 
         let displayedProducts = []; 
-        const anabondProducts = []; // Empty for now
+        const anabondProducts = []; 
+        const sprayPaintColors = [
+            { variant: "Bright Chrome" }, { variant: "Canary Yellow" }, { variant: "Copper" }, { variant: "Deep Yellow" },
+            { variant: "Fluorescent Green" }, { variant: "Fluorescent Orange" }, { variant: "Fluorescent Yellow" }, 
+            { variant: "Fluorescent Red" }, { variant: "Fluorescent Pink" }, { variant: "Fluorescent Blue" },
+            { variant: "Fresh Green" }, { variant: "Gloss Black" }, { variant: "Gloss White" }, { variant: "Gold" },
+            { variant: "Golden Brown" }, { variant: "Grass Green" }, { variant: "Haier Grey" }, { variant: "Isuzu Blue" },
+            { variant: "Ivory" }, { variant: "Lacquer Clear" }, { variant: "Mars Red" }, { variant: "Matt Black" },
+            { variant: "Matt Gray White" }, { variant: "Matt White" }, { variant: "Off White" }, { variant: "Orange Red" },
+            { variant: "Phiroza Blue" }, { variant: "Shifeng Blue" }, { variant: "Siemans Grey" }, { variant: "Silver" },
+            { variant: "Sparkle Gold" }, { variant: "Tang Orange" }, { variant: "Zinc" }
+        ];
 
         const atulProducts = [
             { name: "Lacare AM 70", img: "atul_lacare_am70.jpeg", brand: "Atul", desc: "Lubricates locks, loosens rusted nuts, and cleans spark plugs.", hasOptions: true, btnText: "View Sizes", options: [{ variant: "85g", price: "" }, { variant: "400g", price: "" }], details: `<strong>Description:</strong><br>Multi-purpose maintenance spray designed for preventive and corrective maintenance for industrial use, automobiles, and homes.<br><br><strong>Key Benefits:</strong><br>• Penetrates rust & loosens rusted nuts.<br>• Provides lubrication & removes stickiness.<br>• Displaces moisture & protects from corrosion.<br><br><strong>Applications:</strong><ul><li>Loosening rusted nuts and bolts</li><li>Cleaning spark plugs</li><li>Lubricating door locks, bolts, hinges, fans, mixers, zippers.</li></ul>` },
@@ -722,16 +871,28 @@
                 desc: "Quick-drying paint for metal, wood, and car touch-ups.", img: "abro_spray_group.jpeg", 
                 brand: "ABRO",
                 pdf: "catalogs/abro_spray_chart.pdf", 
-                btnText: "View Available Colours"
+                btnText: "View Available Colours",
+                hasOptions: true,
+                options: [
+                    { variant: "Bright Chrome" }, { variant: "Canary Yellow" }, { variant: "Copper" }, { variant: "Deep Yellow" },
+                    { variant: "Fluorescent Green" }, { variant: "Fluorescent Orange" }, { variant: "Fluorescent Yellow" }, 
+                    { variant: "Fluorescent Red" }, { variant: "Fluorescent Pink" }, { variant: "Fluorescent Blue" },
+                    { variant: "Fresh Green" }, { variant: "Gloss Black" }, { variant: "Gloss White" }, { variant: "Gold" },
+                    { variant: "Golden Brown" }, { variant: "Grass Green" }, { variant: "Haier Grey" }, { variant: "Isuzu Blue" },
+                    { variant: "Ivory" }, { variant: "Lacquer Clear" }, { variant: "Mars Red" }, { variant: "Matt Black" },
+                    { variant: "Matt Gray White" }, { variant: "Matt White" }, { variant: "Off White" }, { variant: "Orange Red" },
+                    { variant: "Phiroza Blue" }, { variant: "Shifeng Blue" }, { variant: "Siemans Grey" }, { variant: "Silver" },
+                    { variant: "Sparkle Gold" }, { variant: "Tang Orange" }, { variant: "Zinc" }
+                ]
             },
-            { name: "Abro Packing Tapes (BOPP)", desc: "Strong tape for carton sealing and packaging.", img: "abro_pack_group.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Sizes & Types", options: [{ variant: "2 Inch Clear", price: "" }, { variant: "2 Inch Brown", price: "" }, { variant: "3 Inch Clear", price: "" }, { variant: "3 Inch Brown", price: "" }] },
-            { name: "Abro Telescopic Runners", desc: "Smooth sliding channels for drawers.", img: "abro_runner_group.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Weight Capacity", options: [{ variant: "35 Kg Capacity", price: "" }, { variant: "45 Kg Capacity", price: "" }] },
-            { name: "Abro 3123 Masking Tape", desc: "General purpose masking tape for painting.", img: "abro_3123.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Inch", price: "" }, { variant: "2 Inch", price: "" }, { variant: "1/2 Inch", price: "" }, { variant: "3/4 Inch", price: "" }, { variant: "1.5 Inch", price: "" }] },
-            { name: "Abro Ezpro Masking Tape", desc: "Easy removal tape for carpentry and painting.", img: "abro_ezpro.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Inch", price: "" }, { variant: "2 Inch", price: "" }, { variant: "1/2 Inch", price: "" }, { variant: "3/4 Inch", price: "" }, { variant: "1.5 Inch", price: "" }] },
-            { name: "Abro GHB Tape", desc: "High-strength bonding tape (Screw replacement).", img: "abro_ghb.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Thickness", options: [{ variant: "2mm", price: "" }, { variant: "1.2mm", price: "" }] },
+            { name: "Abro Packing Tapes (BOPP)", desc: "Strong tape for carton sealing and packaging.", img: "abro_pack_group.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Sizes & Types", options: [{ variant: "2 Inch Clear" }, { variant: "2 Inch Brown" }, { variant: "3 Inch Clear" }, { variant: "3 Inch Brown" }] },
+            { name: "Abro Telescopic Runners", desc: "Smooth sliding channels for drawers.", img: "abro_runner_group.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Weight Capacity", options: [{ variant: "35 Kg Capacity" }, { variant: "45 Kg Capacity" }] },
+            { name: "Abro 3123 Masking Tape", desc: "General purpose masking tape for painting.", img: "abro_3123.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Inch" }, { variant: "2 Inch" }, { variant: "1/2 Inch" }, { variant: "3/4 Inch" }, { variant: "1.5 Inch" }] },
+            { name: "Abro Ezpro Masking Tape", desc: "Easy removal tape for carpentry and painting.", img: "abro_ezpro.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Inch" }, { variant: "2 Inch" }, { variant: "1/2 Inch" }, { variant: "3/4 Inch" }, { variant: "1.5 Inch" }] },
+            { name: "Abro GHB Tape", desc: "High-strength bonding tape (Screw replacement).", img: "abro_ghb.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Thickness", options: [{ variant: "2mm" }, { variant: "1.2mm" }] },
             { name: "Abro Lub. AB-80 (50ml)", desc: "Loosens rusted parts and stops squeaks.", img: "abro_ab80_50.jpeg", brand: "ABRO" },
             { name: "Abro Lub. AB-80 (100ml)", desc: "Lubricant spray for chains and hinges.", img: "abro_ab80_100.jpeg", brand: "ABRO" },
-            { name: "Abro Cloth Roll", desc: "Abrasive cloth for metal cleaning.", img: "abro_cloth_roll.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Grits", options: [{ variant: "Grit 60", price: "" }, { variant: "Grit 80", price: "" }, { variant: "Grit 100", price: "" }, { variant: "Grit 120", price: "" }] },
+            { name: "Abro Cloth Roll", desc: "Abrasive cloth for metal cleaning.", img: "abro_cloth_roll.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Grits", options: [{ variant: "Grit 60" }, { variant: "Grit 80" }, { variant: "Grit 100" }, { variant: "Grit 120" }] },
             { name: "Abro Cut-off Wheel Green (14\")", desc: "Heavy-duty metal cutting wheel.", img: "abro_wheel_green_14.jpeg", brand: "ABRO" },
             { name: "Abro Cut-off Wheel Black (14\")", desc: "Standard metal cutting wheel.", img: "abro_wheel_black_14.jpeg", brand: "ABRO" },
             { name: "Abro Cut-off Wheel Green (4\")", desc: "Stainless steel cutting wheel.", img: "abro_wheel_green_4.jpeg", brand: "ABRO" },
@@ -740,10 +901,10 @@
             { name: "Abro Drywall Tape (2 Inch)", desc: "Joint tape for gypsum board gaps.", img: "abro_drywall_2.jpeg", brand: "ABRO" },
             { name: "Abro Drywall Tape (4 Inch)", desc: "Wide joint tape for large cracks.", img: "abro_drywall_4.jpeg", brand: "ABRO" },
             { name: "Abro Drywall Tape (6 Inch)", desc: "Extra wide tape for wall repair.", img: "abro_drywall_6.jpeg", brand: "ABRO" },
-            { name: "Abro Fiber Disc", desc: "Grinding disc for welding removal.", img: "abro_fiber_disc.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Grits", options: [{ variant: "Grit 60", price: "" }, { variant: "Grit 80", price: "" }, { variant: "Grit 100", price: "" }, { variant: "Grit 120", price: "" }] },
-            { name: "Abro Flap Disc", desc: "Finishing disc for smooth surfaces.", img: "abro_flap_disc.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Grits", options: [{ variant: "Grit 60", price: "" }, { variant: "Grit 80" }] },
-            { name: "Abro GP 260ml", desc: "Silicone sealant for glass and aluminium.", img: "abro_gp_260.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Colors", options: [{ variant: "Clear", price: "" }, { variant: "White", price: "" }, { variant: "Black", price: "" }] },
-            { name: "Abro Latex Paper", desc: "Waterproof sanding paper for polishing.", img: "abro_latex.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Grits", options: [{ variant: "Grit 100", price: "" }, { variant: "Grit 150", price: "" }, { variant: "Grit 160", price: "" }, { variant: "Grit 180", price: "" }, { variant: "Grit 220", price: "" }] },
+            { name: "Abro Fiber Disc", desc: "Grinding disc for welding removal.", img: "abro_fiber_disc.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Grits", options: [{ variant: "Grit 60" }, { variant: "Grit 80" }, { variant: "Grit 100" }, { variant: "Grit 120" }] },
+            { name: "Abro Flap Disc", desc: "Finishing disc for smooth surfaces.", img: "abro_flap_disc.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Grits", options: [{ variant: "Grit 60" }, { variant: "Grit 80" }] },
+            { name: "Abro GP 260ml", desc: "Silicone sealant for glass and aluminium.", img: "abro_gp_260.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Colors", options: [{ variant: "Clear" }, { variant: "White" }, { variant: "Black" }] },
+            { name: "Abro Latex Paper", desc: "Waterproof sanding paper for polishing.", img: "abro_latex.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Grits", options: [{ variant: "Grit 100" }, { variant: "Grit 150" }, { variant: "Grit 160" }, { variant: "Grit 180" }, { variant: "Grit 220" }] },
             { name: "Abro Leakage Repair Tape (2\")", desc: "Waterproof tape for roof leaks.", img: "abro_leakage_2.jpeg", brand: "ABRO" },
             { name: "Abro Leakage Repair Tape (4\")", desc: "Sealing tape for pipes and tanks.", img: "abro_leakage_4.jpeg", brand: "ABRO" },
             { name: "Abro Leakage Repair Tape (6\")", desc: "Wide tape for large crack sealing.", img: "abro_leakage_6.jpeg", brand: "ABRO" },
@@ -753,7 +914,7 @@
             { name: "Abro PTFE Tape (10m)", desc: "Extra length Teflon tape for plumbing.", img: "abro_ptfe_10m.jpeg", brand: "ABRO" },
             { name: "Abro PU Foam (750ml)", desc: "Expanding foam for filling large gaps.", img: "abro_pu_750.jpeg", brand: "ABRO" },
             { name: "Abro PU Foam (450ml)", desc: "Gap filler for windows and ACs.", img: "abro_pu_450.jpeg", brand: "ABRO" },
-            { name: "Abro Insulation Tape", desc: "PVC tape for electrical wires.", img: "abro_insulation.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Colors", options: [{ variant: "Red", price: "" }, { variant: "Blue", price: "" }, { variant: "Green", price: "" }, { variant: "Yellow", price: "" }, { variant: "White", price: "" }, { variant: "Black", price: "" }] },
+            { name: "Abro Insulation Tape", desc: "PVC tape for electrical wires.", img: "abro_insulation.jpeg", brand: "ABRO", hasOptions: true, btnText: "View Colors", options: [{ variant: "Red" }, { variant: "Blue" }, { variant: "Green" }, { variant: "Yellow" }, { variant: "White" }, { variant: "Black" }] },
             { name: "Abro Acrybond Sealant (280ml)", desc: "Paintable acrylic sealant", img: "abro_acrybond.jpeg", brand: "ABRO" },
             { name: "Abro Grinding Wheel", desc: "Metal grinding disc", img: "abro_grinding.jpeg", brand: "ABRO" },
             { name: "Abro Shuttering Tape", desc: "Prevents concrete slurry leakage.", img: "abro_shuttering.jpeg", brand: "ABRO" },
@@ -778,14 +939,14 @@
             { name: "Elastocoat Waterproofing (20 Litre)", desc: "Protective coating for terraces.", img: "bostik_elastocoat_20l.jpeg", brand: "BOSTIK" },
             { name: "EP-Bond (1kg)", desc: "Concrete bonding agent.", img: "bostik_ep_bond.jpeg", brand: "BOSTIK" },
             { name: "Fill A Gap (1kg)", desc: "Acrylic sealant for door frames.", img: "bostik_fill_a_gap.jpeg", brand: "BOSTIK" },
-            { name: "Epoxy Filler (Multi Colours)", desc: "Stain-resistant epoxy for tile joints.", img: "bostik_epoxy_filler.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Available Colours", options: [{ variant: "Charcoal", price: "" }, { variant: "Golden Brown", price: "" }, { variant: "Ivory", price: "" }, { variant: "Neutral Grey", price: "" }, { variant: "Silver Grey", price: "" }, { variant: "White", price: "" }] },
+            { name: "Epoxy Filler (Multi Colours)", desc: "Stain-resistant epoxy for tile joints.", img: "bostik_epoxy_filler.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Available Colours", options: [{ variant: "Charcoal" }, { variant: "Golden Brown" }, { variant: "Ivory" }, { variant: "Neutral Grey" }, { variant: "Silver Grey" }, { variant: "White" }] },
             { name: "Bostik Fixall Grey (5 Kg)", desc: "Polymer modified tile adhesive (Grey).", img: "bostik_fixall_grey_5kg.jpeg", brand: "BOSTIK" },
             { name: "Bostik Fixall Grey (10 Kg)", desc: "Standard grey tile adhesive.", img: "bostik_fixall_grey_10kg.jpeg", brand: "BOSTIK" },
             { name: "Bostik Fixall Grey (20 Kg)", desc: "Tile adhesive for ceramic tiles.", img: "bostik_fixall_grey_20kg.jpeg", brand: "BOSTIK" },
             { name: "Bostik Fixall Grey (30 Kg)", desc: "Bulk pack tile adhesive.", img: "bostik_fixall_grey_30kg.jpeg", brand: "BOSTIK" },
             { name: "Super Fixall White (30kg)", desc: "White tile adhesive for marble/glass blocks.", img: "bostik_fixall_white.jpeg", brand: "BOSTIK" },
             { name: "Super Fixall Grey (30kg)", desc: "High strength premium tile adhesive.", img: "bostik_super_fixall.jpeg", brand: "BOSTIK" },
-            { name: "Bostik Tile Grout (1kg)", desc: "Cement-based joint filler.", img: "bostik_normal_grout.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Colours", options: [{ variant: "Ivory", price: "" }, { variant: "White", price: "Out of Stock" }] },
+            { name: "Bostik Tile Grout (1kg)", desc: "Cement-based joint filler.", img: "bostik_normal_grout.jpeg", brand: "BOSTIK", hasOptions: true, btnText: "View Colours", options: [{ variant: "Ivory" }, { variant: "White" }] },
             { name: "Bostik LW (1 Litre)", desc: "Integral waterproofing compound for concrete.", img: "bostik_lw.jpeg", brand: "BOSTIK" },
             { name: "Moisture Seal (1kg)", desc: "Water barrier coating.", img: "bostik_moisture_seal.jpeg", brand: "BOSTIK" },
             { name: "Bostik Patchfix (30kg)", price: "Out of Stock", isOutOfStock: true, desc: "High strength repair mortar.", img: "bostik_patchfix.jpeg", brand: "BOSTIK" },
@@ -864,7 +1025,8 @@
                         let optionsButton = '';
                         if (product.pdf) {
                             optionsButton = `<a href="${product.pdf}" target="_blank" class="view-options-btn"><span class="material-icons" style="font-size:16px;">picture_as_pdf</span> ${product.btnText}</a>`;
-                        } else if (product.hasOptions) {
+                        } else if (product.hasOptions && !product.options) {
+                             // Only show button if options array is missing (fallback), otherwise dropdown handles it
                             optionsButton = `<button class="view-options-btn" onclick="openOptionsModal(${index})"><span class="material-icons" style="font-size:16px;">list</span> ${product.btnText}</button>`;
                         }
 
@@ -898,6 +1060,15 @@
                             phoneNumber = "+917092441687";
                         }
 
+                        // NEW: MULTI-CHOICE DROPDOWN LOGIC
+                        let optionSelectHtml = '';
+                        if(product.options && product.options.length > 0) {
+                            optionSelectHtml = `<select id="var-${index}" class="variant-select">
+                                <option value="" disabled selected>Select Option/Color</option>
+                                ${product.options.map(opt => `<option value="${opt.variant}">${opt.variant}</option>`).join('')}
+                            </select>`;
+                        }
+
                         let cardHTML = `
                             <div class="card">
                                 ${badgeHtml}
@@ -910,9 +1081,18 @@
                                     <h3 class="material-name">${product.name}</h3>
                                     <p class="product-desc">${product.desc}</p>
                                     ${outOfStockHtml}
-                                    ${optionsButton}
+                                    
+                                    ${optionSelectHtml} ${optionsButton}
                                     ${infoButton}
                                     ${videoButton}
+                                    
+                                    <div class="cart-row">
+                                        <input type="number" id="qty-${index}" class="qty-input" placeholder="Qty" min="1">
+                                        <button onclick="addToCart(${index})" id="btn-${index}" class="add-cart-btn">
+                                            <span class="material-icons">add_shopping_cart</span> Add
+                                        </button>
+                                    </div>
+
                                     <div class="action-row">
                                         <a href="tel:${phoneNumber}" class="buy-now-btn"><span class="material-icons">call</span> CALL TO BUY</a>
                                         <a href="${shareLink}" target="_blank" class="share-btn"><span class="material-icons">share</span></a>
@@ -936,7 +1116,7 @@
 
         // SCROLL REVEAL OBSERVER (ALWAYS ON)
         function observeCards() {
-            const cards = document.querySelectorAll('.card, .about-card'); // Target both products and about cards
+            const cards = document.querySelectorAll('.card, .about-card'); // Target both
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -976,11 +1156,15 @@
         function filterProducts() {
             const query = document.getElementById('searchInput').value.toLowerCase();
             if (!query) { renderGrid(brandDataScope); return; }
-            const filteredItems = brandDataScope.filter(item => 
-                (item.name && item.name.toLowerCase().includes(query)) || 
-                (item.desc && item.desc.toLowerCase().includes(query)) || 
-                (item.brand && item.brand.toLowerCase().includes(query))
-            );
+            
+            const filteredItems = brandDataScope.filter(item => {
+                // ROBUST CHECK to prevent crash
+                const matchName = item.name ? item.name.toLowerCase().includes(query) : false;
+                const matchDesc = item.desc ? item.desc.toLowerCase().includes(query) : false;
+                const matchBrand = item.brand ? item.brand.toLowerCase().includes(query) : false;
+                return matchName || matchDesc || matchBrand;
+            });
+            
             renderGrid(filteredItems);
         }
         
