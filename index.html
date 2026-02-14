@@ -751,7 +751,11 @@
         // --- DATA ---
         let brandDataScope = []; 
         let displayedProducts = []; 
-        const anabondProducts = []; 
+        const anabondProducts = [
+            { name: "Sign-O-Flex (15g)", img: "anabond_sign_o_flex_15g.jpeg", brand: "Anabond", desc: "Instant adhesive for rubber, plastic, metal, and wood." },
+            { name: "Tuffseald 2G", img: "anabond_tuffseald_2g.jpeg", brand: "Anabond", desc: "Super glue for quick bonding of small parts." },
+            { name: "GP Silicon Sealant", img: "anabond_gp_silicon_260ml.jpeg", brand: "Anabond", desc: "General purpose silicone sealant for glass and aluminium.", hasOptions: true, btnText: "View Colors", options: [{ variant: "Clear" }, { variant: "White" }, { variant: "Black" }] }
+        ]; 
         const sprayPaintColors = [
             { variant: "Bright Chrome" }, { variant: "Canary Yellow" }, { variant: "Copper" }, { variant: "Deep Yellow" },
             { variant: "Fluorescent Green" }, { variant: "Fluorescent Orange" }, { variant: "Fluorescent Yellow" }, 
@@ -779,6 +783,7 @@
             { name: "Polygrip Hotbond", img: "atul_polygrip_botbond.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "200ml", price: "" }, { variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }, { variant: "2 Litre", price: "" }, { variant: "5 Litre", price: "" }], desc: "Heat-resistant adhesive (170°C) for laminates and HVAC.", details: `<strong>Description:</strong><br>High heat resistant adhesive (up to 170°C).<br><br><strong>Applications:</strong><ul><li>High heat exposure areas</li><li>Laminates to ply</li><li>HVAC ducting</li></ul>` },
             { name: "Polygrip MP 609", img: "atul_polygrip_mp609.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }, { variant: "5 Litre", price: "" }], desc: "Rubber adhesive for foam, carpet, and upholstery.", details: `<strong>Description:</strong><br>Multi-purpose adhesive suitable for bonding foam.<br><br><strong>Applications:</strong><ul><li>Carpet laying</li><li>Foam bonding</li><li>HVAC ducting</li></ul>` },
             { name: "Polygrip Rapid", img: "atul_polygrip_rapid.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "4.5 Litre", price: "" }, { variant: "30 Litre", price: "" }], desc: "Bulk epoxy adhesive for industrial stone bonding.", details: `<strong>Description:</strong><br>Same high-performance qualities as Lapox Rapid & Clear in bulk packaging.` },
+            { name: "Polygrip Rapid 30L (Epoxy)", img: "atul_polygrip_rapid_30l.jpeg", brand: "Atul", desc: "Industrial-grade epoxy adhesive for large-scale stone bonding projects.", details: `<strong>Description:</strong><br>High-performance two-component epoxy adhesive specifically formulated for industrial applications requiring large volumes.<br><br><strong>Key Benefits:</strong><br>• Fast-setting with excellent bond strength<br>• Cost-effective bulk packaging<br>• Suitable for marble, granite, and stone bonding<br><br><strong>Applications:</strong><ul><li>Large construction projects</li><li>Industrial stone fixing</li><li>Commercial marble installation</li></ul>` },
             { name: "Polygrip S 709", img: "atul_polygrip_s709.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "1 Litre", price: "" }, { variant: "5 Litre", price: "" }], desc: "Sprayable adhesive for HVAC duct insulation.", details: `<strong>Description:</strong><br>Multi-purpose adhesive suitable for bonding substrates like canvas, foam, paper.<br><br><strong>Key Benefits:</strong><br>• Long tack retention time.<br>• Good coverage.` },
             { name: "Polygrip SR 409", img: "atul_polygrip_sr409.jpeg", brand: "Atul", hasOptions: true, btnText: "View Sizes", options: [{ variant: "500ml", price: "" }, { variant: "1 Litre", price: "" }], desc: "Fast-drying adhesive for mattress and sofa manufacturing.", details: `<strong>Description:</strong><br>Light-coloured, fast-drying adhesive for foam-to-foam bonding.<br><br><strong>Key Benefits:</strong><br>• Fast-drying.<br>• Does not stain.` }
         ];
@@ -999,7 +1004,7 @@
             }
 
             // 4. NEW ARRIVAL
-            if (brand === "atul") {
+            if (brand === "atul" || brand === "anabond") {
                 return `<div class="ribbon new">New Arrival</div>`;
             }
 
@@ -1052,7 +1057,7 @@
                         let shareLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
 
                         // --- PHONE NUMBER LOGIC ---
-                        let phoneNumber = "+919790345300"; // Default (Group 1: Bostik, Jubilant, Atul, Nerofix, Esdee)
+                        let phoneNumber = "+919790345300"; // Default (Group 1: Bostik, Jubilant, Atul, Nerofix, Esdee, Anabond)
                         const brandLower = product.brand.toLowerCase();
                         
                         // Group 2 Check: Abro, Weber, Itzu, A1
@@ -1148,7 +1153,7 @@
             else if (brandName === 'Jubilant') { brandDataScope = jubilantProducts; } 
             else if (brandName === 'Itzu') { brandDataScope = itzuProducts; }
             else if (brandName === 'Anabond') { brandDataScope = anabondProducts; }
-            else if (brandName === 'All Products') { brandDataScope = abroProducts.concat(bostikProducts, a1Products, atulProducts, weberProducts, esdeeProducts, nerofixProducts, jubilantProducts, itzuProducts); } 
+            else if (brandName === 'All Products') { brandDataScope = abroProducts.concat(bostikProducts, a1Products, atulProducts, weberProducts, esdeeProducts, nerofixProducts, jubilantProducts, itzuProducts, anabondProducts); } 
             
             renderGrid(brandDataScope);
         }
