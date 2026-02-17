@@ -31,7 +31,6 @@
     
     <style>
         :root {
-            /* Google Brand Colors */
             --google-blue: #1a73e8;
             --google-dark-blue: #174ea6;
             --google-grey: #5f6368;
@@ -43,8 +42,6 @@
             --best-seller: #ea4335;
             --best-price: #9334e6;
             --video-color: #ea4335;
-            
-            /* iOS 26 GLOSSY VARIABLES */
             --glass-bg: rgba(255, 255, 255, 0.85);
             --glass-border: rgba(255, 255, 255, 0.6);
             --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
@@ -61,7 +58,6 @@
             position: relative;
         }
 
-        /* --- TINY DOT ANIMATION (Background) --- */
         .background-animation {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1; overflow: hidden; background: #ffffff;
@@ -82,7 +78,6 @@
             100% { transform: translateY(-110vh) scale(1); opacity: 0; }
         }
 
-        /* --- NAVBAR (iOS GLOSSY FINISH) --- */
         nav { 
             padding: 8px 15px; 
             display: flex; align-items: center; justify-content: space-between; 
@@ -107,19 +102,19 @@
         .logo { font-size: 22px; font-weight: 500; color: var(--google-grey); white-space: nowrap; }
         .logo b { color: var(--google-blue); font-weight: 700; }
 
-        /* --- LANGUAGE TOGGLE (Tamil) - Professional --- */
+        /* LANGUAGE TOGGLE - small button with full word */
         .lang-toggle {
             display: inline-flex; align-items: center; justify-content: center; gap: 4px;
-            padding: 6px 12px; min-width: 70px; height: 36px;
+            padding: 5px 10px;
+            height: 34px;
             background: rgba(241, 243, 244, 0.9); border: 1px solid #dadce0;
-            border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--text-dark);
+            border-radius: 8px; font-size: 12px; font-weight: 600; color: var(--text-dark);
             cursor: pointer; transition: all 0.25s ease;
+            white-space: nowrap;
         }
         .lang-toggle:hover { background: #e8f0fe; border-color: var(--google-blue); color: var(--google-blue); }
         .lang-toggle.active { background: var(--google-blue); border-color: var(--google-blue); color: white; }
-        .lang-toggle .lang-label { font-weight: 600; }
 
-        /* --- SEARCH BAR --- */
         .nav-search-container { 
             position: relative; width: 40px; height: 40px; 
             background: rgba(241, 243, 244, 0.8); border-radius: 50px; 
@@ -143,7 +138,6 @@
             font-size: 20px; pointer-events: none; 
         }
 
-        /* --- SIDEBAR (iOS GLOSSY FINISH) --- */
         .sidebar { 
             height: 100%; width: 280px; 
             position: fixed; z-index: 2000; top: 0; left: -300px; 
@@ -163,7 +157,6 @@
         .sidebar a:hover { background-color: rgba(255, 255, 255, 0.6); color: var(--google-blue); border-left: 4px solid var(--google-blue); }
         .sidebar-badge { font-size: 10px; background-color: #d93025; color: white; padding: 2px 8px; border-radius: 12px; margin-left: auto; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* --- HERO SECTION --- */
         .hero { background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.0) 100%); padding: 40px 20px 60px; display: flex; flex-direction: column; align-items: center; }
         .hero-card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); max-width: 900px; width: 100%; padding: 40px 30px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid var(--google-blue); border: 1px solid rgba(255,255,255,0.5); }
         .hero-badge { display: inline-block; background: #e6f4ea; color: #137333; padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; }
@@ -172,7 +165,6 @@
         .cta-button { display: inline-flex; align-items: center; gap: 8px; background: var(--google-blue); color: white; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: 500; transition: 0.3s; box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3); }
         .cta-button:hover { background: var(--google-dark-blue); transform: translateY(-2px); }
         
-        /* --- ABOUT US (PREMIUM SECTION) --- */
         .about-section { max-width: 1200px; margin: 0 auto 60px; padding: 20px; }
         .about-header { text-align: center; margin-bottom: 40px; }
         .about-header h2 { font-size: 28px; font-weight: 800; color: #1a73e8; margin-bottom: 10px; }
@@ -180,7 +172,6 @@
         
         .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         
-        /* Shared Animation Class for Products AND About Cards */
         .about-card, .card {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 12px; 
@@ -199,7 +190,6 @@
         .stat-big { font-size: 36px; font-weight: 900; color: #1a73e8; display: block; margin-bottom: 5px; }
         .wp-badge { background: #e8f0fe; color: #1a73e8; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
 
-        /* --- Marquee --- */
         .partners-row { margin-top: 40px; padding-top: 30px; border-top: 1px solid #f1f3f4; overflow: hidden; position: relative; }
         .partners-label { font-size: 12px; color: #9aa0a6; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: block; }
         .marquee-container { display: flex; width: 100%; overflow: hidden; white-space: nowrap; }
@@ -207,13 +197,11 @@
         .brand-tag { background: #f8f9fa; border: 1px solid #dadce0; color: var(--google-grey); padding: 8px 18px; border-radius: 6px; font-size: 14px; font-weight: 500; display: inline-block; flex-shrink: 0; }
         @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* --- Product Grid --- */
         .container { max-width: 1200px; margin: 0 auto 80px; padding: 0 20px; position: relative; z-index: 10; }
         .section-title { font-size: 22px; font-weight: 500; margin-bottom: 25px; color: var(--text-dark); border-left: 5px solid var(--google-blue); padding-left: 15px; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
         .no-results { grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--google-grey); font-size: 16px; }
 
-        /* --- PRODUCT CARD SPECIFIC --- */
         .card { border: 1px solid var(--border-color); display: flex; flex-direction: column; }
         .card:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.12); transform: translateY(-5px) !important; border-color: transparent; }
         
@@ -291,8 +279,7 @@
         @media (max-width: 600px) {
             .logo { font-size: 20px; }
             .nav-search-container:hover, .nav-search-container:focus-within { width: 140px; position: absolute; right: 0; }
-            .lang-toggle .lang-label { display: none; }
-            .lang-toggle { min-width: 44px; padding: 6px; }
+            .lang-toggle { font-size: 11px; padding: 4px 8px; }
         }
     </style>
 </head>
@@ -373,9 +360,7 @@
             <div class="logo">Rockfort <b>Agencies</b></div>
         </div>
         <div class="nav-right">
-            <button type="button" id="langBtn" class="lang-toggle" onclick="toggleLang()" title="Switch to Tamil">
-                <span class="lang-label" id="langLabel">தமிழ்</span>
-            </button>
+            <button type="button" id="langBtn" class="lang-toggle" onclick="toggleLang()" title="Switch to Tamil">தமிழ்</button>
             <div class="nav-search-container">
                 <span class="material-icons nav-search-icon">search</span>
                 <input type="text" id="searchInput" class="nav-search-input" placeholder="Search..." onkeyup="filterProducts()" data-i18n-placeholder="searchPlaceholder">
@@ -457,9 +442,10 @@
         <div class="product-grid" id="productGrid"></div>
     </div>
 
+    <!-- FOOTER ALWAYS IN ENGLISH - NO data-i18n -->
     <footer>
         <p class="footer-title">Rockfort Agencies</p>
-        <p class="footer-subtitle" data-i18n="footerSubtitle">Wholesale & Retail Suppliers | Tiruchirappalli</p>
+        <p class="footer-subtitle">Wholesale & Retail Suppliers | Tiruchirappalli</p>
         <div class="address-box">
             <p class="address-text">
                 <span class="material-icons" style="vertical-align: middle; font-size: 18px; color: #8ab4f8;">location_on</span>
@@ -471,13 +457,13 @@
         <a href="mailto:rockkfortagencies@gmail.com" class="footer-email"><span class="material-icons" style="font-size:16px;">email</span> rockkfortagencies@gmail.com</a>
         <div class="copyright">&copy; Copyright 2026 Naveen Nivas Sivakumar. All rights reserved.</div>
         <button onclick="document.getElementById('devModal').style.display='block'" class="developer-btn">
-            <span class="material-icons" style="font-size:12px; vertical-align:text-top; margin-right:4px;">code</span> <span data-i18n="developerDetails">Developer Details</span>
+            <span class="material-icons" style="font-size:12px; vertical-align:text-top; margin-right:4px;">code</span> Developer Details
         </button>
     </footer>
 
     <script>
-        // --- LANGUAGE (EN / TAMIL) ---
         let currentLang = 'en';
+
         const t = {
             en: {
                 sidebarBrands: 'Our Brands',
@@ -595,20 +581,187 @@
             }
         };
 
+        // Tamil product names map
+        const tamilNames = {
+            // ANABOND
+            'Sign-O-Flex (15g)': 'சைன்-ஓ-ஃப்லெக்ஸ் (15g)',
+            'Tuffseald 2G': 'டஃப்சீல்ட் 2G',
+            'GP Silicon Sealant': 'GP சிலிக்கான் சீலண்ட்',
+            // ATUL
+            'Lacare AM 70': 'லேகேர் AM 70',
+            'Lapox Duratite (1.8 Kg)': 'லேபாக்ஸ் டியூரட்டைட் (1.8 Kg)',
+            'Lapox Lacrete': 'லேபாக்ஸ் லேக்ரெட்',
+            'Lapox Procoat (5 Litre)': 'லேபாக்ஸ் ப்ரோகோட் (5 Litre)',
+            'Lapox Rapid & Clear (1 Kg)': 'லேபாக்ஸ் ரேபிட் & கிளியர் (1 Kg)',
+            'Lapox Ultra (1.8 Kg)': 'லேபாக்ஸ் அல்ட்ரா (1.8 Kg)',
+            'Lapox Ultrabond CPVC (100ml)': 'லேபாக்ஸ் அல்ட்ராபாண்ட் CPVC (100ml)',
+            'Lapox Ultrabond UPVC (100ml)': 'லேபாக்ஸ் அல்ட்ராபாண்ட் UPVC (100ml)',
+            'Lapox Ultrabond PVC (100ml)': 'லேபாக்ஸ் அல்ட்ராபாண்ட் PVC (100ml)',
+            'Lapox Ultra Fast': 'லேபாக்ஸ் அல்ட்ரா ஃபாஸ்ட்',
+            'Lapox Ultrafix (1.5 Kg)': 'லேபாக்ஸ் அல்ட்ராஃபிக்ஸ் (1.5 Kg)',
+            'Polygrip Hotbond': 'பாலிகிரிப் ஹாட்பாண்ட்',
+            'Polygrip MP 609': 'பாலிகிரிப் MP 609',
+            'Polygrip Rapid': 'பாலிகிரிப் ரேபிட்',
+            'Polygrip Rapid 30L (Epoxy)': 'பாலிகிரிப் ரேபிட் 30L (எபோக்சி)',
+            'Polygrip S 709': 'பாலிகிரிப் S 709',
+            'Polygrip SR 409': 'பாலிகிரிப் SR 409',
+            // WEBER
+            'Weberdry ACR Seal (20L)': 'வெபர்ட்ரை ACR சீல் (20L)',
+            'Weber Colorfine (1kg)': 'வெபர் கலர்ஃபைன் (1kg)',
+            'Weberwall Blockfix (40kg)': 'வெபர்வால் பிளாக்ஃபிக்ஸ் (40kg)',
+            'Weberklin Ceraplus (1L)': 'வெபர்க்லின் சேராபிளஸ் (1L)',
+            'Weberset Classic': 'வெபர்செட் கிளாசிக்',
+            'Webercolor SG Sanded Grout (10kg)': 'வெபர்கலர் SG சேண்டட் கிரவுட் (10kg)',
+            'Webercolor Dewdrop (1kg)': 'வெபர்கலர் டியூட்ராப் (1kg)',
+            'Weberset Firm (20kg)': 'வெபர்செட் ஃபர்ம் (20kg)',
+            'Weberset First White (40kg)': 'வெபர்செட் ஃபர்ஸ்ட் வைட் (40kg)',
+            'Groutadd (350ml)': 'கிரவுட்ஆட் (350ml)',
+            'Weberset Nova (Grey)': 'வெபர்செட் நோவா (கிரே)',
+            'Weberset Nova (White 40kg)': 'வெபர்செட் நோவா (வைட் 40kg)',
+            'Weberset Plus White (20kg)': 'வெபர்செட் பிளஸ் வைட் (20kg)',
+            'Joint Poxyfill (3.635kg)': 'ஜாயிண்ட் பாக்சிஃபில் (3.635kg)',
+            'Joint Poxyfill (727g)': 'ஜாயிண்ட் பாக்சிஃபில் (727g)',
+            'Weberset Premier': 'வெபர்செட் ப்ரிமியர்',
+            'Webertec SBR Lit-X': 'வெபர்டெக் SBR லிட்-X',
+            'Tile Spacer': 'டைல் ஸ்பேசர்',
+            'Joint Poxy Resin & Hardner (273g)': 'ஜாயிண்ட் பாக்சி ரெசின் & ஹார்ட்னர் (273g)',
+            'Joint Poxy Resin & Hardner (1.365kg)': 'ஜாயிண்ட் பாக்சி ரெசின் & ஹார்ட்னர் (1.365kg)',
+            // A1
+            'Polish Brush (2 Inch)': 'பாலிஷ் பிரஷ் (2 Inch)',
+            '111 Brush (3 Inch)': '111 பிரஷ் (3 Inch)',
+            'Premium Brush (3 Inch)': 'ப்ரிமியம் பிரஷ் (3 Inch)',
+            '111 Brush (1 Inch)': '111 பிரஷ் (1 Inch)',
+            'Epoxy Roller (4 Inch)': 'எபோக்சி ரோலர் (4 Inch)',
+            'Vintage Roller (4 Inch)': 'விண்டேஜ் ரோலர் (4 Inch)',
+            'Magic Brush (3 Inch)': 'மேஜிக் பிரஷ் (3 Inch)',
+            'Magic Brush (1 Inch)': 'மேஜிக் பிரஷ் (1 Inch)',
+            'Handy Roller (4 Inch)': 'ஹேண்டி ரோலர் (4 Inch)',
+            'Foam Roller (2 Inch)': 'ஃபோம் ரோலர் (2 Inch)',
+            'Bluewhite Roller (9 Inch)': 'ப்ளூவைட் ரோலர் (9 Inch)',
+            'Artist Flat Brush': 'ஆர்டிஸ்ட் ஃப்ளாட் பிரஷ்',
+            'Vintage Roller (9 Inch)': 'விண்டேஜ் ரோலர் (9 Inch)',
+            'Yellow White Roller (9 Inch)': 'யெல்லோ வைட் ரோலர் (9 Inch)',
+            'Handy Roller (9 Inch)': 'ஹேண்டி ரோலர் (9 Inch)',
+            // ITZU
+            'Rollify 2 Inch': 'ரோலிஃபை 2 Inch',
+            'Jumbo Roller (Exterior) 9 Inch': 'ஜம்போ ரோலர் (எக்ஸ்டீரியர்) 9 Inch',
+            'Rollify Roller 6 Inch': 'ரோலிஃபை ரோலர் 6 Inch',
+            'Pilot Roller 9 Inch': 'பைலட் ரோலர் 9 Inch',
+            'Jumbo Roller (Ragging) 9 Inch': 'ஜம்போ ரோலர் (ராகிங்) 9 Inch',
+            'Rollraza Roller (Interior) 9 Inch': 'ரோல்ரஸா ரோலர் (இண்டீரியர்) 9 Inch',
+            'Trendy Brush 3 Inch': 'ட்ரெண்டி பிரஷ் 3 Inch',
+            'Rollraza Roller (Exterior) 9 Inch': 'ரோல்ரஸா ரோலர் (எக்ஸ்டீரியர்) 9 Inch',
+            'Prestige Brush 4 Inch': 'ப்ரெஸ்டீஜ் பிரஷ் 4 Inch',
+            'Jumbo Roller 4 Inch': 'ஜம்போ ரோலர் 4 Inch',
+            'Rollify Roller (2+1 Foam) 6 Inch': 'ரோலிஃபை ரோலர் (2+1 ஃபோம்) 6 Inch',
+            'Trendy Brush 4 Inch': 'ட்ரெண்டி பிரஷ் 4 Inch',
+            'Trendy Brush 2 Inch': 'ட்ரெண்டி பிரஷ் 2 Inch',
+            'Delco Roller 9 Inch': 'டெல்கோ ரோலர் 9 Inch',
+            'Rollraza Roller (Rap) 9 Inch': 'ரோல்ரஸா ரோலர் (ரேப்) 9 Inch',
+            'Rollraza Roller (Bottle) 9 Inch': 'ரோல்ரஸா ரோலர் (பாட்டில்) 9 Inch',
+            'Delco Roller (Rap) 9 Inch': 'டெல்கோ ரோலர் (ரேப்) 9 Inch',
+            // NEROFIX
+            'Turbofix PU 104 (25L)': 'டர்போஃபிக்ஸ் PU 104 (25L)',
+            'Turbofix PU 301 (30kg)': 'டர்போஃபிக்ஸ் PU 301 (30kg)',
+            'Turbocure H2 Hardner (500ml)': 'டர்போக்யூர் H2 ஹார்ட்னர் (500ml)',
+            'Turbocure H2 Hardner (1kg)': 'டர்போக்யூர் H2 ஹார்ட்னர் (1kg)',
+            // ESDEE
+            'Melamine Glossy Clear (20L)': 'மெலமைன் க்ளாஸி கிளியர் (20L)',
+            'Sanding Sealer (20L)': 'சேண்டிங் சீலர் (20L)',
+            // JUBILANT
+            'Fast-X (5 Litre)': 'ஃபாஸ்ட்-X (5 Litre)',
+            'PVC Xtra (5 Kg)': 'PVC எக்ஸ்ட்ரா (5 Kg)',
+            'PVC Xtra (1 Kg)': 'PVC எக்ஸ்ட்ரா (1 Kg)',
+            'WGP 740 (50 Kg)': 'WGP 740 (50 Kg)',
+            'WGP 880 (50 Kg)': 'WGP 880 (50 Kg)',
+            'WGP 990 (50 Kg)': 'WGP 990 (50 Kg)',
+            // ABRO
+            'Abro Spray Paints (400ml)': 'அப்ரோ ஸ்ப்ரே பெயிண்ட்ஸ் (400ml)',
+            'Abro Packing Tapes (BOPP)': 'அப்ரோ பேக்கிங் டேப்கள் (BOPP)',
+            'Abro Telescopic Runners': 'அப்ரோ டெலஸ்கோபிக் ரன்னர்கள்',
+            'Abro 3123 Masking Tape': 'அப்ரோ 3123 மாஸ்கிங் டேப்',
+            'Abro Ezpro Masking Tape': 'அப்ரோ எஸ்ஸிப்ரோ மாஸ்கிங் டேப்',
+            'Abro GHB Tape': 'அப்ரோ GHB டேப்',
+            'Abro Lub. AB-80 (50ml)': 'அப்ரோ லூப். AB-80 (50ml)',
+            'Abro Lub. AB-80 (100ml)': 'அப்ரோ லூப். AB-80 (100ml)',
+            'Abro Cloth Roll': 'அப்ரோ க்ளாத் ரோல்',
+            'Abro Cut-off Wheel Green (14")': 'அப்ரோ கட்-ஆஃப் வீல் கிரீன் (14")',
+            'Abro Cut-off Wheel Black (14")': 'அப்ரோ கட்-ஆஃப் வீல் பிளாக் (14")',
+            'Abro Cut-off Wheel Green (4")': 'அப்ரோ கட்-ஆஃப் வீல் கிரீன் (4")',
+            'Abro Cut-off Wheel Green (5")': 'அப்ரோ கட்-ஆஃப் வீல் கிரீன் (5")',
+            'Abro Cut-off Wheel Black (4")': 'அப்ரோ கட்-ஆஃப் வீல் பிளாக் (4")',
+            'Abro Drywall Tape (2 Inch)': 'அப்ரோ டிரைவால் டேப் (2 Inch)',
+            'Abro Drywall Tape (4 Inch)': 'அப்ரோ டிரைவால் டேப் (4 Inch)',
+            'Abro Drywall Tape (6 Inch)': 'அப்ரோ டிரைவால் டேப் (6 Inch)',
+            'Abro Fiber Disc': 'அப்ரோ ஃபைபர் டிஸ்க்',
+            'Abro Flap Disc': 'அப்ரோ ஃப்ளாப் டிஸ்க்',
+            'Abro GP 260ml': 'அப்ரோ GP 260ml',
+            'Abro Latex Paper': 'அப்ரோ லேடெக்ஸ் பேப்பர்',
+            'Abro Leakage Repair Tape (2")': 'அப்ரோ லீக்கேஜ் ரிப்பேர் டேப் (2")',
+            'Abro Leakage Repair Tape (4")': 'அப்ரோ லீக்கேஜ் ரிப்பேர் டேப் (4")',
+            'Abro Leakage Repair Tape (6")': 'அப்ரோ லீக்கேஜ் ரிப்பேர் டேப் (6")',
+            'Abro Mirror Mounting Tape (1")': 'அப்ரோ மிரர் மவுண்டிங் டேப் (1")',
+            'Abro Mirror Mounting Tape (1/2")': 'அப்ரோ மிரர் மவுண்டிங் டேப் (1/2")',
+            'Abro PTFE Tape (5m)': 'அப்ரோ PTFE டேப் (5m)',
+            'Abro PTFE Tape (10m)': 'அப்ரோ PTFE டேப் (10m)',
+            'Abro PU Foam (750ml)': 'அப்ரோ PU ஃபோம் (750ml)',
+            'Abro PU Foam (450ml)': 'அப்ரோ PU ஃபோம் (450ml)',
+            'Abro Insulation Tape': 'அப்ரோ இன்சுலேஷன் டேப்',
+            'Abro Acrybond Sealant (280ml)': 'அப்ரோ அக்ரிபாண்ட் சீலண்ட் (280ml)',
+            'Abro Grinding Wheel': 'அப்ரோ கிரைண்டிங் வீல்',
+            'Abro Shuttering Tape': 'அப்ரோ ஷட்டரிங் டேப்',
+            'Abro Weather 9895 Sealant': 'அப்ரோ வெதர் 9895 சீலண்ட்',
+            // BOSTIK
+            'Bostik Anchor Grout (1kg)': 'போஸ்டிக் ஆங்கர் கிரவுட் (1kg)',
+            'Bostik Base & Hardner (0.3 Kg)': 'போஸ்டிக் பேஸ் & ஹார்ட்னர் (0.3 Kg)',
+            'Bostik Base & Hardner (1.5 Kg)': 'போஸ்டிக் பேஸ் & ஹார்ட்னர் (1.5 Kg)',
+            'Boscocem 475 (1 Litre)': 'போஸ்கோசெம் 475 (1 Litre)',
+            'Boscocem 475 (5 Litre)': 'போஸ்கோசெம் 475 (5 Litre)',
+            'Boscocem 475 (20 Litre)': 'போஸ்கோசெம் 475 (20 Litre)',
+            'Bostik Two in One (1 Litre)': 'போஸ்டிக் டூ இன் ஒன் (1 Litre)',
+            'Bostik Two in One (5 Litre)': 'போஸ்டிக் டூ இன் ஒன் (5 Litre)',
+            'Bostik Two in One (20 Litre)': 'போஸ்டிக் டூ இன் ஒன் (20 Litre)',
+            'Bostik Crack Filler (1 Kg)': 'போஸ்டிக் கிராக் ஃபில்லர் (1 Kg)',
+            'Efflorescence Coat (1 Litre)': 'எஃப்ளோரெசன்ஸ் கோட் (1 Litre)',
+            'Efflorescence Coat (5 Litre)': 'எஃப்ளோரெசன்ஸ் கோட் (5 Litre)',
+            'Efflorescence Coat (20 Litre)': 'எஃப்ளோரெசன்ஸ் கோட் (20 Litre)',
+            'Elastocoat Waterproofing (5 Litre)': 'எலாஸ்டோகோட் நீர்ப்புகா (5 Litre)',
+            'Elastocoat Waterproofing (20 Litre)': 'எலாஸ்டோகோட் நீர்ப்புகா (20 Litre)',
+            'EP-Bond (1kg)': 'EP-பாண்ட் (1kg)',
+            'Fill A Gap (1kg)': 'ஃபில் அ கேப் (1kg)',
+            'Epoxy Filler (Multi Colours)': 'எபோக்சி ஃபில்லர் (பல நிறங்கள்)',
+            'Bostik Fixall Grey (5 Kg)': 'போஸ்டிக் ஃபிக்ஸால் கிரே (5 Kg)',
+            'Bostik Fixall Grey (10 Kg)': 'போஸ்டிக் ஃபிக்ஸால் கிரே (10 Kg)',
+            'Bostik Fixall Grey (20 Kg)': 'போஸ்டிக் ஃபிக்ஸால் கிரே (20 Kg)',
+            'Bostik Fixall Grey (30 Kg)': 'போஸ்டிக் ஃபிக்ஸால் கிரே (30 Kg)',
+            'Super Fixall White (30kg)': 'சூப்பர் ஃபிக்ஸால் வைட் (30kg)',
+            'Super Fixall Grey (30kg)': 'சூப்பர் ஃபிக்ஸால் கிரே (30kg)',
+            'Bostik Tile Grout (1kg)': 'போஸ்டிக் டைல் கிரவுட் (1kg)',
+            'Bostik LW (1 Litre)': 'போஸ்டிக் LW (1 Litre)',
+            'Moisture Seal (1kg)': 'மாய்ஸ்சர் சீல் (1kg)',
+            'Bostik Patchfix (30kg)': 'போஸ்டிக் பேட்ச்ஃபிக்ஸ் (30kg)',
+            'Bostik Plugleak (1kg)': 'போஸ்டிக் பிளக்லீக் (1kg)',
+            'Bostik Plugleak (5kg)': 'போஸ்டிக் பிளக்லீக் (5kg)',
+            'Bostik UW Blue (5kg)': 'போஸ்டிக் UW ப்ளூ (5kg)',
+            'Bostik ZRP (1kg)': 'போஸ்டிக் ZRP (1kg)',
+            'Block P530 Boscoseal PU-D (20kg)': 'பிளாக் P530 போஸ்கோசீல் PU-D (20kg)'
+        };
+
         function toggleLang() {
             currentLang = currentLang === 'en' ? 'ta' : 'en';
-            applyLanguage();
             var btn = document.getElementById('langBtn');
-            var lbl = document.getElementById('langLabel');
             if (currentLang === 'ta') {
                 btn.classList.add('active');
                 btn.title = 'Switch to English';
-                lbl.textContent = 'EN';
+                btn.textContent = 'EN';
             } else {
                 btn.classList.remove('active');
                 btn.title = 'Switch to Tamil';
-                lbl.textContent = 'தமிழ்';
+                btn.textContent = 'தமிழ்';
             }
+            applyLanguage();
+            // Re-render grid with new language
+            renderGrid(displayedProducts);
         }
 
         function applyLanguage() {
@@ -632,7 +785,6 @@
         var lastGridTitleKey = 'productCatalog';
         var lastGridTitleBrand = '';
 
-        // --- CART SYSTEM ---
         let cart = [];
 
         function addToCart(index) {
@@ -771,13 +923,11 @@
         let brandDataScope = [];
         let displayedProducts = [];
 
-        // --- ANABOND PRODUCTS (3 items) ---
         var anabondProducts = [
             { name: 'Sign-O-Flex (15g)', img: 'anabond_sign_o_flex_15g.jpeg', brand: 'Anabond', desc: 'Instant adhesive for rubber, plastic, metal, and wood.' },
             { name: 'Tuffseald 2G', img: 'anabond_tuffseald_2g.jpeg', brand: 'Anabond', desc: 'Super glue for quick bonding of small parts.' },
             { name: 'GP Silicon Sealant', img: 'anabond_gp_silicon_260ml.jpeg', brand: 'Anabond', desc: 'General purpose silicone sealant for glass and aluminium.', hasOptions: true, btnText: 'View Colors', options: [{ variant: 'Clear' }, { variant: 'White' }, { variant: 'Black' }] }
         ];
-        // Spray paint colour options used by Abro Spray Paints (400ml) product
         var sprayPaintColors = [
             { variant: 'Bright Chrome' }, { variant: 'Canary Yellow' }, { variant: 'Copper' }, { variant: 'Deep Yellow' },
             { variant: 'Fluorescent Green' }, { variant: 'Fluorescent Orange' }, { variant: 'Fluorescent Yellow' }, { variant: 'Fluorescent Red' }, { variant: 'Fluorescent Pink' }, { variant: 'Fluorescent Blue' },
@@ -785,8 +935,6 @@
             { variant: 'Ivory' }, { variant: 'Lacquer Clear' }, { variant: 'Mars Red' }, { variant: 'Matt Black' }, { variant: 'Matt Gray White' }, { variant: 'Matt White' }, { variant: 'Off White' }, { variant: 'Orange Red' },
             { variant: 'Phiroza Blue' }, { variant: 'Shifeng Blue' }, { variant: 'Siemans Grey' }, { variant: 'Silver' }, { variant: 'Sparkle Gold' }, { variant: 'Tang Orange' }, { variant: 'Zinc' }
         ];
-
-        // --- ATUL PRODUCTS (18 items): Lacare, Lapox series, Polygrip series ---
         var atulProducts = [
             { name: 'Lacare AM 70', img: 'atul_lacare_am70.jpeg', brand: 'Atul', desc: 'Lubricates locks, loosens rusted nuts, and cleans spark plugs.', hasOptions: true, btnText: 'View Sizes', options: [{ variant: '85g', price: '' }, { variant: '400g', price: '' }], details: '<strong>Description:</strong><br>Multi-purpose maintenance spray designed for preventive and corrective maintenance for industrial use, automobiles, and homes.<br><br><strong>Key Benefits:</strong><br>• Penetrates rust & loosens rusted nuts.<br>• Provides lubrication & removes stickiness.<br>• Displaces moisture & protects from corrosion.<br><br><strong>Applications:</strong><ul><li>Loosening rusted nuts and bolts</li><li>Cleaning spark plugs</li><li>Lubricating door locks, bolts, hinges, fans, mixers, zippers.</li></ul>' },
             { name: 'Lapox Duratite (1.8 Kg)', img: 'atul_lapox_duratite_1.8kg.jpeg', brand: 'Atul', desc: 'Heavy-duty epoxy for fixing granite, marble, and wood.', details: '<strong>Description:</strong><br>A solvent-less, high viscous, fast-curing, high-strength epoxy adhesive with long pot life.<br><br><strong>Technical Specs:</strong><br>• Viscosity: 50,000 - 60,000 mPas<br>• Pot Life: 75 - 90 mins<br><br><strong>Applications:</strong><ul><li>Fixing granite, marble and wood</li><li>Sand broadcasting & Grouting steel railings</li><li>Bonding magnets to metals in audio speakers</li><li>Filling gaps in furniture joints</li></ul>' },
@@ -806,7 +954,6 @@
             { name: 'Polygrip S 709', img: 'atul_polygrip_s709.jpeg', brand: 'Atul', hasOptions: true, btnText: 'View Sizes', options: [{ variant: '1 Litre', price: '' }, { variant: '5 Litre', price: '' }], desc: 'Sprayable adhesive for HVAC duct insulation.', details: '<strong>Description:</strong><br>Multi-purpose adhesive suitable for bonding substrates like canvas, foam, paper.<br><br><strong>Key Benefits:</strong><br>• Long tack retention time.<br>• Good coverage.' },
             { name: 'Polygrip SR 409', img: 'atul_polygrip_sr409.jpeg', brand: 'Atul', hasOptions: true, btnText: 'View Sizes', options: [{ variant: '500ml', price: '' }, { variant: '1 Litre', price: '' }], desc: 'Fast-drying adhesive for mattress and sofa manufacturing.', details: '<strong>Description:</strong><br>Light-coloured, fast-drying adhesive for foam-to-foam bonding.<br><br><strong>Key Benefits:</strong><br>• Fast-drying.<br>• Does not stain.' }
         ];
-        // --- WEBER PRODUCTS (25 items) ---
         var weberProducts = [
             { name: 'Weberdry ACR Seal (20L)', img: 'weber_acr_seal_20l.jpeg', brand: 'Weber', desc: 'Roof waterproofing coating.', hasOptions: true, btnText: 'View Colours', options: [{ variant: 'Terracotta', price: '' }, { variant: 'White', price: '' }] },
             { name: 'Weber Colorfine (1kg)', img: 'weber_colorfine_1kg.jpeg', brand: 'Weber', desc: 'Fine joint filler for ceramic and vitrified tiles.', hasOptions: true, btnText: 'View Colours', options: [
@@ -835,7 +982,6 @@
             { name: 'Joint Poxy Resin & Hardner (273g)', img: 'weber_joint_poxy_resin_273g.jpeg', brand: 'Weber', desc: 'Base resin & hardener component for epoxy grout.' },
             { name: 'Joint Poxy Resin & Hardner (1.365kg)', img: 'weber_joint_poxy_resin_1.365kg.jpeg', brand: 'Weber', desc: 'Bulk base resin & hardener component.' }
         ];
-        // --- A1 PRODUCTS (15 items) ---
         var a1Products = [
             { name: 'Polish Brush (2 Inch)', img: 'a1_polish_brush_2inch.jpeg', brand: 'A1', desc: 'Soft bristle brush for wood polishing.' },
             { name: '111 Brush (3 Inch)', img: 'a1_111_brush_3inch.jpeg', brand: 'A1', desc: 'Standard paint brush for walls.' },
@@ -849,11 +995,10 @@
             { name: 'Foam Roller (2 Inch)', img: 'a1_foam_roller_2inch.jpeg', brand: 'A1', desc: 'Mini foam roller for touch-ups.' },
             { name: 'Bluewhite Roller (9 Inch)', img: 'a1_bluewhite_roller_9inch.jpeg', brand: 'A1', desc: 'Standard exterior wall roller.' },
             { name: 'Artist Flat Brush', img: 'a1_artist_flat_brush.jpeg', brand: 'A1', desc: 'Fine tip brush for detailing.' },
-            { name: 'Vintage Roller (9 Inch)', img: 'a1_vintage_roller_9inch.jpeg', brand: 'A1', desc: 'Large texture roller for walls.' },
+            { name: 'Vintage Roller (9 Inch)', img: 'a1_vintage_roller_9inch.jpeg', brand: 'A1', desc: 'Rough surface paint roller.' },
             { name: 'Yellow White Roller (9 Inch)', img: 'a1_yellowwhite_roller_9inch.jpeg', brand: 'A1', desc: 'Rough surface paint roller.' },
             { name: 'Handy Roller (9 Inch)', img: 'a1_handy_roller_9inch.jpeg', brand: 'A1', desc: 'All-purpose wall paint roller.' }
         ];
-        // --- ITZU PRODUCTS (17 items) ---
         var itzuProducts = [
             { name: 'Rollify 2 Inch', img: 'itzu_rollify_2inch.jpeg', brand: 'Itzu', desc: 'Mini paint roller for trims.' },
             { name: 'Jumbo Roller (Exterior) 9 Inch', img: 'itzu_jumbo_roller_exterior_9inch.jpeg', brand: 'Itzu', desc: 'Heavy-duty roller for rough exterior walls.' },
@@ -873,19 +1018,16 @@
             { name: 'Rollraza Roller (Bottle) 9 Inch', img: 'itzu_rollraza_bottle_9inch.jpeg', brand: 'Itzu', desc: 'Unique texture roller.' },
             { name: 'Delco Roller (Rap) 9 Inch', img: 'itzu_delco_rap_9inch.jpeg', brand: 'Itzu', desc: 'Texture application roller.' }
         ];
-        // --- NEROFIX PRODUCTS (4 items) ---
         var nerofixProducts = [
             { name: 'Turbofix PU 104 (25L)', img: 'nerofix_turbofix_pu104_25l.jpeg', brand: 'Nerofix', desc: 'Water-resistant wood adhesive (D3 Standard).' },
             { name: 'Turbofix PU 301 (30kg)', img: 'nerofix_turbofix_pu301_30kg.jpeg', brand: 'Nerofix', desc: 'High-strength adhesive for wood and PVC.' },
             { name: 'Turbocure H2 Hardner (500ml)', img: 'nerofix_turbocure_h2_500ml.jpeg', brand: 'Nerofix', desc: 'Hardener for PU 104.' },
             { name: 'Turbocure H2 Hardner (1kg)', img: 'nerofix_turbocure_h2_1kg.jpeg', brand: 'Nerofix', desc: 'Hardener for PU 301.' }
         ];
-        // --- ESDEE PRODUCTS (2 items) ---
         var esdeeProducts = [
             { name: 'Melamine Glossy Clear (20L)', img: 'esdee_melamine_glossy_20l.jpeg', brand: 'Esdee', desc: 'High gloss clear finish for wood furniture.' },
             { name: 'Sanding Sealer (20L)', img: 'esdee_sanding_sealer_20l.jpeg', brand: 'Esdee', desc: 'Base coat sealer for preparing wood surfaces.' }
         ];
-        // --- JUBILANT PRODUCTS (6 items) ---
         var jubilantProducts = [
             { name: 'Fast-X (5 Litre)', img: 'jubilant_fastx_5l.jpeg', brand: 'Jubilant', desc: 'Fast-setting synthetic resin adhesive.' },
             { name: 'PVC Xtra (5 Kg)', img: 'jubilant_pvc_xtra_5kg.jpeg', brand: 'Jubilant', desc: 'Heavy-duty adhesive for plywood and laminates.', isOutOfStock: true },
@@ -894,7 +1036,6 @@
             { name: 'WGP 880 (50 Kg)', img: 'jubilant_wgp_880_50kg.jpeg', brand: 'Jubilant', desc: 'High-strength waterproof wood glue.' },
             { name: 'WGP 990 (50 Kg)', img: 'jubilant_wgp_990_50kg.jpeg', brand: 'Jubilant', desc: 'Premium anti-termite wood adhesive.' }
         ];
-        // --- ABRO PRODUCTS (40+ items) ---
         var abroProducts = [
             { name: 'Abro Spray Paints (400ml)', desc: 'Quick-drying paint for metal, wood, and car touch-ups.', img: 'abro_spray_group.jpeg', brand: 'ABRO', hasOptions: true, btnText: 'View Available Colours', options: sprayPaintColors },
             { name: 'Abro Packing Tapes (BOPP)', desc: 'Strong tape for carton sealing and packaging.', img: 'abro_pack_group.jpeg', brand: 'ABRO', hasOptions: true, btnText: 'View Sizes & Types', options: [{ variant: '2 Inch Clear' }, { variant: '2 Inch Brown' }, { variant: '3 Inch Clear' }, { variant: '3 Inch Brown' }] },
@@ -932,7 +1073,6 @@
             { name: 'Abro Shuttering Tape', desc: 'Prevents concrete slurry leakage.', img: 'abro_shuttering.jpeg', brand: 'ABRO' },
             { name: 'Abro Weather 9895 Sealant', desc: 'Exterior neutral silicone sealant', img: 'abro_weather_9895.jpeg', brand: 'ABRO' }
         ];
-        // --- BOSTIK PRODUCTS (35 items) ---
         var bostikProducts = [
             { name: 'Bostik Anchor Grout (1kg)', isOutOfStock: true, desc: 'High strength polyester anchoring grout.', img: 'bostik_anchor_grout.jpeg', brand: 'BOSTIK', video: 'videos/bostik_anchor_grout.mp4' },
             { name: 'Bostik Base & Hardner (0.3 Kg)', desc: 'Epoxy bonding agent for concrete repair.', img: 'bostik_base_hardner_0.3kg.jpeg', brand: 'BOSTIK' },
@@ -969,131 +1109,6 @@
             { name: 'Block P530 Boscoseal PU-D (20kg)', desc: 'Bitumen-PU waterproofing membrane.', img: 'bostik_block_p530_20kg.jpeg', brand: 'BOSTIK' }
         ];
 
-        // ==================== ROCKFORT AGENCIES - PRODUCT CATALOG ====================
-        // Badge types: Best Seller, Offer, Best Price, New Arrival
-        // Product grid: options dropdown, PDF link, info modal, video modal, cart, WhatsApp
-        // Phone: +919790345300 (Bostik, Jubilant, Atul, Nerofix, Esdee, Anabond)
-        //        +917092441687 (Abro, Weber, Itzu, A1)
-        // Language: English (en) / Tamil (ta) - toggle via nav button
-        // ==================== ANABOND ====================
-        // Sign-O-Flex, Tuffseald 2G, GP Silicon Sealant (Clear/White/Black)
-        // ==================== ATUL ====================
-        // Lacare AM 70, Lapox Duratite, Lapox Lacrete, Lapox Procoat, Lapox Rapid & Clear
-        // Lapox Ultra, Lapox Ultrabond CPVC/UPVC/PVC, Lapox Ultra Fast, Lapox Ultrafix
-        // Polygrip Hotbond, Polygrip MP 609, Polygrip Rapid, Polygrip S 709, Polygrip SR 409
-        // ==================== WEBER ====================
-        // Weberdry ACR Seal, Weber Colorfine, Weberwall Blockfix, Weberklin Ceraplus
-        // Weberset Classic/Firm/First White/Nova/Plus White/Premier, Groutadd
-        // Webercolor SG/Dewdrop, Joint Poxyfill (3.635kg/727g), Tile Spacer, Joint Poxy Resin
-        // ==================== A1 ====================
-        // Polish Brush, 111 Brush, Premium Brush, Epoxy Roller, Vintage Roller, Magic Brush
-        // Handy Roller, Foam Roller, Bluewhite/Yellow White Roller, Artist Flat Brush
-        // ==================== ITZU ====================
-        // Rollify 2/6 Inch, Jumbo Roller (Exterior/Ragging/4"), Pilot Roller, Rollraza (Interior/Exterior/Rap/Bottle)
-        // Trendy Brush, Prestige Brush, Delco Roller
-        // ==================== NEROFIX ====================
-        // Turbofix PU 104 (25L), Turbofix PU 301 (30kg), Turbocure H2 Hardner (500ml/1kg)
-        // ==================== ESDEE ====================
-        // Melamine Glossy Clear (20L), Sanding Sealer (20L)
-        // ==================== JUBILANT ====================
-        // Fast-X (5L), PVC Xtra (5Kg/1Kg), WGP 740/880/990 (50 Kg)
-        // ==================== ABRO ====================
-        // Spray Paints (33 colours), Packing Tapes BOPP, Telescopic Runners, 3123/Ezpro Masking Tape
-        // GHB Tape, Lub. AB-80, Cloth Roll, Cut-off Wheels, Drywall Tape, Fiber/Flap Disc
-        // Abro GP 260ml, Latex Paper, Leakage Repair Tape, Mirror Mounting Tape, PTFE Tape
-        // PU Foam, Insulation Tape, Acrybond, Grinding Wheel, Shuttering Tape, Weather 9895
-        // ==================== BOSTIK ====================
-        // Anchor Grout, Base & Hardner, Boscocem 475, Two in One, Crack Filler, Efflorescence Coat
-        // Elastocoat, EP-Bond, Fill A Gap, Epoxy Filler, Fixall Grey/White, Super Fixall
-        // Tile Grout, LW, Moisture Seal, Patchfix, Plugleak, UW Blue, ZRP, Block P530 Boscoseal
-        // ==================== END PRODUCT REFERENCE ====================
-        // Rockfort Agencies - 24/7 VADIVEL NAGAR 4 TH CROSS, WORAIYUR, TRICHY - 620003
-        // Contact: +91 97903 45300 | rockkfortagencies@gmail.com
-        // Developer: Naveen Nivas S | +91 94893 30306 | naveennivas09@gmail.com
-        // Copyright 2026. Tamil/English language toggle. All product data as per catalog.
-        // Images: images/ (default), images2/ (ABRO, A1), images3/ (Itzu). Videos: videos/
-        // ==================== BADGE & GRID RENDER ====================
-        // getBadge(): assigns Best Seller / Offer / Best Price / New Arrival based on product name & brand
-        // renderGrid(): builds product cards with image, dropdown, Add to cart, Call to buy, Share
-        // loadBrand(): sets brandDataScope and section title (EN/TA), then renderGrid
-        // filterProducts(): filters brandDataScope by search query (name, desc, brand)
-        // observeCards(): IntersectionObserver for scroll reveal animation on .card and .about-card
-        // Cart: addToCart, updateCartCount, openCartModal, removeFromCart, sendCartToWhatsapp
-        // Modals: optionsModal, infoModal, videoModal, cartModal, devModal
-        // Language: currentLang ('en'|'ta'), t.en / t.ta, toggleLang(), applyLanguage()
-        // DOMContentLoaded: applyLanguage(), createDots(), loadBrand('All Products')
-        // ==================== END SCRIPT REFERENCE ====================
-        // 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
-        // 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60
-        // 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90
-        // 91 92 93 94 95 96 97 98 99 100 - Rockfort Agencies Full Catalog - 1200+ Lines
-        // Anabond Atul Weber A1 Itzu Nerofix Esdee Jubilant Abro Bostik - All brands included
-        // Tamil (ta) / English (en) - toggle button left of search in nav. applyLanguage() updates all data-i18n
-        // Product images: images/ images2/ (ABRO A1) images3/ (Itzu). Logo: images/logo.png
-        // Floating: WhatsApp Mail Cart BackToTop. Footer: address phone email developer button
-        // Sidebar: Our Brands All Products Abro Bostik Jubilant Weber Atul Anabond Nerofix Esdee Itzu A1
-        // Hero: Leading Supplier Get Quote Our Authorized Partners marquee. About: 7 cards Why Choose
-        // Modals: Options Info Video Cart Developer. Cart: Add Remove Send Enquiry WhatsApp
-        // Two phone numbers: 9790345300 (Bostik Jubilant Atul Nerofix Esdee Anabond) 7092441687 (Abro Weber Itzu A1)
-        // Badges: Best Seller Offer Best Price New Arrival. Ribbons on product cards. Out of Stock label
-        // Scroll reveal: IntersectionObserver .card .about-card .reveal. createDots() background animation
-        // Search: filterProducts() by name desc brand. loadBrand() sets title + grid. renderGrid() builds HTML
-        // Variant dropdown: Select Option/Color. Add to cart with qty. CALL TO BUY opens tel: link
-        // Share button: WhatsApp share text. Product Info modal: product.details. Watch Demo: product.video
-        // PDF: product.pdf opens in new tab. View Options/Colours/Sizes from product.hasOptions product.options
-        // Copyright 2026 Naveen Nivas Sivakumar. Rockfort Agencies Trichy. 24/7 Vadivel Nagar 4th Cross Woraiyur
-        // End of inline documentation. Total lines 1200+
-        // L101 L102 L103 L104 L105 L106 L107 L108 L109 L110 L111 L112 L113 L114 L115 L116 L117 L118 L119 L120
-        // L121 L122 L123 L124 L125 L126 L127 L128 L129 L130 L131 L132 L133 L134 L135 L136 L137 L138 L139 L140
-        // L141 L142 L143 L144 L145 L146 L147 L148 L149 L150 - Full code 1200+ lines - Copy from file or Cursor
-        // 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170
-        // 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190
-        // 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210
-        // 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230
-        // 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250
-        // 251 252 253 254 255 256 257 258 259 260 - Rockfort Agencies index.html complete
-        // 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280
-        // 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300
-        // 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 320
-        // 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340
-        // 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360
-        // 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379 380
-        // 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 400
-        // 401 402 403 404 405 406 407 408 409 410 - 1200+ lines total - No errors
-        // 411 412 413 414 415 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430
-        // 431 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447 448 449 450
-        // 451 452 453 454 455 456 457 458 459 460 461 462 463 464 465 466 467 468 469 470
-        // 471 472 473 474 475 476 477 478 479 480 481 482 483 484 485 486 487 488 489 490
-        // 491 492 493 494 495 496 497 498 499 500 - Tamil/English language support - Professional UI
-        // 501 502 503 504 505 506 507 508 509 510 511 512 513 514 515 516 517 518 519 520
-        // 521 522 523 524 525 526 527 528 529 530 531 532 533 534 535 536 537 538 539 540
-        // 541 542 543 544 545 546 547 548 549 550 551 552 553 554 555 556 557 558 559 560
-        // 561 562 563 564 565 566 567 568 569 570 571 572 573 574 575 576 577 578 579 580
-        // 581 582 583 584 585 586 587 588 589 590 591 592 593 594 595 596 597 598 599 600
-        // 601 602 603 604 605 606 607 608 609 610 611 612 613 614 615 616 617 618 619 620
-        // 621 622 623 624 625 626 627 628 629 630 631 632 633 634 635 636 637 638 639 640
-        // 641 642 643 644 645 646 647 648 649 650 - Full product data - All brands - Ready to copy
-        // 651 652 653 654 655 656 657 658 659 660 661 662 663 664 665 666 667 668 669 670
-        // 671 672 673 674 675 676 677 678 679 680 681 682 683 684 685 686 687 688 689 690
-        // 691 692 693 694 695 696 697 698 699 700 701 702 703 704 705 706 707 708 709 710
-        // 711 712 713 714 715 716 717 718 719 720 721 722 723 724 725 726 727 728 729 730
-        // 731 732 733 734 735 736 737 738 739 740 741 742 743 744 745 746 747 748 749 750
-        // 751 752 753 754 755 756 757 758 759 760 761 762 763 764 765 766 767 768 769 770
-        // 771 772 773 774 775 776 777 778 779 780 781 782 783 784 785 786 787 788 789 790
-        // 791 792 793 794 795 796 797 798 799 800 801 802 803 804 805 806 807 808 809 810
-        // 811 812 813 814 815 816 817 818 819 820 - 1200+ LINES - OREY STRETCH - COPY PANNUNGA
-        // 821 822 823 824 825 826 827 828 829 830 831 832 833 834 835 836 837 838 839 840
-        // 841 842 843 844 845 846 847 848 849 850 851 852 853 854 855 856 857 858 859 860
-        // 861 862 863 864 865 866 867 868 869 870 871 872 873 874 875 876 877 878 879 880
-        // 881 882 883 884 885 886 887 888 889 890 891 892 893 894 895 896 897 898 899 900
-        // 901 902 903 904 905 906 907 908 909 910 911 912 913 914 915 916 917 918 919 920
-        // 921 922 923 924 925 926 927 928 929 930 931 932 933 934 935 936 937 938 939 940
-        // 941 942 943 944 945 946 947 948 949 950 951 952 953 954 955 956 957 958 959 960
-        // 961 962 963 964 965 966 967 968 969 970 971 972 973 974 975 976 977 978 979 980
-        // 981 982 983 984 985 986 987 988 989 990 991 992 993 994 995 996 997 998 999 1000
-        // 1001 ... 1200+ - ROCKFORT AGENCIES - FULL CODE - NO ERROR - ONE STRETCH
-        // Save as index.html - Open in browser - Tamil button left of search - Click to switch language
-
         function getBadge(product) {
             var name = product.name.toLowerCase();
             var brand = product.brand.toLowerCase();
@@ -1102,6 +1117,13 @@
             if (brand === 'itzu' || brand === 'a1') return '<div class="ribbon price">Best Price</div>';
             if (brand === 'atul' || brand === 'anabond') return '<div class="ribbon new">New Arrival</div>';
             return '';
+        }
+
+        function getDisplayName(product) {
+            if (currentLang === 'ta' && tamilNames[product.name]) {
+                return tamilNames[product.name];
+            }
+            return product.name;
         }
 
         function renderGrid(productsList) {
@@ -1130,7 +1152,8 @@
                         if (product.options && product.options.length > 0) {
                             optionSelectHtml = '<select id="var-' + index + '" class="variant-select"><option value="" disabled selected>' + L.selectOptionColor + '</option>' + product.options.map(function(opt) { return '<option value="' + opt.variant + '">' + opt.variant + '</option>'; }).join('') + '</select>';
                         }
-                        var cardHTML = '<div class="card">' + badgeHtml + '<div class="card-img"><div class="skeleton"></div><img src="' + imgFolder + '/' + product.img + '" alt="' + product.name + '" style="width:100%; height:100%; object-fit:contain;" onload="this.style.opacity=1; this.previousElementSibling.style.display=\'none\';" onerror="this.onerror=null; this.src=\'https://placehold.co/400x300?text=' + product.brand + '\';"></div><div class="card-content"><p class="category">' + product.brand + '</p><h3 class="material-name">' + product.name + '</h3><p class="product-desc">' + product.desc + '</p>' + outOfStockHtml + optionSelectHtml + optionsButton + infoButton + videoButton + '<div class="cart-row"><input type="number" id="qty-' + index + '" class="qty-input" placeholder="' + L.qty + '" min="1"><button onclick="addToCart(' + index + ')" id="btn-' + index + '" class="add-cart-btn"><span class="material-icons">add_shopping_cart</span> ' + L.add + '</button></div><div class="action-row"><a href="tel:' + phoneNumber + '" class="buy-now-btn"><span class="material-icons">call</span> ' + L.callToBuy + '</a><a href="' + shareLink + '" target="_blank" class="share-btn"><span class="material-icons">share</span></a></div></div></div>';
+                        var displayName = getDisplayName(product);
+                        var cardHTML = '<div class="card">' + badgeHtml + '<div class="card-img"><div class="skeleton"></div><img src="' + imgFolder + '/' + product.img + '" alt="' + product.name + '" style="width:100%; height:100%; object-fit:contain;" onload="this.style.opacity=1; this.previousElementSibling.style.display=\'none\';" onerror="this.onerror=null; this.src=\'https://placehold.co/400x300?text=' + product.brand + '\';"></div><div class="card-content"><p class="category">' + product.brand + '</p><h3 class="material-name">' + displayName + '</h3><p class="product-desc">' + product.desc + '</p>' + outOfStockHtml + optionSelectHtml + optionsButton + infoButton + videoButton + '<div class="cart-row"><input type="number" id="qty-' + index + '" class="qty-input" placeholder="' + L.qty + '" min="1"><button onclick="addToCart(' + index + ')" id="btn-' + index + '" class="add-cart-btn"><span class="material-icons">add_shopping_cart</span> ' + L.add + '</button></div><div class="action-row"><a href="tel:' + phoneNumber + '" class="buy-now-btn"><span class="material-icons">call</span> ' + L.callToBuy + '</a><a href="' + shareLink + '" target="_blank" class="share-btn"><span class="material-icons">share</span></a></div></div></div>';
                         gridElement.innerHTML += cardHTML;
                     });
                     observeCards();
