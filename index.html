@@ -205,21 +205,9 @@
         .section-title { font-size: 22px; font-weight: 500; margin-bottom: 25px; color: var(--text-dark); border-left: 5px solid var(--google-blue); padding-left: 15px; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
         .no-results { grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--google-grey); font-size: 16px; }
-        
-        /* Product card cascade animation - lighter */
-        .card { 
-            border: 1px solid var(--border-color); 
-            display: flex; 
-            flex-direction: column;
-            opacity: 0;
-            transform: translateY(-50px) scale(0.9);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .card.show-card { 
-            opacity: 1; 
-            transform: translateY(0) scale(1); 
-        }
-        .card:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.12); transform: translateY(-5px) scale(1.01) !important; border-color: transparent; }
+        .card { border: 1px solid var(--border-color); display: flex; flex-direction: column; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .card.reveal { opacity: 1; transform: translateY(0); }
+        .card:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.12); transform: translateY(-5px) !important; border-color: transparent; }
         .card-img { height: 200px; background: white; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f1f3f4; padding: 15px; position: relative; overflow: hidden; }
         .card-img img { transition: transform 0.4s ease, opacity 0.3s ease; opacity: 0; z-index: 2; }
         .card:hover .card-img img { transform: scale(1.08); }
@@ -1237,28 +1225,7 @@ function renderGrid(productsList) {
                     '</div></div>';
                 gridElement.innerHTML += cardHTML;
             });
-            // Product cards cascade - RETRIGGER on scroll
-            setTimeout(function() {
-                var productCards = document.querySelectorAll('.card');
-                var productObserver = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            var allCards = document.querySelectorAll('.card');
-                            var cardIndex = Array.from(allCards).indexOf(entry.target);
-                            setTimeout(function() {
-                                entry.target.classList.add('show-card');
-                            }, cardIndex * 50); // Faster stagger
-                        } else {
-                            // Reset when scrolled out
-                            entry.target.classList.remove('show-card');
-                        }
-                    });
-                }, { threshold: 0.15 });
-                
-                productCards.forEach(function(card) {
-                    productObserver.observe(card);
-                });
-            }, 100);
+            observeCards();
         } else {
             gridElement.innerHTML = '<div class="no-results"><span class="material-icons" style="font-size:48px;color:#dadce0;">search_off</span><p style="margin-top:10px;">' + L.noProductsFound + '</p></div>';
         }
@@ -1266,6 +1233,17 @@ function renderGrid(productsList) {
         console.error('Grid Render Error:', e);
         document.getElementById('productGrid').innerHTML = '<div style="text-align:center;padding:20px;">Error loading products. Please refresh.</div>';
     }
+}
+
+function observeCards() {
+    var cards = document.querySelectorAll('.card');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) entry.target.classList.add('reveal');
+            else entry.target.classList.remove('reveal');
+        });
+    }, { threshold: 0.1 });
+    cards.forEach(function(card) { observer.observe(card); });
 }
 
 function loadBrand(brandName) {
