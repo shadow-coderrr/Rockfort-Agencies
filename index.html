@@ -223,8 +223,9 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 5px 11px;
+            padding: 5px 8px;
             height: 34px;
+            min-width: 34px;
             background: rgba(241, 243, 244, 0.9);
             border: 1px solid #dadce0;
             border-radius: 8px;
@@ -234,7 +235,6 @@
             cursor: pointer;
             transition: all 0.25s ease;
             white-space: nowrap;
-            min-width: 60px;
         }
 
         .lang-toggle:hover {
@@ -1306,8 +1306,8 @@
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            padding: 6px 14px;
-            height: 36px;
+            padding: 6px 12px;
+            height: 34px;
             background: #ffffff;
             border: 1.5px solid #dadce0;
             border-radius: 8px;
@@ -1495,8 +1495,8 @@
 
             .lang-toggle {
                 font-size: 12px;
-                padding: 4px 9px;
-                min-width: 52px;
+                padding: 4px 6px;
+                min-width: 30px;
             }
 
             .google-login-btn span.login-text {
@@ -1654,7 +1654,7 @@
                 <span class="nav-user-initials" id="navUserInitials"></span>
             </button>
             <button type="button" id="langBtn" class="lang-toggle" onclick="toggleLang()"
-                title="Switch to Tamil">தமிழ்</button>
+                title="Switch to Tamil">த</button>
             <div class="nav-search-container">
                 <span class="material-icons nav-search-icon">search</span>
                 <input type="text" id="searchInput" class="nav-search-input" placeholder="Search..."
@@ -2063,7 +2063,7 @@
             } else {
                 btn.classList.remove('active');
                 btn.title = 'Switch to Tamil';
-                btn.textContent = 'தமிழ்';
+                btn.textContent = 'த';
             }
             applyLanguage();
             renderGrid(displayedProducts);
